@@ -1,5 +1,7 @@
 # AP Computer Science Principles Summary
 
+[![Build LaTeX document](https://github.com/rowi1de/apcsp-summary/actions/workflows/compile-latex.yml/badge.svg)](https://github.com/witi42/apcsp-summary/actions/workflows/compile-latex.yml)
+
 ⚠️ **WORK IN PROGRESS** - This document is currently under development and is not complete. Content may be missing, incorrect, or subject to significant changes.
 
 ## ⚠️ Important Disclaimer
@@ -38,3 +40,11 @@ To compile this document:
    - color
 
 3. Compile using:
+
+## Download PDF
+
+[![Download Latest PDF](https://img.shields.io/badge/Download-Latest%20PDF-blue.svg)](https://nightly.link/rowi1de/apcsp-summary/workflows/compile-latex/main/AP-CSP-Summary.zip)
+
+You can also:
+1. Go to the [Actions tab](../../actions), click on the latest workflow run, and download the "AP-CSP-Summary" artifact
+2. Check the [Releases page](../../releases) for stable versions
