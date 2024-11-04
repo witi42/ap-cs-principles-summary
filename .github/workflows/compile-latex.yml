@@ -16,11 +16,17 @@ jobs:
       - name: Rename PDF file
         run: mv main.pdf ap-cs-principles-summary.pdf
       
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
-        with:
-          name: AP-CSP-Summary
-          path: ap-cs-principles-summary.pdf
+      - name: Upload PDF to pdf-latest branch
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git checkout --orphan pdf-latest
+          git rm -rf .
+          mv ap-cs-principles-summary.pdf AP-CSP-Summary.pdf
+          git add AP-CSP-Summary.pdf
+          git commit -m "Update latest PDF"
+          git push -f origin pdf-latest
           
       # Create Release (only on tags)
       - name: Create Release
