@@ -1,7 +1,7 @@
 # AP Computer Science Principles Summary
 
 <div align="center">
-  <a href="https://github.com/rowi1de/apcsp-summary/raw/pdf-latest/AP-CSP-Summary.pdf">
+  <a href="https://github.com/witi42/ap-cs-principles-summary/blob/pdf-latest/AP-CSP-Summary.pdf">
     <img src="https://img.shields.io/badge/Download-Latest%20PDF-2ea44f?style=for-the-badge&logo=adobe-acrobat-reader" alt="Download PDF">
   </a>
 </div>
