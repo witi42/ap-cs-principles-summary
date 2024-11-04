@@ -1,37 +1,50 @@
-\documentclass{book}
+\documentclass[11pt,oneside]{book}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{tikz}
-\usetikzlibrary{positioning}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
 
-\title{AP Computer Science Principles\\Unofficial Summary\\[1em]
-{\large \textcolor{red}{Work in Progress - Under Development}}}
+\titleformat{\chapter}{\normalfont\huge\bfseries}{\thechapter}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+\title{
+    \Huge AP Computer Science Principles\\
+    \Large Unofficial Summary\\[0.5em]
+    \normalsize\textcolor{red}{Work in Progress - Under Development}
+}
 \author{\href{https://rowi.dev/}{Robin Wiethüchter}}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-\begin{center}
-\large\textbf{Disclaimer}\\[0.5em]
-\normalsize
-This document is currently under development and is not complete.\\
-Content may be missing, incorrect, or subject to significant changes.\\[1em]
-
-\fbox{\parbox{0.9\textwidth}{
-\textbf{Important Notice:}\\
-This is an \textit{unofficial} study resource and is not affiliated with, endorsed by, or reviewed by the College Board\textsuperscript{\textregistered} or Code.org\textsuperscript{\textregistered}. The content may:
-\begin{itemize}
-\item Contain errors or inaccuracies
-\item Deviate from official AP\textsuperscript{\textregistered} curriculum guidelines
-\item Not fully align with current exam requirements
-\item Be incomplete or outdated
+\begin{tcolorbox}[
+    title=Disclaimer,
+    colback=white,
+    colframe=black,
+    width=\textwidth-2cm,
+    center
+]
+This is an \textit{unofficial} study resource not affiliated with College Board\textsuperscript{\textregistered} or Code.org\textsuperscript{\textregistered}. The content may:
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Contain errors or inaccuracies
+    \item Deviate from official AP\textsuperscript{\textregistered} curriculum guidelines
+    \item Not fully align with current exam requirements
+    \item Be incomplete or outdated
 \end{itemize}
-Users should always refer to official College Board\textsuperscript{\textregistered} materials for authoritative information.
-}}
-\end{center}
+Users should refer to official College Board\textsuperscript{\textregistered} materials for authoritative information.
+\end{tcolorbox}
 
 \tableofcontents
 
