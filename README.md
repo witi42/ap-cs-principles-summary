@@ -1,10 +1,13 @@
 # AP Computer Science Principles Summary
 
+<div align="center">
+  <a href="https://github.com/rowi1de/apcsp-summary/raw/pdf-latest/AP-CSP-Summary.pdf">
+    <img src="https://img.shields.io/badge/Download-Latest%20PDF-2ea44f?style=for-the-badge&logo=adobe-acrobat-reader" alt="Download PDF">
+  </a>
+</div>
+
+
 ⚠️ **WORK IN PROGRESS** - This document is currently under development and is not complete. Content may be missing, incorrect, or subject to significant changes.
-
-## Download PDF
-
-1. **Direct Download** (Latest Build): [Download PDF](https://github.com/rowi1de/apcsp-summary/raw/pdf-latest/AP-CSP-Summary.pdf)
 
 ## ⚠️ Important Disclaimer
 
