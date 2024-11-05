@@ -1,6 +1,77 @@
 \chapter{Digital Information}
 
 \section*{Overview}
-Understanding how computers store and represent different types of information digitally, including numbers, text, images, and sound.
+Computers can only understand binary - sequences of 0s and 1s. Everything we see and do on computers, from text to images to programs, is ultimately stored and processed as binary data.
 
-% Add more sections as needed 
+\section{Binary and Data Representation}
+\begin{itemize}
+    \item \textbf{Binary}: A single binary digit (0 or 1) is called a bit. It represents one of two possible states: on/off, true/false, or high/low voltage
+    \item \textbf{Bits and Bytes}: 8 bits group together to form 1 byte. This gives us 256 possible unique values ($2^8$). For example, the numbers 0-255 can be stored in one byte
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        box/.style={
+            draw,
+            rectangle,
+            minimum width=2cm,
+            minimum height=1cm,
+            align=center
+        }
+    ]
+        % Binary representation boxes
+        \foreach \x/\v in {0/1,1/0,2/1,3/1,4/0,5/0,6/0,7/1} {
+            \node[box] at (\x*2,0) {\v};
+        }
+        
+        % Labels
+        \node[above] at (7,1.5) {Each box represents one bit (0 or 1)};
+        \draw[->] (7,1.2) -- (7,0.5);
+        
+        % Power labels below
+        \foreach \x/\p in {0/7,1/6,2/5,3/4,4/3,5/2,6/1,7/0} {
+            \node[below] at (\x*2,-0.5) {$2^\p$};
+        }
+        
+        % Add calculation below
+        \node[below, align=left] at (7,-2) {
+            $1 \cdot 2^7 + 0 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$\\
+            $= 128 + 0 + 32 + 16 + 0 + 0 + 0 + 1$\\
+            $= 177_{10}$
+        };
+    \end{tikzpicture}
+    \caption{Converting binary to decimal: Each 1 or 0 is multiplied by its position value (powers of 2), then added together}
+    \label{fig:binary-byte}
+\end{figure}
+
+\section{Number Systems}
+\begin{itemize}
+    \item \textbf{Binary to Decimal}: To convert binary to decimal, multiply each digit by its position value (powers of 2) and add. For example, $1101_2 = 8 + 4 + 0 + 1 = 13_{10}$
+    \item \textbf{Binary Addition}: Add columns right to left, carrying over a 1 when sum exceeds 1. Example:\\
+    \hspace{1cm}  1 1 0 1\\
+    \hspace{1cm}+ 0 1 1 1\\
+    \hspace{1cm}= 1 0 1 0 0
+    \item \textbf{Negative Numbers}: Use "two's complement" to represent negatives. Flip bits and add 1. Example: $5_{10} = 0101_2$, $-5_{10} = 1011_2$.
+\end{itemize}
+
+\section{Text and Media}
+\begin{itemize}
+    \item \textbf{Text}: ASCII assigns each character a number from 0-127. 'A' is 65, 'B' is 66, etc. So 'CAT' in binary would be 01000011 01000001 01010100
+    \item \textbf{Images}: Pictures are grids of pixels. Each pixel stores RGB (Red, Green, Blue) values from 0-255. More pixels = higher resolution but larger file size
+    \item \textbf{Sound}: Sound waves are measured thousands of times per second. Each measurement becomes a number representing the wave's height at that moment
+\end{itemize}
+
+\section{Storage and Data Transfer}
+\begin{itemize}
+    \item \textbf{File Sizes}: As files get bigger, we use larger units: 1 KB = 1,024 bytes, 1 MB = 1,024 KB, 1 GB = 1,024 MB. A typical photo might be 3 MB
+    \item \textbf{Data Transfer}: Data moves in packets across networks. Transfer speed depends on bandwidth (capacity) and latency (delay). A slow connection might transfer 1 MB/second
+    \item \textbf{Metadata}: Files carry extra information like creation date and size. For example, a photo includes when it was taken, camera settings, and location
+\end{itemize}
+
+\section{Programs and Data}
+\begin{itemize}
+    \item \textbf{Programs}: Software is just a sequence of binary instructions telling the computer what to do. Each instruction might be "add these numbers" or "display this text"
+    \item \textbf{Data}: Programs process data - the actual content like your documents, photos, or game saves. The same program can work with different data
+    \item \textbf{Compression}: Files can be made smaller by finding and removing patterns. Like writing "123123123" as "123×3". This saves storage space and transfer time
+\end{itemize}
