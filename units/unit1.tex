@@ -1,12 +1,50 @@
 \chapter{Digital Information}
 
-\section*{Overview}
-Computers can only understand binary - sequences of 0s and 1s. Everything we see and do on computers, from text to images to programs, is ultimately stored and processed as binary data.
+The foundation of computing lies in how computers represent and process information digitally. This unit explores how data is represented using binary and the implications of digital representation.
 
-\section{Binary and Data Representation}
+\section*{Learning Objectives}
+
+\subsection*{Binary Numbers (2.1)}
+\begin{itemize}[label=--]
+    \item \textbf{DAT-1.A}: Explain how data can be represented using bits
+    \item \textbf{DAT-1.B}: Explain the consequences of using bits to represent data
+    \item \textbf{DAT-1.C}: Calculate and compare binary numbers
+\end{itemize}
+
+\subsection*{Data Compression (2.2)}
+\begin{itemize}[label=--]
+    \item \textbf{DAT-1.D}: Compare data compression algorithms in context
+\end{itemize}
+
+\subsection*{Legal and Ethical Concerns (5.5)}
+\begin{itemize}[label=--]
+    \item \textbf{IOC-1.F}: Explain how computing raises legal and ethical concerns
+\end{itemize}
+
+\section*{Essential Knowledge}
+
+\subsection*{Binary and Data Representation}
 \begin{itemize}
-    \item \textbf{Binary}: A single binary digit (0 or 1) is called a bit. It represents one of two possible states: on/off, true/false, or high/low voltage
-    \item \textbf{Bits and Bytes}: 8 bits group together to form 1 byte. This gives us 256 possible unique values ($2^8$). For example, the numbers 0-255 can be stored in one byte
+    \item \textbf{Basic Concepts}
+        \begin{itemize}
+            \item A bit (binary digit) is the smallest unit of data, representing either 0 or 1 % DAT-1.A.3
+            \item A byte consists of 8 bits % DAT-1.A.4
+            \item Computing devices represent all data digitally using bits at their lowest level % DAT-1.A.2
+            \item Data values can be stored in variables, lists, or constants and can be used as input/output for procedures % DAT-1.A.1
+        \end{itemize}
+    
+    \item \textbf{Data Abstraction}
+        \begin{itemize}
+            \item Abstraction reduces complexity by hiding irrelevant details while bringing together useful ones, allowing focus on the main idea % DAT-1.A.5
+            \item Bits are grouped to represent higher-level abstractions like numbers, text, and colors % DAT-1.A.6
+            \item The same bit sequence can mean different things in different contexts (e.g., the same bits might represent a number or a letter) % DAT-1.A.7
+        \end{itemize}
+        
+    \item \textbf{Digital vs. Analog}
+        \begin{itemize}
+            \item Analog data has values that change smoothly over time (e.g., pitch and volume of music, colors in a painting, position of a runner) % DAT-1.A.8
+            \item Digital data approximates analog data through sampling - measuring values at regular intervals to determine the bits needed for storage % DAT-1.A.9, DAT-1.A.10
+        \end{itemize}
 \end{itemize}
 
 \begin{figure}[h]
@@ -41,37 +79,131 @@ Computers can only understand binary - sequences of 0s and 1s. Everything we see
             $= 177_{10}$
         };
     \end{tikzpicture}
-    \caption{Converting binary to decimal: Each 1 or 0 is multiplied by its position value (powers of 2), then added together}
+    \caption{Converting binary to decimal: Each bit's value is multiplied by its position value (powers of 2)}
     \label{fig:binary-byte}
 \end{figure}
 
-\section{Number Systems}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        box/.style={
+            draw=none,
+            minimum width=1cm,
+            minimum height=0.8cm,
+            align=center
+        },
+        carry/.style={
+            font=\small,
+            text=red
+        }
+    ]
+        % Title
+        \node[align=center] at (4,2) {Binary Addition Example};
+        
+        % First number
+        \node[box] at (3,0) {1};
+        \node[box] at (4,0) {0};
+        \node[box] at (5,0) {1};
+        \node[box] at (6,0) {1};
+        
+        % Plus sign and second number
+        \node[box] at (1,-1) {+};
+        \node[box] at (3,-1) {1};
+        \node[box] at (4,-1) {0};
+        \node[box] at (5,-1) {1};
+        \node[box] at (6,-1) {1};
+        
+        % Carry numbers (just above the line)
+        \node[carry] at (2,-1.3) {1};
+        \node[carry] at (4,-1.3) {1};
+        \node[carry] at (5,-1.3) {1};
+        
+        
+        % Line
+        \draw[thick] (1,-1.5) -- (6,-1.5);
+        
+        % Result
+        % \node[box] at (2,-2) {1};
+        \node[box] at (2,-2) {1};
+        \node[box] at (3,-2) {0};
+        \node[box] at (4,-2) {1};
+        \node[box] at (5,-2) {1};
+        \node[box] at (6,-2) {0};
+        
+        % Explanation
+        \node[align=left] at (8,-3.5) {
+            \hspace{1.0em}$11_{10} = \hspace{0.5em}1011_2$\\
+            $+\: 11_{10} = \hspace{0.5em}1011_2$\\
+            \hspace{1.0em}$22_{10} = 10110_2$
+        };
+        
+    \end{tikzpicture}
+    \caption{Binary addition example showing carry bits in red}
+    \label{fig:binary-addition}
+\end{figure}
+
+\subsection*{Number Systems}
 \begin{itemize}
-    \item \textbf{Binary to Decimal}: To convert binary to decimal, multiply each digit by its position value (powers of 2) and add. For example, $1101_2 = 8 + 4 + 0 + 1 = 13_{10}$
-    \item \textbf{Binary Addition}: Add columns right to left, carrying over a 1 when sum exceeds 1. Example:\\
-    \hspace{1cm}  1 1 0 1\\
-    \hspace{1cm}+ 0 1 1 1\\
-    \hspace{1cm}= 1 0 1 0 0
-    \item \textbf{Negative Numbers}: Use "two's complement" to represent negatives. Flip bits and add 1. Example: $5_{10} = 0101_2$, $-5_{10} = 1011_2$.
+    \item \textbf{Binary Numbers}
+        \begin{itemize}
+            \item Binary (base 2) uses only 0s and 1s % DAT-1.C.2
+            \item Decimal (base 10) uses digits 0-9 % DAT-1.C.3
+            \item A bit's position determines its value - multiply the bit (0 or 1) by the place value % DAT-1.C.4
+            \item Place values are powers of 2, starting from right ($2^0$) and increasing leftward % DAT-1.C.5
+        \end{itemize}
+    
+    \item \textbf{Limitations}
+        \begin{itemize}
+            \item Fixed-size integers in many programming languages have limited range, which can cause overflow errors % DAT-1.B.1
+            \item Some languages allow unlimited integer size, limited only by computer memory % DAT-1.B.2
+            \item Real numbers often have limited precision, leading to round-off errors when stored or calculated % DAT-1.B.3
+        \end{itemize}
 \end{itemize}
 
-\section{Text and Media}
+\subsection*{Data Compression}
 \begin{itemize}
-    \item \textbf{Text}: ASCII assigns each character a number from 0-127. 'A' is 65, 'B' is 66, etc. So 'CAT' in binary would be 01000011 01000001 01010100
-    \item \textbf{Images}: Pictures are grids of pixels. Each pixel stores RGB (Red, Green, Blue) values from 0-255. More pixels = higher resolution but larger file size
-    \item \textbf{Sound}: Sound waves are measured thousands of times per second. Each measurement becomes a number representing the wave's height at that moment
+    \item \textbf{Basic Concepts}
+        \begin{itemize}
+            \item Data compression reduces the number of bits needed for data storage/transmission % DAT-1.D.1
+            \item Fewer bits doesn't always mean less information % DAT-1.D.2
+            \item Compression effectiveness depends on data redundancy and the algorithm used % DAT-1.D.3
+        \end{itemize}
+
+    \item \textbf{Types of Compression}
+        \begin{itemize}
+            \item Lossless: Guarantees exact reconstruction of original data % DAT-1.D.4
+            \item Lossy: Creates approximation of original data, typically achieving better compression ratios % DAT-1.D.5, DAT-1.D.6
+        \end{itemize}
+    
+    \item \textbf{Choosing Compression}
+        \begin{itemize}
+            \item Use lossless when exact reconstruction is crucial (e.g., text documents, program files) % DAT-1.D.7
+            \item Use lossy when minimizing size/transmission time is priority (e.g., streaming video, music) % DAT-1.D.8
+        \end{itemize}
 \end{itemize}
 
-\section{Storage and Data Transfer}
+\subsection*{Legal and Ethical Considerations}
 \begin{itemize}
-    \item \textbf{File Sizes}: As files get bigger, we use larger units: 1 KB = 1,024 bytes, 1 MB = 1,024 KB, 1 GB = 1,024 MB. A typical photo might be 3 MB
-    \item \textbf{Data Transfer}: Data moves in packets across networks. Transfer speed depends on bandwidth (capacity) and latency (delay). A slow connection might transfer 1 MB/second
-    \item \textbf{Metadata}: Files carry extra information like creation date and size. For example, a photo includes when it was taken, camera settings, and location
-\end{itemize}
+    \item \textbf{Intellectual Property}
+        \begin{itemize}
+            \item Digital content is the intellectual property of its creator or organization % IOC-1.F.1
+            \item Digital distribution makes intellectual property concerns more complex % IOC-1.F.2
+            \item Proper safeguards should protect intellectual property % IOC-1.F.3
+            \item Using others' work without attribution is plagiarism with legal consequences % IOC-1.F.4
+        \end{itemize}
+    
+    \item \textbf{Legal Usage}
+        \begin{itemize}
+            \item Creative Commons: Public license enabling free distribution of copyrighted work
+            \item Open source: Programs freely available for redistribution and modification
+            \item Open access: Research output free of access restrictions % IOC-1.F.5
+            \item All borrowed material must be properly cited % IOC-1.F.6
+        \end{itemize}
 
-\section{Programs and Data}
-\begin{itemize}
-    \item \textbf{Programs}: Software is just a sequence of binary instructions telling the computer what to do. Each instruction might be "add these numbers" or "display this text"
-    \item \textbf{Data}: Programs process data - the actual content like your documents, photos, or game saves. The same program can work with different data
-    \item \textbf{Compression}: Files can be made smaller by finding and removing patterns. Like writing "123123123" as "123×3". This saves storage space and transfer time
+    \item \textbf{Broader Impact}
+        \begin{itemize}
+            \item Computing can affect social and political issues % IOC-1.F.9
+            \item Digital divide raises ethical concerns about computing access % IOC-1.F.10
+            \item Ethical concerns include biased algorithms, data collection privacy, and digital media access % IOC-1.F.11
+        \end{itemize}
 \end{itemize}

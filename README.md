@@ -2,7 +2,11 @@
 
 <div align="center">
   <a href="https://github.com/witi42/ap-cs-principles-summary/blob/pdf-latest/AP-CSP-Summary.pdf">
-    <img src="https://img.shields.io/badge/Download-Latest%20PDF-2ea44f?style=for-the-badge&logo=adobe-acrobat-reader" alt="Download PDF">
+    <img src="https://img.shields.io/badge/Download-Complete%20PDF-2ea44f?style=for-the-badge&logo=adobe-acrobat-reader" alt="Download Complete PDF">
+  </a>
+  &nbsp;
+  <a href="https://github.com/witi42/ap-cs-principles-summary/blob/pdf-latest/AP-CSP-Summary-Blanks.pdf">
+    <img src="https://img.shields.io/badge/Download-Practice%20Version-blue?style=for-the-badge&logo=adobe-acrobat-reader" alt="Download Practice Version">
   </a>
 </div>
 
@@ -46,5 +50,12 @@ To compile this document:
 
 3. Compile using:
 
+## A Prompt
+generate unit 1 @unit1.tex for my AP Cumputer Science summary following the syllabus from code.org @https://code.org/files/CSPSyllabus2020.pdf . 
+Keep it compact, no unecessary subsections, include everything that is needed for the AP CS Principles curriculum but don't add topics students don't need to know for the exam. Create diagrams when helpful to explain things to prepare students well for the exam.
+
+
+please check the content my AP Cumputer Science summary following the syllabus from code.org. The goal of the summary is to prepare students for the AP exam. Iterate over this. Check if topics are missing. If so add them. Check if items are explained to briefly. Extend the explanation a bit. Check if topics that are not exam relevant are mentioned. Remove them. 
+Check if there's some type of exam question that students are not prepared for with this summary. Add content to prepare them. You may add tikz figures if helpful.
 
 
