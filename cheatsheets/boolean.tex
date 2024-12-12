@@ -1,0 +1,294 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[top=0.5in, bottom=0.5in]{geometry}
+
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    mathescape=true,
+    backgroundcolor=\color{backcolour},   
+    % commentstyle=\color{codegreen},
+    % keywordstyle=\color{magenta},
+    % numberstyle=\tiny\color{codegray},
+    % stringstyle=\color{codepurple},
+    % basicstyle=\ttfamily\footnotesize,
+    % breakatwhitespace=false,         
+    % breaklines=true,                 
+    % captionpos=b,                    
+    % keepspaces=true,                 
+    % numbers=left,                    
+    % numbersep=5pt,                  
+    % showspaces=false,                
+    % showstringspaces=false,
+    % showtabs=false,                  
+    % tabsize=2
+}
+\lstset{style=mystyle}
+
+
+
+% Define custom highlighting commands
+\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+
+\begin{document}
+
+\title{Boolean Expressions \& Conditionals}
+\author{}
+\date{}
+\maketitle
+
+\textbf{Warning:} This document is a work in progress.
+
+
+\section*{Boolean Expressions}
+
+\subsection*{Categories}
+
+\begin{itemize}
+    \item \textbf{Numbers, Strings, Variables}
+    \item \textbf{\hlc[red!20]{Logical Operators}}
+    \item \textbf{\hlc[yellow!40]{Relational Operators}}
+    \item \textbf{\hlc[blue!20]{Parentheses}}
+\end{itemize}
+
+\subsection*{Relational Operators}
+
+Relational operators compare two values and evaluate to either true or false.
+
+\begin{tabular}{l|l|l}
+\toprule
+\textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[yellow!40]{\texttt{==}} & \hlc[yellow!40]{$=$} & Equal to \\
+\hlc[yellow!40]{\texttt{!=}} & \hlc[yellow!40]{$\neq$} & Not equal to \\
+\hlc[yellow!40]{\texttt{>}} & \hlc[yellow!40]{$>$} & Greater than \\
+\hlc[yellow!40]{\texttt{<}} & \hlc[yellow!40]{$<$} & Less than \\
+\hlc[yellow!40]{\texttt{>=}} & \hlc[yellow!40]{$\geq$} & Greater than or equal to \\
+\hlc[yellow!40]{\texttt{<=}} & \hlc[yellow!40]{$\leq$} & Less than or equal to \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Logical Operators}
+
+Logical operators combine two or more boolean expressions and evaluate to either true or false.
+
+\begin{tabular}{l|l|l}
+\toprule
+\textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[red!20]{\texttt{\&\&}} & \hlc[red!20]{AND} & Logical AND (true only if both are true) \\
+\hlc[red!20]{\texttt{||}} & \hlc[red!20]{OR} & Logical OR (true if at least one is true) \\
+\hlc[red!20]{\texttt{!}} & \hlc[red!20]{NOT} & Logical NOT (true if false, false if true) \\
+\bottomrule
+\end{tabular}
+
+
+
+\subsection*{Examples}
+
+\begin{itemize}
+    \item \textit{Example 1:}
+    
+    \hlc[white]{x} \ \hlc[yellow!40]{$>$} \ \hlc[white]{10} \ \hlc[red!20]{AND} \ \hlc[white]{y} \ \hlc[yellow!40]{$<$} \ \hlc[white]{20}
+
+    True for $x = 11, y = 19$
+
+    False for $x = 11, y = 21$
+    
+    \item \textit{Example 2:}
+    
+    \hlc[red!20]{NOT} \ \hlc[blue!20]{(} \hlc[white]{a} \ \hlc[yellow!40]{==} \ \hlc[white]{b} \hlc[blue!20]{)}
+
+    True for $a = 5, b = 2$
+
+    False for $a = 11, b = 11$
+    
+\end{itemize}
+
+\subsection*{Side by Side Comparison}
+
+\begin{tabular}{l|l|l}
+\toprule
+\textbf{Operation} & \textbf{JavaScript} & \textbf{AP Pseudocode} \\
+\midrule
+Assignment & x = 5 & x $\leftarrow$ 5 \\
+Equal to & \hlc[white]{a} \ \hlc[yellow!40]{==} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[yellow!40]{=} \ \hlc[white]{b} \\
+% Not equal to & \hlc[white]{a} \ \hlc[yellow!40]{!=} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[yellow!40]{!=} \ \hlc[white]{b} \\
+Logical OR & \hlc[white]{a} \ \hlc[red!20]{\texttt{||}} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[red!20]{OR} \ \hlc[white]{b} \\
+Logical AND & \hlc[white]{a} \ \hlc[red!20]{\texttt{\&\&}} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[red!20]{AND} \ \hlc[white]{b} \\
+Logical NOT & \hlc[red!20]{\texttt{!}}\hlc[white]{a} & \hlc[red!20]{NOT} \ \hlc[white]{a} \\
+\bottomrule
+\end{tabular}
+
+% \section*{Tasks}
+
+% \begin{tabular}{c|p{4.5in}|p{1in}}
+% \toprule
+% & \textbf{Expression} & \textbf{Value} \\
+% \midrule
+% a & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% b & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% c & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% d & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% e & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% f & \hlc[white]{} & \hlc[white]{} \\[3ex]
+% \bottomrule
+% \end{tabular}
+
+% \section*{Conditionals}
+
+\section*{Conditionals (AP CSP 3.6 \& 3.7)}
+
+
+\subsection*{Basic IF Statement}
+
+This is the basic structure of an if statement:
+\begin{lstlisting}[mathescape=true]
+    IF (condition)
+    {
+        statements
+    }
+\end{lstlisting}
+If the condition is true, the statements inside the if block are executed.
+
+Here's an example:
+\begin{lstlisting}[mathescape=true]
+    score $\leftarrow$ 100
+    IF (score $\ge$ 100)
+    {
+        bonus $\leftarrow$ score * 10
+    }
+\end{lstlisting}
+This example will set bonus to 1000 because the condition is true.
+
+
+\subsection*{IF ELSE Statements}
+
+This is the structure of an if else statement:
+\begin{lstlisting}
+    IF (condition)
+    {
+        statements
+    }
+    ELSE
+    {
+        statements2
+    }
+\end{lstlisting}
+
+If the condition is true, the statements inside the if block are executed.
+If the condition is false, the statements2 inside the else block are executed.
+
+Here's an example:
+\begin{lstlisting}
+    score $\leftarrow$ 90
+    IF (score $\ge$ 100)
+    {
+        bonus $\leftarrow$ score * 10
+    }
+    ELSE
+    {
+        bonus $\leftarrow$ 0
+    }
+\end{lstlisting}
+
+This example will set bonus to 0 because the condition is false.
+
+\subsection*{IF ELSE IF (ELSE) Statements}
+
+This is the structure of an if else if statement:
+\begin{lstlisting}
+    IF (condition)
+    {
+        statements
+    }
+    ELSE IF (condition2)
+    {
+        statements2
+    }
+    ELSE
+    {
+        statements3
+    }
+\end{lstlisting}
+If condition is true, statements inside the if block are executed.\\
+If condition is false, condition2 is checked.\\
+If condition2 is true, statements2 inside the else if block are executed.\\
+If condition2 is false, statements3 inside the else block are executed (if present).\\
+We can have multiple else if statements, but only one else statement (or no else statement).
+
+Here's an example:
+\begin{lstlisting}
+    score $\leftarrow$ 85
+    IF (score $\ge$ 90)
+    {
+        grade $\leftarrow$ "A"
+    }
+    ELSE IF (score $\ge$ 80)
+    {
+        grade $\leftarrow$ "B"
+    }
+\end{lstlisting}
+
+This example will set grade to "B".
+
+
+\subsection{Multiple IF Statements}
+
+Else connects its block to the previous one to build one unit. Of that whole structure that starts with a single if statement, only one block will be executed.
+
+However, multiple if statements that are not connected with an else statement are executed independently. 
+Here's an example:
+\begin{lstlisting}
+    score $\leftarrow$ 100
+    count $\leftarrow$ 0
+    IF (score $\ge$ 80)
+    {
+        count $\leftarrow$ count + 1
+    }
+    IF (score $\ge$ 90)
+    {
+        count $\leftarrow$ count + 1
+    }
+    count $\leftarrow$ count + 1
+    IF (score $\ge$ 100)
+    {
+        count $\leftarrow$ count + 1
+    }
+\end{lstlisting}
+
+This example will set count to 4 because all three conditions are true and we add 1 to count without a condition between the last two if statements.
+
+\subsection*{Nested Conditionals}
+
+We can have if statements inside other if statements.
+
+Here's an example:
+\begin{lstlisting}
+    homeworkComplete $\leftarrow$ true
+    score $\leftarrow$ 95
+    IF (homeworkComplete)
+    {
+        IF (score $\ge$ 90)
+        {
+            grade $\leftarrow$ "A"
+        }
+        ELSE
+        {
+            grade $\leftarrow$ "B"
+        }
+    }
+\end{lstlisting}
+We check if homeworkComplete is true. Only if it is true, we check if score is greater than or equal to 90. In this case, grade will be set to "A".
+
+\end{document}
+
