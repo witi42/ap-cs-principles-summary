@@ -1,0 +1,776 @@
+\documentclass[11pt,oneside]{book}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor} % Use xcolor for more color options
+\usepackage{tikz}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage[most]{tcolorbox} % Load tcolorbox with 'most' library for more features
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb} % Added for math symbols
+\usepackage{booktabs}
+\usepackage{tabularx} % For tables with adjusted width columns
+
+% --- Adjust Headheight for fancyhdr ---
+\setlength{\headheight}{14pt} % Increased from default to accommodate header content
+
+% --- Color Definitions ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{hlyellow}{HTML}{FFFACD} % yellow!40 approx
+\definecolor{hlred}{HTML}{FFCCCB} % red!20 approx
+\definecolor{hlblue}{HTML}{ADD8E6} % blue!20 approx
+
+% --- Listing Styles ---
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    mathescape=true % Added to allow math mode in listings like in boolean.tex
+}
+\lstset{style=mystyle}
+
+% --- Highlighting Command ---
+\newcommand{\hlc}[2][hlyellow]{\sethlcolor{#1}\hl{#2}}
+
+% --- TColorBox Setup ---
+\tcbset{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries
+}
+
+% --- Title Formatting ---
+\titleformat{\chapter}{\normalfont\huge\bfseries}{\thechapter}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt} % Adjust spacing as needed
+
+% --- Header/Footer ---
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+\fancyhead[R]{\leftmark} % Chapter title on the right header
+\fancyfoot[C]{\thepage} % Page number in the center footer
+\renewcommand{\headrulewidth}{0.4pt} % Add a line under the header
+\renewcommand{\footrulewidth}{0pt} % No line above the footer
+
+% --- Hyperref Setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={AP Computer Science Principles Summary},
+    pdfpagemode=FullScreen,
+}
+
+% --- Document Title ---
+% Removed helper commands, placing text directly
+\title{AP Computer Science Principles \\par Big Ideas Summary \\par A Practical Overview}
+\author{\href{https://rowi.dev/}{Robin Wiethüchter} (AI Assisted)}
+\date{\today}
+
+% --- Document Start ---
+\begin{document}
+\maketitle
+
+\frontmatter % Use frontmatter for ToC, etc.
+\tableofcontents
+
+\mainmatter % Start main content
+
+% =============================================
+% Chapter 1: Creative Development
+% =============================================
+\chapter{Big Idea 1: Creative Development}
+\label{chap:creative_development}
+
+The process of developing computational artifacts (like programs, digital images, audio, video, presentations, or web pages) is iterative and often collaborative. This Big Idea explores how computing innovations are created and their potential impacts.
+
+\section{Collaboration}
+\label{sec:collaboration}
+Developing complex computational artifacts often requires collaboration, where individuals bring diverse perspectives and skills. Effective collaboration includes:
+\begin{itemize}
+    \item Communication: Clearly explaining ideas, progress, and problems.
+    \item Shared Goals: Working towards a common objective.
+    \item Contribution: Each member actively participates.
+    \item Conflict Resolution: Addressing disagreements constructively.
+    \item Using Tools: Employing version control (like Git) or shared document platforms to manage contributions.
+\end{itemize}
+
+\section{Program Function and Purpose}
+\label{sec:program_function_purpose}
+Every program or computational artifact is designed with a specific purpose and function.
+\begin{itemize}
+    \item \textbf{Purpose}: The problem the program aims to solve or the creative expression it intends to convey (e.g., calculating grades, simulating planetary motion, creating interactive art).
+    \item \textbf{Function}: What the program actually does; the specific tasks it performs (e.g., takes user input, performs calculations, displays output, responds to events).
+\end{itemize}
+Understanding the intended purpose helps guide the development process and evaluate the final product.
+
+\section{Program Design and Development}
+\label{sec:program_design_development}
+This is an iterative process involving cycles of designing, implementing, testing, and refining. Key phases include:
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Investigation/Understanding the Problem}: Defining the requirements, purpose, and target audience.
+    \item \textbf{Design}: Planning the program's structure, algorithms, user interface, and data representation. This might involve pseudocode, flowcharts, or diagrams.
+    \item \textbf{Implementation (Coding)}: Writing the program code in a chosen programming language.
+    \item \textbf{Testing}: Identifying and fixing errors (debugging). This involves running the program with various inputs and scenarios.
+    \item \textbf{Refinement}: Improving the program based on testing, feedback, or new requirements. This could involve adding features, optimizing performance, or enhancing usability.
+    \item \textbf{Documentation}: Explaining how the program works, how to use it, and the design choices made. This can include comments in the code and external documents.
+\end{enumerate}
+This process is rarely linear; developers often loop back to earlier phases.
+
+\section{Identifying and Correcting Errors (Debugging)}
+\label{sec:debugging}
+Errors (bugs) are inevitable in programming. Debugging strategies include:
+\begin{itemize}
+    \item \textbf{Testing}: Systematically checking program behavior with different inputs.
+    \item \textbf{Reading Error Messages}: Understanding compiler/interpreter messages.
+    \item \textbf{Print Statements/Logging}: Inserting temporary output commands to track program flow and variable values.
+    \item \textbf{Using a Debugger Tool}: Step-by-step execution, inspecting variables, setting breakpoints.
+    \item \textbf{Simplifying the Problem}: Isolating the error by commenting out code sections or testing smaller parts.
+\end{itemize}
+Different types of errors exist:
+\begin{itemize}
+    \item \textbf{Syntax Errors}: Violations of the programming language's grammar rules (caught by the compiler/interpreter).
+    \item \textbf{Runtime Errors}: Errors occurring during program execution (e.g., division by zero, accessing invalid memory).
+    \item \textbf{Logic Errors}: The program runs but produces incorrect results because the algorithm or its implementation is flawed. These are often the hardest to find.
+\end{itemize}
+
+% =============================================
+% Chapter 2: Data
+% =============================================
+\chapter{Big Idea 2: Data}
+\label{chap:data}
+% Placeholder for Big Idea 2 content
+Computers store, process, and transmit information digitally using binary data. This Big Idea focuses on how data is represented, manipulated, and used.
+
+\section{Bits and Bytes}
+\label{sec:bits_bytes}
+The fundamental unit of digital information is the \textbf{bit} (binary digit), which can represent one of two states: 0 or 1. Bits are grouped together to represent more complex data.
+\begin{itemize}
+    \item \textbf{Byte}: A group of 8 bits. A common unit for measuring data size.
+    \item \textbf{Number of States}: With $n$ bits, you can represent $2^n$ distinct states or values. For example, 8 bits (1 byte) can represent $2^8 = 256$ different values (often 0-255).
+\end{itemize}
+
+\section{Number Systems}
+\label{sec:number_systems}
+Computers use binary internally, but humans often use other systems for convenience.
+\begin{itemize}
+    \item \textbf{Binary (Base-2)}: Uses only digits 0 and 1. Each position represents a power of 2 (e.g., $1101_2 = 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 8 + 4 + 0 + 1 = 13_{10}$).
+    \item \textbf{Decimal (Base-10)}: The system we use daily, with digits 0-9. Each position represents a power of 10.
+    \item \textbf{Hexadecimal (Base-16)}: Uses digits 0-9 and letters A-F (representing 10-15). Each position represents a power of 16. Often used as a shorthand for binary because 1 hexadecimal digit corresponds exactly to 4 bits (e.g., $B4_{16} = 1011\,0100_2$). This is useful for representing colors, memory addresses, etc.
+\end{itemize}
+
+\section{Representing Data}
+\label{sec:representing_data}
+Different types of data are encoded using bits:
+\begin{itemize}
+    \item \textbf{Numbers}: Integers are represented using binary (like unsigned binary or two's complement for signed integers). Real numbers (floating-point) use formats like IEEE 754, involving a sign, mantissa, and exponent.
+    \item \textbf{Text}: Characters are mapped to numerical codes using standards like ASCII (7 or 8 bits per character) or Unicode (uses variable bits, supports many languages).
+    \item \textbf{Images}: Represented as grids of pixels (picture elements). Each pixel has a color value, often encoded using RGB (Red, Green, Blue) components. Image file formats (JPEG, PNG, GIF) use different encoding and compression techniques.
+        \begin{itemize}
+            \item Metadata: Image files often contain metadata (data about data), like camera settings, location, date, dimensions.
+        \end{itemize}
+    \item \textbf{Sound}: Sound waves are sampled at regular intervals (sampling rate), and the amplitude at each sample point is quantized (represented by a binary number). Higher sampling rates and bit depths result in higher fidelity but larger file sizes.
+\end{itemize}
+
+\section{Data Compression}
+\label{sec:data_compression}
+Compression reduces the number of bits needed to store or transmit data.
+\begin{itemize}
+    \item \textbf{Lossless Compression}: Allows perfect reconstruction of the original data (e.g., ZIP, PNG). Algorithms look for redundancies (like repeated patterns) and encode them more efficiently.
+    \item \textbf{Lossy Compression}: Discards some information deemed less important to achieve higher compression ratios (e.g., JPEG, MP3). This is acceptable for images and audio where humans may not notice the slight loss of quality. The original data cannot be perfectly recovered.
+\end{itemize}
+The choice depends on the data type and requirements (e.g., text needs lossless, video often uses lossy).
+
+\section{Extracting Information from Data}
+\label{sec:extracting_info}
+Large datasets can reveal patterns, trends, and insights not obvious from individual data points. Techniques include:
+\begin{itemize}
+    \item \textbf{Filtering}: Selecting a subset of data based on criteria (e.g., show only sales from the last month).
+    \item \textbf{Sorting}: Arranging data in a specific order (e.g., alphabetically, numerically).
+    \item \textbf{Aggregation}: Summarizing data (e.g., calculating averages, sums, counts).
+    \item \textbf{Visualization}: Creating charts and graphs (bar charts, scatter plots, heat maps) to make patterns easier to understand.
+    \item \textbf{Data Mining / Machine Learning}: Using algorithms to discover complex patterns, make predictions, or classify data automatically.
+\end{itemize}
+Computers are essential for processing large datasets efficiently.
+
+\section{Digital Data Security and Privacy}
+\label{sec:data_security_privacy}
+Collecting and storing digital data raises significant concerns:
+\begin{itemize}
+    \item \textbf{Security}: Protecting data from unauthorized access, modification, or destruction (e.g., using passwords, encryption, firewalls).
+    \item \textbf{Privacy}: Controlling how personal information is collected, used, and shared. This includes issues like data breaches, surveillance, and PII (Personally Identifiable Information).
+    \item \textbf{Anonymization}: Removing PII from datasets to protect privacy while still allowing analysis. However, re-identification can sometimes be possible by combining anonymized data with other sources.
+    \item \textbf{Metadata Concerns}: Even metadata (e.g., file creation times, locations in photos) can reveal sensitive information.
+\end{itemize}
+
+% =============================================
+% Chapter 3: Algorithms and Programming
+% =============================================
+\chapter{Big Idea 3: Algorithms and Programming}
+\label{chap:algorithms_programming}
+% Placeholder for Big Idea 3 content
+Programming enables us to implement algorithms that solve problems. This involves using programming languages to express instructions a computer can execute.
+
+\section{Variables and Assignments}
+\label{sec:variables_assignment}
+Variables are named storage locations for data values that can change during program execution. You can think of a variable as a box with a label on it. We can look at what value is in the box or put a new value in the box.
+
+\begin{itemize}
+    \item \textbf{Declaration/Assignment}: In AP Pseudocode, variables are often declared implicitly when they are first assigned a value using the assignment operator (<-). In other languages, you might need to declare the type first.
+    \begin{lstlisting}[language={}, label={lst:assignment_detail}, caption={AP Pseudocode: Assignment Examples}]
+    x <- 5          // Assigns the value 5 to variable x
+    y <- 10
+    z <- x + y      // Assigns the value of x + y (15) to z
+    message <- "Hello" // Assigns a string value
+    isValid <- true   // Assigns a boolean value
+
+    // Updating a variable's value
+    x <- x + 1      // Reads the current value of x (5), adds 1, assigns the result (6) back to x
+    \end{lstlisting}
+    \item \textbf{Naming}: Meaningful variable names (e.g., \texttt{totalScore} instead of just \texttt{s}) significantly improve code readability and understanding.
+\end{itemize}
+
+\section{Mathematical and Logical Expressions}
+\label{sec:expressions}
+Programs use expressions, combining values, variables, and operators, to compute new values. Categories include:
+\begin{itemize}
+    \item Numbers, Strings, Variables
+    \item \hlc[hlred]{Logical Operators}
+    \item \hlc[hlyellow]{Relational Operators}
+    \item \hlc[hlblue]{Parentheses}
+\end{itemize}
+
+\subsection*{Mathematical Expressions}
+Use arithmetic operators to perform calculations.
+\begin{itemize}
+    \item Operators: \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, \texttt{MOD} (modulus/remainder).
+    \item Order of Operations: Follows standard mathematical precedence (PEMDAS/BODMAS). Parentheses \hlc[hlblue]{( )} can be used to force a specific evaluation order.
+\end{itemize}
+\begin{lstlisting}[language={}, label={lst:math_expr_detail}, caption={AP Pseudocode: Math Expressions}]
+    totalCost <- price * quantity
+    remainder <- 17 MOD 5 // remainder will be 2
+    average <- (a + b + c) / 3 // Parentheses ensure addition happens before division
+\end{lstlisting}
+
+\subsection*{Relational Operators}
+\hlc[hlyellow]{Relational operators} compare two values and evaluate to a Boolean result (\texttt{true} or \texttt{false}).
+
+\begin{tabularx}{\textwidth}{>{\ttfamily}l >{\ttfamily}c X}
+\toprule
+\textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[hlyellow]{==} (often) & \hlc[hlyellow]{=} & Equal to \\
+\hlc[hlyellow]{!=} & \hlc[hlyellow]{$\neq$} & Not equal to \\
+\hlc[hlyellow]{>} & \hlc[hlyellow]{>} & Greater than \\
+\hlc[hlyellow]{<} & \hlc[hlyellow]{<} & Less than \\
+\hlc[hlyellow]{>=} & \hlc[hlyellow]{$\geq$} & Greater than or equal to \\
+\hlc[hlyellow]{<=} & \hlc[hlyellow]{$\leq$} & Less than or equal to \\
+\bottomrule
+\end{tabularx}
+
+\subsection*{Logical Operators}
+\hlc[hlred]{Logical operators} combine two or more Boolean expressions.
+
+\begin{tabularx}{\textwidth}{>{\ttfamily}l >{\ttfamily}c X}
+\toprule
+\textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[hlred]{\&\&} (often) & \hlc[hlred]{AND} & Logical AND (true only if \textit{both} operands are true) \\
+\hlc[hlred]{||} (often) & \hlc[hlred]{OR} & Logical OR (true if \textit{at least one} operand is true) \\
+\hlc[hlred]{!} (often) & \hlc[hlred]{NOT} & Logical NOT (evaluates to true if the operand is false, and vice versa) \\
+\bottomrule
+\end{tabularx}
+
+\subsection*{Boolean Expression Examples}
+\begin{itemize}
+    \item \textit{Example 1:}
+    \begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
+    (x > 10) AND (y < 20)
+    \end{lstlisting}
+    Evaluates to \texttt{true} if \texttt{x} is greater than 10 \textit{and} \texttt{y} is less than 20. (e.g., true for \texttt{x = 11, y = 19}; false for \texttt{x = 11, y = 21})
+    \item \textit{Example 2:}
+    \begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
+    NOT (a = b)
+    \end{lstlisting}
+    Evaluates to \texttt{true} if \texttt{a} is \textit{not} equal to \texttt{b}. (e.g., true for \texttt{a = 5, b = 2}; false for \texttt{a = 11, b = 11})
+    \item \textit{Example 3 (Combined):}
+    \begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
+    (score >= 70 AND score < 100) OR (isBonusEligible = true)
+    \end{lstlisting}
+    Evaluates to \texttt{true} if the score is between 70 (inclusive) and 100 (exclusive), \textit{or} if the student is eligible for a bonus.
+\end{itemize}
+
+\subsection*{Operator Comparison (JavaScript vs AP Pseudocode)}
+Different programming languages may use different symbols for the same operation.
+
+\begin{tabularx}{\textwidth}{l >{\ttfamily}l >{\ttfamily}l}
+\toprule
+\textbf{Operation} & \textbf{Common Code (e.g., JS)} & \textbf{AP Pseudocode} \\
+\midrule
+Assignment & x = 5 & x <- 5 \\
+Equal to & \hlc[hlyellow]{a == b} & \hlc[hlyellow]{a = b} \\
+Not Equal to & \hlc[hlyellow]{a != b} & \hlc[hlyellow]{a $\neq$ b} \\
+Logical OR & \hlc[hlred]{a || b} & \hlc[hlred]{a OR b} \\
+Logical AND & \hlc[hlred]{a \&\& b} & \hlc[hlred]{a AND b} \\
+Logical NOT & \hlc[hlred]{!a} & \hlc[hlred]{NOT a} \\
+\bottomrule
+\end{tabularx}
+
+\section{Control Structures}
+\label{sec:control_structures}
+Control structures determine the order in which instructions are executed.
+\begin{itemize}
+    \item \textbf{Sequence}: Instructions are executed one after another in the order they appear.
+    \item \textbf{Selection (Conditionals)}: Executes different blocks of code based on a Boolean condition. Uses \texttt{IF}, \texttt{ELSE IF}, \texttt{ELSE}. (See details below)
+    \item \textbf{Iteration (Loops)}: Repeats a block of code multiple times. (See details below)
+\end{itemize}
+
+\subsection*{Selection / Conditionals (Detailed)}
+
+\subsubsection*{Basic IF Statement}
+Executes a block of code only if a condition is true.
+\begin{lstlisting}[language={}, label={lst:basic_if}, caption={AP Pseudocode: Basic IF}]
+    IF (condition)
+    {
+        // Statements executed if condition is true
+        statements
+    }
+    // Code here executes regardless
+\end{lstlisting}
+Example:
+\begin{lstlisting}[language={}]
+    score <- 100
+    IF (score = 100) // Note: AP uses = for comparison
+    {
+        DISPLAY("Perfect score!")
+    }
+\end{lstlisting}
+
+\subsubsection*{IF-ELSE Statement}
+Executes one block of code if the condition is true, and a different block if the condition is false.
+\begin{lstlisting}[language={}, label={lst:if_else}, caption={AP Pseudocode: IF-ELSE}]
+    IF (condition)
+    {
+        // Statements executed if condition is true
+        statements_if_true
+    }
+    ELSE
+    {
+        // Statements executed if condition is false
+        statements_if_false
+    }
+\end{lstlisting}
+Example:
+\begin{lstlisting}[language={}]
+    temperature <- 15
+    IF (temperature > 20)
+    {
+        DISPLAY("It's warm.")
+    }
+    ELSE
+    {
+        DISPLAY("It's cool.") // This will be displayed
+    }
+\end{lstlisting}
+
+\subsubsection*{IF - ELSE IF - ELSE Statement}
+Checks multiple conditions in order. The first condition that evaluates to true has its corresponding block executed. If none are true, the optional \texttt{ELSE} block is executed.
+\begin{lstlisting}[language={}, label={lst:if_elseif_else}, caption={AP Pseudocode: IF - ELSE IF - ELSE}]
+    IF (condition1)
+    {
+        // Statements executed if condition1 is true
+        statements1
+    }
+    ELSE IF (condition2)
+    {
+        // Statements executed if condition1 is false AND condition2 is true
+        statements2
+    }
+    ELSE // Optional
+    {
+        // Statements executed if all preceding conditions are false
+        statements_else
+    }
+\end{lstlisting}
+Example (Grading):
+\begin{lstlisting}[language={}, label={lst:grading_example}]
+    score <- 85
+    grade <- ""
+    IF (score >= 90)
+    {
+        grade <- "A"
+    }
+    ELSE IF (score >= 80)
+    {
+        grade <- "B" // This block executes, grade becomes "B"
+    }
+    ELSE IF (score >= 70)
+    {
+        grade <- "C"
+    }
+    ELSE
+    {
+        grade <- "D"
+    }
+    DISPLAY(grade)
+\end{lstlisting}
+\textbf{Important:} Only one block (the first one whose condition is met) in an IF-ELSE IF-...-ELSE structure will execute.
+
+\subsubsection*{Multiple Independent IF Statements}
+Unlike ELSE IF, separate IF statements are evaluated independently.
+\begin{lstlisting}[language={}, label={lst:multiple_if}, caption={AP Pseudocode: Multiple Independent IFs}]
+    score <- 100
+    count <- 0
+    IF (score >= 80) // Condition is true
+    {
+        count <- count + 1 // count becomes 1
+    }
+    // This IF is checked regardless of the previous one
+    IF (score >= 90) // Condition is true
+    {
+        count <- count + 1 // count becomes 2
+    }
+    count <- count + 1 // count becomes 3 (unconditional)
+    // This IF is also checked independently
+    IF (score >= 100) // Condition is true
+    {
+        count <- count + 1 // count becomes 4
+    }
+    DISPLAY(count) // Displays 4
+\end{lstlisting}
+Here, multiple IF blocks can execute if their respective conditions are true.
+
+\subsubsection*{Nested Conditionals}
+An IF statement can be placed inside another IF or ELSE block.
+\begin{lstlisting}[language={}, label={lst:nested_if}, caption={AP Pseudocode: Nested IFs}]
+    homeworkComplete <- true
+    score <- 95
+    grade <- ""
+
+    IF (homeworkComplete = true) // Outer condition
+    {
+        // This block executes only if homeworkComplete is true
+        DISPLAY("Checking score because homework is complete...")
+        IF (score >= 90) // Inner condition
+        {
+            grade <- "A" // This executes
+        }
+        ELSE
+        {
+            grade <- "B"
+        }
+    }
+    ELSE
+    {
+        grade <- "Incomplete"
+    }
+    DISPLAY(grade) // Displays "A"
+\end{lstlisting}
+Indentation helps visualize the structure of nested blocks.
+
+\subsection*{Iteration / Loops (Detailed)}
+Loops repeat blocks of code.
+\begin{itemize}
+    \item \textbf{\texttt{REPEAT n TIMES}}: Executes the block a fixed number of times.\\[1ex]
+    \begin{lstlisting}[language={}, label={lst:repeat_n_detail}, caption={AP Pseudocode: REPEAT n TIMES}]
+    count <- 0
+    REPEAT 5 TIMES
+    {
+        count <- count + 1
+        DISPLAY(count) // Displays 1, 2, 3, 4, 5
+    }
+    \end{lstlisting}
+    \item \textbf{\texttt{REPEAT UNTIL (condition)}}: Executes the block \textit{first}, then checks the condition. Repeats as long as the condition is \texttt{false}. The block always executes at least once.\\[1ex]
+    \begin{lstlisting}[language={}, label={lst:repeat_until_detail}, caption={AP Pseudocode: REPEAT UNTIL}]
+    input <- ""
+    REPEAT UNTIL (input = "quit")
+    {
+        DISPLAY("Enter command (or 'quit'):")
+        input <- INPUT()
+        // Process input...
+        DISPLAY("You entered: " + input)
+    }
+    DISPLAY("Exiting loop.")
+    \end{lstlisting}
+    \item \textbf{\texttt{FOR EACH item IN list}} (Covered more in Lists): Iterates through each element in a list sequentially.\\[1ex]
+    \begin{lstlisting}[language={}, label={lst:for_each_detail}, caption={AP Pseudocode: FOR EACH}]
+    names <- ["Alice", "Bob", "Charlie"]
+    FOR EACH name IN names
+    {
+        DISPLAY("Hello, " + name)
+    }
+    \end{lstlisting}
+\end{itemize}
+These three structures (Sequence, Selection, Iteration) are the fundamental building blocks for constructing any algorithm.
+
+\section{Algorithms}
+\label{sec:algorithms}
+An algorithm is a finite sequence of well-defined, computer-implementable instructions to solve a class of problems or perform a computation.
+\begin{itemize}
+    \item \textbf{Clarity}: Steps must be unambiguous.
+    \item \textbf{Effectiveness}: Steps must be executable.
+    \item \textbf{Finiteness}: Must eventually terminate.
+    \item \textbf{Correctness}: Must produce the correct output for all valid inputs.
+\end{itemize}
+Algorithms can be expressed in natural language, flowcharts, or pseudocode before being implemented in a programming language.
+
+\section{Procedures (Functions/Methods)}
+\label{sec:procedures}
+Procedures (often called functions or methods) are named blocks of code that perform a specific task. They help organize code, reduce redundancy, and improve reusability.
+\begin{itemize}
+    \item \textbf{Definition}: Specifies the procedure name, parameters (inputs), and the code it executes.
+    \item \textbf{Parameters}: Variables listed in the definition that receive values when the procedure is called.
+    \item \textbf{Arguments}: The actual values passed to the parameters when the procedure is called.
+    \item \textbf{Return Values}: Procedures can optionally return a value back to the calling code using the \texttt{RETURN} statement.
+    \item \textbf{Modularity}: Breaking down a complex problem into smaller, manageable procedures.
+    \item \textbf{Abstraction}: Hiding the complex details of implementation behind a simple interface (the procedure call).
+\end{itemize}
+\begin{lstlisting}[language={}, label={lst:procedure}, caption={AP Pseudocode: Procedure Definition and Call}]
+// Procedure Definition
+PROCEDURE calculateArea(length, width)
+{
+    area <- length * width
+    RETURN(area)
+}
+
+// Procedure Call
+roomLength <- 10
+roomWidth <- 8
+roomArea <- calculateArea(roomLength, roomWidth)
+DISPLAY("The area is: ")
+DISPLAY(roomArea)
+\end{lstlisting}
+
+\section{Lists (Arrays)}
+\label{sec:lists}
+Lists (or arrays in some languages) are ordered collections of items (elements). AP Pseudocode uses 1-based indexing.
+\begin{itemize}
+    \item \textbf{Creating Lists}: \texttt{myList <- [item1, item2, item3]}
+    \item \textbf{Accessing Elements}: By index. \texttt{firstItem <- myList[1]}, \texttt{thirdItem <- myList[3]}
+    \item \textbf{Modifying Elements}: \texttt{myList[2] <- newItem}
+    \item \textbf{Length}: Finding the number of elements. \texttt{len <- LENGTH(myList)}
+    \item \textbf{Common Operations}: Adding items (\texttt{APPEND}), removing items (\texttt{REMOVE}), inserting items (\texttt{INSERT}).
+    \item \textbf{Iteration with Lists}: Using \texttt{FOR EACH}.
+    \begin{lstlisting}[language={}, label={lst:list_iteration}, caption={AP Pseudocode: List Iteration}]
+    scores <- [85, 92, 78, 95]
+    sum <- 0
+    FOR EACH score IN scores
+    {
+        sum <- sum + score
+    }
+    average <- sum / LENGTH(scores)
+    DISPLAY(average)
+    \end{lstlisting}
+\end{itemize}
+
+\section{Algorithm Analysis}
+\label{sec:algorithm_analysis}
+Comparing algorithms that solve the same problem.
+\begin{itemize}
+    \item \textbf{Correctness}: Does the algorithm always produce the correct result?
+    \item \textbf{Efficiency}: How many resources (time, memory) does the algorithm use, especially as the input size grows? Measured often using Big O notation (though not explicitly required by CSP, understanding relative efficiency is).
+    \item \textbf{Readability/Simplicity}: Is the algorithm easy to understand and implement?
+\end{itemize}
+Different algorithms can have vastly different efficiencies. For example, linear search vs. binary search (requires sorted list).
+\begin{itemize}
+    \item \textbf{Linear Search}: Checks each element sequentially. Reasonable for small or unsorted lists.
+    \item \textbf{Binary Search}: Efficiently finds items in sorted lists by repeatedly dividing the search interval in half. Much faster than linear search for large lists.
+\end{itemize}
+\textbf{Heuristics}: Sometimes, finding an exact, optimal solution is too slow (computationally intractable). A heuristic is an approach that finds an approximate solution that is "good enough" for practical purposes, often much faster.
+
+\section{Simulations}
+\label{sec:simulations}
+Simulations use computer models to mimic real-world phenomena or systems. They allow us to:
+\begin{itemize}
+    \item Test hypotheses
+    \item Explore complex systems where real-world experiments are impossible, dangerous, or expensive
+    \item Make predictions
+\end{itemize}
+Simulations involve designing models with specific rules, variables, and interactions, often incorporating randomness (using random number generators) to reflect real-world variability.
+
+% =============================================
+% Chapter 4: Computer Systems and Networks
+% =============================================
+\chapter{Big Idea 4: Computer Systems and Networks}
+\label{chap:systems_networks}
+% Placeholder for Big Idea 4 content
+Computing requires hardware and software working together. Networks, especially the Internet, connect computers globally, enabling communication and information sharing.
+
+\section{Computer Components}
+\label{sec:computer_components}
+While CSP focuses less on deep hardware details, a basic understanding is helpful.
+\begin{itemize}
+    \item \textbf{Hardware}: The physical parts (CPU, memory/RAM, storage devices like HDDs/SSDs, input devices like keyboards/mice, output devices like monitors/printers).
+    \item \textbf{Software}: Instructions that tell the hardware what to do (Operating Systems like Windows/macOS/Linux, Applications like browsers/word processors).
+    \item \textbf{CPU (Central Processing Unit)}: Executes program instructions.
+    \item \textbf{Memory (RAM)}: Temporary storage for data and programs currently in use. Volatile (data lost when power is off).
+    \item \textbf{Storage}: Permanent storage for data and programs (Hard Drives, Solid State Drives). Non-volatile.
+\end{itemize}
+Hardware and software interact through layers of abstraction.
+
+\section{The Internet}
+\label{sec:internet}
+The Internet is a global network of interconnected computer networks. It's a system for communication and information exchange.
+\begin{itemize}
+    \item \textbf{Decentralized}: No single point of control or failure.
+    \item \textbf{Interoperability}: Uses standardized, open protocols (rules for communication) allowing different types of devices and networks to connect.
+    \item \textbf{World Wide Web (WWW)}: A system of linked hypertext documents accessed via the Internet (using protocols like HTTP/HTTPS). The Web is *part* of the Internet, not the same thing.
+\end{itemize}
+
+\section{How the Internet Works}
+\label{sec:how_internet_works}
+Data travels across the Internet in packets.
+\begin{itemize}
+    \item \textbf{Protocols}: Sets of rules governing communication. Key examples:
+        \begin{itemize}
+            \item \textbf{IP (Internet Protocol)}: Responsible for addressing and routing packets from source to destination based on IP addresses.
+            \item \textbf{TCP (Transmission Control Protocol)}: Works with IP to provide reliable, ordered delivery of data. It breaks messages into packets, reassembles them at the destination, and handles lost or out-of-order packets.
+            \item \textbf{UDP (User Datagram Protocol)}: A simpler, faster alternative to TCP that doesn't guarantee delivery or order. Used for applications like streaming or online games where speed is more critical than perfect reliability.
+            \item \textbf{HTTP/HTTPS (Hypertext Transfer Protocol/Secure)}: Used for accessing web pages.
+            \item \textbf{DNS (Domain Name System)}: Translates human-readable domain names (e.g., www.google.com) into numerical IP addresses that computers use.
+        \end{itemize}
+    \item \textbf{IP Addresses}: Unique numerical labels assigned to each device connected to a network using IP (e.g., 192.168.1.1, or a longer IPv6 address).
+    \item \textbf{Packets}: Data is broken down into small units called packets. Each packet contains part of the data, source/destination IP addresses, and control information.
+    \item \textbf{Routing}: Devices called routers direct packets across networks towards their destination. They choose paths based on efficiency and network conditions. Packets from the same message may take different routes.
+    \item \textbf{Scalability}: The Internet's design allows it to grow and handle increasing numbers of users and devices.
+\end{itemize}
+
+\section{Fault Tolerance}
+\label{sec:fault_tolerance}
+Systems that can continue operating even if some components fail are fault-tolerant. The Internet achieves fault tolerance through:
+\begin{itemize}
+    \item \textbf{Redundancy}: Multiple paths exist between networks. If one path fails, routers can redirect traffic through alternative routes.
+    \item \textbf{Packet Switching}: Data is broken into packets that can be rerouted independently. If a packet is lost, TCP can request retransmission.
+\end{itemize}
+This design makes the Internet robust against localized failures.
+
+\section{Parallel and Distributed Computing}
+\label{sec:parallel_distributed}
+These approaches use multiple computers or processors to solve large problems faster.
+\begin{itemize}
+    \item \textbf{Parallel Computing}: Uses multiple processors working simultaneously on parts of the same task, often within a single computer system.
+    \item \textbf{Distributed Computing}: Spreads tasks across multiple, independent computers connected by a network (like the Internet). Examples include large-scale scientific simulations (e.g., protein folding) or big data processing.
+    \item \textbf{Speedup}: The performance gain achieved by using parallel/distributed systems compared to a single processor. Ideally, $N$ processors could provide $N$ times speedup, but communication overhead and task dependencies often limit this.
+\end{itemize}
+
+\section{Cybersecurity}
+\label{sec:cybersecurity}
+Protecting computer systems, networks, and data from unauthorized access, attacks, damage, or theft.
+\begin{itemize}
+    \item \textbf{CIA Triad}: Core security goals:
+        \begin{itemize}
+            \item \textbf{Confidentiality}: Preventing unauthorized disclosure of information (achieved via encryption, access controls).
+            \item \textbf{Integrity}: Ensuring data is accurate and hasn't been tampered with (achieved via hashing, digital signatures).
+            \item \textbf{Availability}: Ensuring systems and data are accessible when needed (achieved via redundancy, backups, denial-of-service protection).
+        \end{itemize}
+    \item \textbf{Common Threats}:
+        \begin{itemize}
+            \item \textbf{Malware}: Malicious software (viruses, worms, ransomware, spyware).
+            \item \textbf{Phishing}: Tricking users into revealing sensitive information (passwords, credit card numbers) often via fake emails or websites.
+            \item \textbf{Denial-of-Service (DoS/DDoS) Attacks}: Overwhelming a system with traffic to make it unavailable to legitimate users.
+            \item \textbf{Social Engineering}: Manipulating people to gain access or information.
+        \end{itemize}
+    \item \textbf{Countermeasures}:
+        \begin{itemize}
+            \item \textbf{Authentication}: Verifying identity (passwords, multi-factor authentication).
+            \item \textbf{Encryption}: Scrambling data so it's unreadable without a key. Used for secure communication (HTTPS, WPA2) and data storage.
+            \item \textbf{Firewalls}: Network security systems that monitor and control incoming/outgoing traffic based on rules.
+            \item \textbf{Software Updates}: Patching vulnerabilities discovered in software.
+            \item \textbf{User Education}: Awareness about phishing and safe practices.
+        \end{itemize}
+\end{itemize}
+Cybersecurity is an ongoing challenge due to evolving threats and system complexity.
+
+% =============================================
+% Chapter 5: Impact of Computing
+% =============================================
+\chapter{Big Idea 5: Impact of Computing}
+\label{chap:impact_computing}
+% Placeholder for Big Idea 5 content
+Computing technologies have profoundly changed society, bringing numerous benefits but also raising significant ethical and societal challenges.
+
+\section{Beneficial Effects}
+\label{sec:beneficial_effects}
+Computing innovations have driven progress in many areas:
+\begin{itemize}
+    \item \textbf{Communication}: Facilitating instant global communication (email, social media, video conferencing).
+    \item \textbf{Access to Information}: Providing vast resources for learning and research (World Wide Web, online libraries, search engines).
+    \item \textbf{Collaboration}: Enabling collaboration on projects regardless of geographic location.
+    \item \textbf{Creativity and Expression}: Offering new tools for art, music, writing, and design.
+    \item \textbf{Automation}: Performing repetitive or dangerous tasks, increasing efficiency in various industries.
+    \item \textbf{Economic Growth}: Creating new industries, jobs, and markets.
+    \item \textbf{Scientific Advancement}: Enabling complex simulations, data analysis, and discovery in fields like medicine, climate science, and physics.
+    \item \textbf{Accessibility}: Providing assistive technologies for people with disabilities.
+\end{itemize}
+
+\section{Harmful Effects and Challenges}
+\label{sec:harmful_effects}
+Alongside benefits, computing raises concerns:
+\begin{itemize}
+    \item \textbf{Bias in Algorithms}: Algorithms, often trained on historical data, can reflect and amplify existing societal biases (e.g., in facial recognition, loan applications, hiring tools).
+    \item \textbf{Privacy Concerns}: Widespread collection and analysis of personal data raise issues of surveillance, data breaches, and misuse of information.
+    \item \textbf{Security Risks}: Increased reliance on digital systems makes individuals and infrastructure vulnerable to cyberattacks (as discussed in Big Idea 4).
+    \item \textbf{Digital Divide}: Unequal access to computing devices, the internet, and digital literacy skills creates disparities in opportunities (economic, educational, social).
+    \item \textbf{Workforce Impact}: Automation can displace workers in certain sectors, requiring workforce adaptation and retraining.
+    \item \textbf{Information Reliability}: The ease of spreading information online makes it challenging to distinguish credible sources from misinformation and disinformation.
+    \item \textbf{Intellectual Property}: Digital content (music, movies, software) is easily copied, leading to challenges in protecting copyright and preventing piracy.
+    \item \textbf{Social Impacts}: Effects on social interaction, mental health (e.g., social media addiction), and the nature of community.
+\end{itemize}
+
+\section{Bias in Computing}
+\label{sec:bias_computing}
+Bias can be introduced into computing systems at various stages:
+\begin{itemize}
+    \item \textbf{Data Bias}: If the data used to train an algorithm is not representative of the population it will be used on, the algorithm may perform poorly or unfairly for certain groups.
+    \item \textbf{Algorithm Bias}: The design choices made by programmers can inadvertently introduce bias.
+    \item \textbf{Human Bias}: The people designing, implementing, and using technology can bring their own conscious or unconscious biases.
+\end{itemize}
+It's crucial to be aware of potential biases and strive to create and use technology equitably.
+
+\section{Legal and Ethical Concerns}
+\label{sec:legal_ethical}
+Computing raises complex legal and ethical questions:
+\begin{itemize}
+    \item \textbf{Copyright and Intellectual Property}: How to balance creators' rights with public access to information and innovation. Concepts include copyright, fair use, open source software, and Creative Commons licenses.
+    \item \textbf{Data Privacy Laws}: Regulations like GDPR (Europe) or CCPA (California) attempt to give individuals more control over their personal data.
+    \item \textbf{Responsibility}: Who is responsible when an autonomous system (like a self-driving car) causes harm?
+    \item \textbf{Ethical Use}: Considering the potential consequences of technology and using it responsibly.
+\end{itemize}
+
+\section{Safe Computing}
+\label{sec:safe_computing}
+Refers to practices for protecting oneself and one's data online.
+\begin{itemize}
+    \item \textbf{Strong Passwords \& Authentication}: Using unique, complex passwords and enabling multi-factor authentication where possible.
+    \item \textbf{Recognizing Phishing}: Being wary of suspicious emails, links, or requests for personal information.
+    \item \textbf{Secure Connections}: Using HTTPS websites (look for the padlock) and being cautious on public Wi-Fi.
+    \item \textbf{Software Updates}: Keeping operating systems and applications updated to patch security vulnerabilities.
+    \item \textbf{Data Backups}: Regularly backing up important files.
+    \item \textbf{Privacy Settings}: Reviewing and adjusting privacy settings on social media and other online accounts.
+    \item \textbf{Sharing Appropriately}: Being mindful of what personal information is shared online.
+\end{itemize}
+
+\end{document} 
