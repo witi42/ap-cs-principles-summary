@@ -1,0 +1,1 @@
+pdflatex -output-directory=full-summary -interaction=nonstopmode full-summary/ap_csp_summary.tex && pdflatex -output-directory=full-summary -interaction=nonstopmode full-summary/ap_csp_summary.tex

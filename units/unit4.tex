@@ -1,9 +1,78 @@
 \chapter{Variables, Conditionals, and Functions}
 
-\section*{Overview}
-Core programming constructs that enable data storage, decision-making, and code organization, with emphasis on practical application in app development.
+% \section*{Overview}
+% Core programming constructs that enable data storage, decision-making, and code organization, with emphasis on practical application in app development.
 
 % Key topics:
 % - Variable types and scope
 % - Control structures
 % - Function definition and usage 
+
+% \documentclass{article}
+% \usepackage{xcolor}
+% \usepackage{array}
+% \usepackage{amsmath}
+
+% \begin{document}
+
+\section*{Categories}
+
+\begin{itemize}
+    \item \textbf{\hlc[red!20]{Logical Operators}}
+    \item \textbf{\hlc[yellow!40]{Relational Operators}}
+    \item \textbf{Numbers, Strings, Variables (neutral)}
+    \item \textbf{\hlc[blue!20]{Parentheses}}
+\end{itemize}
+
+\section*{Logical Operators}
+
+\begin{tabular}{lll}
+\toprule
+\textbf{Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[red!20]{\texttt{\&\&}} & \hlc[red!20]{AND} & Logical AND \\
+\hlc[red!20]{\texttt{||}} & \hlc[red!20]{OR} & Logical OR \\
+\hlc[red!20]{\texttt{!}} & \hlc[red!20]{NOT} & Logical NOT \\
+\bottomrule
+\end{tabular}
+
+\section*{Relational Operators}
+
+\begin{tabular}{ll}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[yellow!40]{\texttt{==}} & Equal to \\
+\hlc[yellow!40]{\texttt{!=}} & Not equal to \\
+\hlc[yellow!40]{\texttt{>}} & Greater than \\
+\hlc[yellow!40]{\texttt{<}} & Less than \\
+\hlc[yellow!40]{\texttt{>=}} & Greater than or equal to \\
+\hlc[yellow!40]{\texttt{<=}} & Less than or equal to \\
+\bottomrule
+\end{tabular}
+
+\section*{Examples}
+
+\begin{itemize}
+    \item \textit{Example 1:}
+    
+    \hlc[white]{x} \ \hlc[yellow!40]{$>$} \ \hlc[white]{10} \ \hlc[red!20]{AND} \ \hlc[white]{y} \ \hlc[yellow!40]{$<$} \ \hlc[white]{20}
+    
+    \item \textit{Example 2:}
+    
+    \hlc[red!20]{NOT} \ \hlc[blue!20]{(} \hlc[white]{a} \ \hlc[yellow!40]{==} \ \hlc[white]{b} \hlc[blue!20]{)}
+\end{itemize}
+
+\section*{Side by Side Comparison}
+
+\begin{tabular}{ll}
+\toprule
+\textbf{JavaScript} & \textbf{AP Pseudocode} \\
+\midrule
+Assignment: \hlc[white]{x} \ \hlc[yellow!40]{=} \ \hlc[white]{5} & Assignment: \hlc[white]{x} \ \hlc[yellow!40]{$\leftarrow$} \ \hlc[white]{5} \\
+Logical OR: \hlc[white]{a} \ \hlc[red!20]{\texttt{||}} \ \hlc[white]{b} & Logical OR: \hlc[white]{a} \ \hlc[red!20]{OR} \ \hlc[white]{b} \\
+Logical AND: \hlc[white]{a} \ \hlc[red!20]{\texttt{\&\&}} \ \hlc[white]{b} & Logical AND: \hlc[white]{a} \ \hlc[red!20]{AND} \ \hlc[white]{b} \\
+Logical NOT: \hlc[red!20]{\texttt{!}}\hlc[white]{a} & Logical NOT: \hlc[red!20]{NOT} \ \hlc[white]{a} \\
+\bottomrule
+\end{tabular}
+% \end{document}

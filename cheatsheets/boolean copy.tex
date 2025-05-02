@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[top=0.5in, bottom=0.5in]{geometry}
+
+% Define custom highlighting commands
+\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+
+\begin{document}
+
+\title{Boolean Expressions \& Conditionals}
+\author{}
+\date{}
+\maketitle
+
+\section*{Categories}
+
+\begin{itemize}
+    \item \textbf{Numbers, Strings, Variables}
+    \item \textbf{\hlc[red!20]{Logical Operators}}
+    \item \textbf{\hlc[yellow!40]{Relational Operators}}
+    \item \textbf{\hlc[blue!20]{Parentheses}}
+\end{itemize}
+
+\section*{Logical Operators}
+
+\begin{tabular}{l|l|l}
+\toprule
+\textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[red!20]{\texttt{\&\&}} & \hlc[red!20]{AND} & Logical AND (true only if both are true) \\
+\hlc[red!20]{\texttt{||}} & \hlc[red!20]{OR} & Logical OR (true if at least one is true) \\
+\hlc[red!20]{\texttt{!}} & \hlc[red!20]{NOT} & Logical NOT (true if false, false if true) \\
+\bottomrule
+\end{tabular}
+
+\section*{Relational Operators}
+
+\begin{tabular}{l|l|l}
+\toprule
+\textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
+\midrule
+\hlc[yellow!40]{\texttt{==}} & \hlc[yellow!40]{$=$} & Equal to \\
+\hlc[yellow!40]{\texttt{!=}} & \hlc[yellow!40]{$\neq$} & Not equal to \\
+\hlc[yellow!40]{\texttt{>}} & \hlc[yellow!40]{$>$} & Greater than \\
+\hlc[yellow!40]{\texttt{<}} & \hlc[yellow!40]{$<$} & Less than \\
+\hlc[yellow!40]{\texttt{>=}} & \hlc[yellow!40]{$\geq$} & Greater than or equal to \\
+\hlc[yellow!40]{\texttt{<=}} & \hlc[yellow!40]{$\leq$} & Less than or equal to \\
+\bottomrule
+\end{tabular}
+
+\section*{Examples}
+
+\begin{itemize}
+    \item \textit{Example 1:}
+    
+    \hlc[white]{x} \ \hlc[yellow!40]{$>$} \ \hlc[white]{10} \ \hlc[red!20]{AND} \ \hlc[white]{y} \ \hlc[yellow!40]{$<$} \ \hlc[white]{20}
+
+    True for $x = 11, y = 19$
+
+    False for $x = 11, y = 21$
+    
+    \item \textit{Example 2:}
+    
+    \hlc[red!20]{NOT} \ \hlc[blue!20]{(} \hlc[white]{a} \ \hlc[yellow!40]{==} \ \hlc[white]{b} \hlc[blue!20]{)}
+
+    True for $a = 5, b = 2$
+
+    False for $a = 11, b = 11$
+    
+\end{itemize}
+
+\section*{Side by Side Comparison}
+
+\begin{tabular}{l|l|l}
+\toprule
+\textbf{Operation} & \textbf{JavaScript} & \textbf{AP Pseudocode} \\
+\midrule
+Assignment & x = 5 & x $\leftarrow$ 5 \\
+Equal to & \hlc[white]{a} \ \hlc[yellow!40]{==} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[yellow!40]{=} \ \hlc[white]{b} \\
+% Not equal to & \hlc[white]{a} \ \hlc[yellow!40]{!=} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[yellow!40]{!=} \ \hlc[white]{b} \\
+Logical OR & \hlc[white]{a} \ \hlc[red!20]{\texttt{||}} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[red!20]{OR} \ \hlc[white]{b} \\
+Logical AND & \hlc[white]{a} \ \hlc[red!20]{\texttt{\&\&}} \ \hlc[white]{b} & \hlc[white]{a} \ \hlc[red!20]{AND} \ \hlc[white]{b} \\
+Logical NOT & \hlc[red!20]{\texttt{!}}\hlc[white]{a} & \hlc[red!20]{NOT} \ \hlc[white]{a} \\
+\bottomrule
+\end{tabular}
+
+% \section*{Tasks}
+
+% \begin{tabular}{c|p{4.5in}|p{1in}}
+% \toprule
+% & \textbf{Expression} & \textbf{Value} \\
+% \midrule
+% a & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% b & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% c & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% d & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% e & \hlc[white]{} & \hlc[white]{} \\[5ex]
+% f & \hlc[white]{} & \hlc[white]{} \\[3ex]
+% \bottomrule
+% \end{tabular}
+
+\end{document}

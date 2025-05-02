@@ -86,7 +86,7 @@
 
 % --- Document Title ---
 % Removed helper commands, placing text directly
-\title{AP Computer Science Principles \\par Big Ideas Summary \\par A Practical Overview}
+\title{AP Computer Science Principles \\ Summary}
 \author{\href{https://rowi.dev/}{Robin Wiethüchter} (AI Assisted)}
 \date{\today}
 
@@ -179,20 +179,92 @@ Computers use binary internally, but humans often use other systems for convenie
 \begin{itemize}
     \item \textbf{Binary (Base-2)}: Uses only digits 0 and 1. Each position represents a power of 2 (e.g., $1101_2 = 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 8 + 4 + 0 + 1 = 13_{10}$).
     \item \textbf{Decimal (Base-10)}: The system we use daily, with digits 0-9. Each position represents a power of 10.
-    \item \textbf{Hexadecimal (Base-16)}: Uses digits 0-9 and letters A-F (representing 10-15). Each position represents a power of 16. Often used as a shorthand for binary because 1 hexadecimal digit corresponds exactly to 4 bits (e.g., $B4_{16} = 1011\,0100_2$). This is useful for representing colors, memory addresses, etc.
 \end{itemize}
+
+% Figure: Binary to Decimal Conversion (simplified to match image)
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Title text
+        \node at (0,2) {Each box represents one bit (0 or 1)};
+        \draw[->] (0,1.7) -- (0,1);
+        
+        % Boxes with binary digits
+        \foreach \i/\bit/\power in {0/1/7,1/0/6,2/1/5,3/1/4,4/0/3,5/0/2,6/0/1,7/1/0} {
+            \draw (\i,-0.5) rectangle ++(1,1);
+            \node at (\i+0.5,0) {\bit};
+            \node at (\i+0.5,-1.2) {$2^{\power}$};
+        }
+    \end{tikzpicture}
+    
+    \vspace{1em}
+    $1 \cdot 2^7 + 0 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$\\
+    $= 128 + 0 + 32 + 16 + 0 + 0 + 0 + 1$\\
+    $= 177_{10}$
+    
+    \caption{Converting binary to decimal: Each bit's value is multiplied by its position value (powers of 2)}
+    \label{fig:binary-byte}
+\end{figure}
+
+% Figure: Binary Addition (simplified to match image)
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % First number
+        \node at (0,1) {1};
+        \node at (1,1) {0};
+        \node at (2,1) {1};
+        \node at (3,1) {1};
+        \node at (4.5,1) {$= 11_{10}$};
+        
+        % Plus and second number
+        \node at (-0.5,0) {$+$};
+        \node[text=red] at (0,0.5) {1};
+        \node at (0,0) {1};
+        \node[text=red] at (1,0.5) {1};
+        \node at (1,0) {1};
+        \node at (2,0) {0};
+        \node[text=red] at (3,0.5) {1};
+        \node at (3,0) {1};
+        \node at (4.5,0) {$+13_{10}$};
+        
+        % Line
+        \draw (-0.5,-0.3) -- (3.5,-0.3);
+        
+        % Result
+        \node at (-1,-1) {1};
+        \node at (0,-1) {0};
+        \node at (1,-1) {0};
+        \node at (2,-1) {0};
+        \node at (3,-1) {0};
+        \node at (4.5,-1) {$= 24_{10}$};
+    \end{tikzpicture}
+    \caption{Binary addition example (1011 + 1101 = 11000) showing carry bits in red}
+    \label{fig:binary-addition}
+\end{figure}
 
 \section{Representing Data}
 \label{sec:representing_data}
-Different types of data are encoded using bits:
+Data is encoded using bits to represent various types of information.
+
+\subsection*{Sampling and Quantization}
+\label{subsec:sampling}
+To represent continuous, real-world phenomena (like sound waves or visual scenes) digitally, we need to convert them into discrete values. This involves two main steps:
+\begin{itemize}
+    \item \textbf{Sampling}: Measuring the phenomenon's value at regular intervals in either time (for sound) or space (for images). The \textbf{sampling rate} (or resolution) determines how frequently these measurements are taken. More samples generally lead to a more accurate representation but require more data.
+    \item \textbf{Quantization}: Assigning each sample a value from a finite set of possible values. This typically involves rounding the measured value to the nearest representable level. The number of levels is determined by the \textbf{bit depth} – the number of bits used to store each sample. A higher bit depth allows for finer distinctions (more levels) but increases data size.
+\end{itemize}
+This process inherently involves approximation, as the continuous reality is represented by discrete digital data.
+
+\subsection*{Common Data Types}
 \begin{itemize}
     \item \textbf{Numbers}: Integers are represented using binary (like unsigned binary or two's complement for signed integers). Real numbers (floating-point) use formats like IEEE 754, involving a sign, mantissa, and exponent.
     \item \textbf{Text}: Characters are mapped to numerical codes using standards like ASCII (7 or 8 bits per character) or Unicode (uses variable bits, supports many languages).
-    \item \textbf{Images}: Represented as grids of pixels (picture elements). Each pixel has a color value, often encoded using RGB (Red, Green, Blue) components. Image file formats (JPEG, PNG, GIF) use different encoding and compression techniques.
+    \item \textbf{Images}: Images are represented by sampling visual information across a 2D space. The image is divided into a grid of \textbf{pixels} (picture elements), each representing a sample point. For each pixel, color information is quantized, often using RGB (Red, Green, Blue) values, each with a certain bit depth. Image file formats (JPEG, PNG, GIF) use different encoding and compression techniques.
         \begin{itemize}
             \item Metadata: Image files often contain metadata (data about data), like camera settings, location, date, dimensions.
         \end{itemize}
-    \item \textbf{Sound}: Sound waves are sampled at regular intervals (sampling rate), and the amplitude at each sample point is quantized (represented by a binary number). Higher sampling rates and bit depths result in higher fidelity but larger file sizes.
+    \item \textbf{Sound}: Sound is represented by sampling an analog sound wave's amplitude at regular time intervals (the sampling rate). Each sample's amplitude is then quantized based on the bit depth. Higher sampling rates and bit depths capture the original sound more accurately, resulting in higher fidelity but larger file sizes.
 \end{itemize}
 
 \section{Data Compression}
@@ -642,30 +714,60 @@ The Internet is a global network of interconnected computer networks. It's a sys
 
 \section{How the Internet Works}
 \label{sec:how_internet_works}
-Data travels across the Internet in packets.
+Data travels across the Internet using standardized procedures (protocols). Key concepts:
 \begin{itemize}
-    \item \textbf{Protocols}: Sets of rules governing communication. Key examples:
-        \begin{itemize}
-            \item \textbf{IP (Internet Protocol)}: Responsible for addressing and routing packets from source to destination based on IP addresses.
-            \item \textbf{TCP (Transmission Control Protocol)}: Works with IP to provide reliable, ordered delivery of data. It breaks messages into packets, reassembles them at the destination, and handles lost or out-of-order packets.
-            \item \textbf{UDP (User Datagram Protocol)}: A simpler, faster alternative to TCP that doesn't guarantee delivery or order. Used for applications like streaming or online games where speed is more critical than perfect reliability.
-            \item \textbf{HTTP/HTTPS (Hypertext Transfer Protocol/Secure)}: Used for accessing web pages.
-            \item \textbf{DNS (Domain Name System)}: Translates human-readable domain names (e.g., www.google.com) into numerical IP addresses that computers use.
-        \end{itemize}
-    \item \textbf{IP Addresses}: Unique numerical labels assigned to each device connected to a network using IP (e.g., 192.168.1.1, or a longer IPv6 address).
-    \item \textbf{Packets}: Data is broken down into small units called packets. Each packet contains part of the data, source/destination IP addresses, and control information.
-    \item \textbf{Routing}: Devices called routers direct packets across networks towards their destination. They choose paths based on efficiency and network conditions. Packets from the same message may take different routes.
-    \item \textbf{Scalability}: The Internet's design allows it to grow and handle increasing numbers of users and devices.
+    \item \textbf{Protocols}: Standardized sets of rules governing communication. Open protocols (like those used on the Internet) allow different types of devices and networks to connect and interoperate smoothly.
+    \item \textbf{IP Addresses}: Every device connected to the Internet needs a unique numerical label, its IP address (Internet Protocol address), to be identified and receive data.
+    \item \textbf{Domain Name System (DNS)}: Since remembering numerical IP addresses is difficult, the DNS acts like the Internet's phonebook. It translates human-readable domain names (e.g., \texttt{www.google.com}) into the corresponding IP addresses needed for routing.
+    \item \textbf{Packets}: Data sent over the Internet is broken down into small units called packets. Each packet contains a portion of the data plus metadata (like source/destination IP addresses) needed for routing and reassembly.
+    \item \textbf{Routing}: Devices called routers examine packet destination addresses and forward them across networks towards their destination. The Internet is designed to be dynamic; packets from the same message might take different routes depending on network conditions and efficiency.
+    \item \textbf{Packet Reliability}: Protocols like TCP (Transmission Control Protocol) ensure reliable data transfer by managing packet sequencing, checking for errors, and requesting retransmission of lost packets. Other protocols like UDP prioritize speed over guaranteed delivery for applications like streaming. (You don't need to know the deep specifics of TCP/UDP, just that mechanisms exist for reliability vs. speed trade-offs).
+    \item \textbf{World Wide Web (WWW) and HTTP/HTTPS}: The WWW is a system of linked information (web pages, files, etc.) accessed \textit{via} the Internet. It uses the HTTP (Hypertext Transfer Protocol) or HTTPS (secure version) to request and display web content. The WWW is one of many services that run on the Internet, but it is not the Internet itself.
+    \item \textbf{Scalability}: The Internet's design using open protocols, packet switching, and decentralized routing allows it to expand to handle ever-increasing numbers of users and devices effectively.
 \end{itemize}
 
 \section{Fault Tolerance}
 \label{sec:fault_tolerance}
 Systems that can continue operating even if some components fail are fault-tolerant. The Internet achieves fault tolerance through:
 \begin{itemize}
-    \item \textbf{Redundancy}: Multiple paths exist between networks. If one path fails, routers can redirect traffic through alternative routes.
-    \item \textbf{Packet Switching}: Data is broken into packets that can be rerouted independently. If a packet is lost, TCP can request retransmission.
+    \item \textbf{Redundancy}: Multiple paths exist between networks. If one path or router fails, traffic can often be automatically redirected through alternative routes.
+    \item \textbf{Packet Switching}: Because data is broken into independent packets, if some packets are lost or take a faulty route, they can often be re-sent or rerouted without losing the entire message (especially when using reliable protocols like TCP).
 \end{itemize}
-This design makes the Internet robust against localized failures.
+This design makes the Internet robust against many common failures, ensuring communication can continue.
+
+% Figure: Network Redundancy (from unit2.tex)
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[every node/.style={circle, draw, minimum size=1cm, inner sep=0pt}, thick]
+        % Define nodes with highlighted A and D
+        \node[fill=yellow] (A) at (0,0) {A};
+        \node (B) at (2,2) {B};
+        \node (C) at (2,-2) {C};
+        \node[fill=yellow] (D) at (4,0) {D};
+        \node (E) at (6,2) {E};
+        \node (F) at (6,-2) {F};
+
+        % Define undirected connections
+        \draw (A) -- (B);
+        \draw (A) -- (C);
+        \draw (B) -- (C);
+        \draw (B) -- (D);
+        \draw (C) -- (D);
+        \draw (D) -- (E);
+        \draw (D) -- (F);
+        \draw (E) -- (F);
+
+        % Additional paths for redundancy - simplified slightly
+        \draw (A) to [bend left=30] (D); % Direct redundant path A->D visualization
+        \draw (C) to [bend right=30] (E); % Other redundancy example C->E
+
+    \end{tikzpicture}
+    \captionsetup{list=no} % Prevent figure from appearing in List of Figures if used
+    \caption{
+        Network diagram illustrating redundancy and fault tolerance. Multiple paths exist between nodes (e.g., A to D directly, via B, or via C). If one path (e.g., A-B-D) fails, data can be rerouted through another (e.g., A-C-D or the direct A-D path), allowing the network to continue functioning.
+    }
+    \label{fig:network-redundancy}
+\end{figure}
 
 \section{Parallel and Distributed Computing}
 \label{sec:parallel_distributed}

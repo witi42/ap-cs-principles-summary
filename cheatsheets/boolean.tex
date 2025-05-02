@@ -15,7 +15,12 @@
 
 \lstdefinestyle{mystyle}{
     mathescape=true,
-    backgroundcolor=\color{backcolour},   
+    backgroundcolor=\color{backcolour},
+    numbers=left,         % Show line numbers on the left
+    numberstyle=\small,   % Style of the numbers
+    stepnumber=1,         % Number every line (you can change this to number every n-th line)
+    numbersep=5pt,        % Distance between line numbers and the code
+    basicstyle=\ttfamily  % Code font style
     % commentstyle=\color{codegreen},
     % keywordstyle=\color{magenta},
     % numberstyle=\tiny\color{codegray},
@@ -48,8 +53,34 @@
 
 \textbf{Warning:} This document is a work in progress.
 
+\section*{Variables CSP 3.1}
 
-\section*{Boolean Expressions}
+\subsection*{Variable Declaration}
+
+You can think of a variables as a box with a label on it. We can look what value is in the box or we can put a new value in the box.
+
+\begin{lstlisting}
+    x $\leftarrow$ 5
+\end{lstlisting}
+
+This declares a variable x and assigns it the value 5.
+
+We can increase the value of x by 1 like this:
+\begin{lstlisting}
+    x $\leftarrow$ x + 1
+\end{lstlisting}
+
+We can also work with several variables at once.
+
+\begin{lstlisting}
+    x $\leftarrow$ 5
+    y $\leftarrow$ 10
+    z $\leftarrow$ x + y
+\end{lstlisting}
+
+This will set z to 15.
+
+\section*{Boolean Expressions CSP 3.5}
 
 \subsection*{Categories}
 
@@ -289,6 +320,9 @@ Here's an example:
     }
 \end{lstlisting}
 We check if homeworkComplete is true. Only if it is true, we check if score is greater than or equal to 90. In this case, grade will be set to "A".
+
+The curly brackets \{ \} indicate what statements are inside a block. To see more easily see the blocks, we can use indentation. 
+All statements inside a block usually have the same indentation (like the statements in lines 7 to 12. They are all part of the if(homeworkComplete) block)
 
 \end{document}
 
