@@ -831,7 +831,7 @@ Protecting computer systems, networks, and data from unauthorized access, attack
                 \begin{itemize}
                     \item \textbf{Multifactor Authentication (MFA)}: Enhances security by requiring two or more distinct pieces of evidence (factors) to verify identity (e.g., something you know like a password + something you have like a code from your phone).
                 \end{itemize}
-            \item \textbf{Encryption}: Scrambling data (plaintext) into an unreadable format (ciphertext) using an algorithm and a secret key, so it's unintelligible without the key. Used for secure communication (HTTPS, WPA2) and data storage.
+            \item \textbf{Encryption}: Scrambling data (plaintext) into an unreadable format (ciphertext) using an algorithm and a key, so it's unintelligible without the key. Used for secure communication (HTTPS) and data storage.
                 \begin{itemize}
                     \item \textbf{Symmetric Key Encryption}: Uses the \textbf{same secret key} for both encryption and decryption. Faster, but requires a secure way to share the secret key beforehand between the sender and receiver.
                     \item \textbf{Public Key (Asymmetric) Encryption}: Uses \textbf{two keys}: a \textit{public key} (shared freely) for encryption and a corresponding \textit{private key} (kept secret by the owner) for decryption. Anyone can encrypt a message using the recipient's public key, but only the recipient with the matching private key can decrypt it. This solves the key sharing problem of symmetric encryption but is computationally slower.
@@ -842,25 +842,27 @@ Protecting computer systems, networks, and data from unauthorized access, attack
                 \end{itemize}
             \begin{figure}[h!]
                 \centering
-                \begin{tikzpicture}[node distance=2cm and 1cm, every node/.style={draw, rounded corners, align=center}]
-                    % Nodes
-                    \node (Alice) {Alice};
-                    \node (Bob) [right=4cm of Alice] {Bob};
-                    \node (Message) [below left=0.5cm and -0.5cm of Alice] {Plaintext\Message};
-                    \node (Encrypt) [right=of Message] {Encrypt using\Bob's Public Key};
-                    \node (Ciphertext) [right=of Encrypt] {Ciphertext\(Unreadable)};
-                    \node (Decrypt) [right=of Ciphertext] {Decrypt using\Bob's Private Key};
-                    \node (Received) [below right=0.5cm and -0.5cm of Bob] {Plaintext\Message};
+                \begin{tikzpicture}[every node/.style={draw, rounded corners, align=center, minimum height=1.2cm, minimum width=2.5cm}]
+                    % Define node coordinates explicitly
+                    \node (Message)   at (0,0)   {Plaintext\\Message};
+                    \node (Encrypt)   at (3.5,0)  {Encrypt using\\Bob's Public Key};
+                    \node (Ciphertext)at (7.5,0)  {Ciphertext\\(Unreadable)};
+                    \node (Decrypt)   at (11.5,0) {Decrypt using\\Bob's Private Key};
+                    \node (Received)  at (15,0)  {Plaintext\\Message};
                     
+                    % Alice and Bob labels 
+                    \node (Alice) [draw=none, above of=Message, yshift=0.5cm] {Alice sends}; 
+                    \node (Bob)   [draw=none, above of=Received, yshift=0.5cm] {Bob receives};
+
                     % Arrows
-                    \draw[->] (Message) -- (Encrypt);
-                    \draw[->] (Encrypt) -- (Ciphertext);
-                    \draw[->] (Ciphertext) -- (Decrypt);
-                    \draw[->] (Decrypt) -- (Received);
+                    \draw[->, thick] (Message) -- (Encrypt);
+                    \draw[->, thick] (Encrypt) -- (Ciphertext);
+                    \draw[->, thick] (Ciphertext) -- (Decrypt);
+                    \draw[->, thick] (Decrypt) -- (Received);
                     
-                    % Key indication (simplified)
-                    \node (PubKey) [above=0.2cm of Encrypt, draw=none] {Bob's Public Key \$\rightarrow$}; 
-                    \node (PrivKey) [above=0.2cm of Decrypt, draw=none] {Bob's Private Key \$\rightarrow$};
+                    % Key indication - positioned explicitly above Encrypt/Decrypt
+                    \node (PubKey) [draw=none, text=blue, above of=Encrypt, yshift=0.2cm] {Bob's Public Key $\uparrow$}; 
+                    \node (PrivKey) [draw=none, text=red, above of=Decrypt, yshift=0.2cm] {Bob's Private Key $\uparrow$};
                 \end{tikzpicture}
                 \caption{Public Key Encryption Example: Alice encrypts a message using Bob's public key. Only Bob, with his corresponding private key, can decrypt it.}
                 \label{fig:public-key-encryption}
