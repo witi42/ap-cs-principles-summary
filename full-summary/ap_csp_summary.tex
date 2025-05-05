@@ -175,11 +175,6 @@ Different types of errors exist:
     \item \textbf{Runtime Errors}: Errors occurring during program execution (e.g., division by zero, accessing invalid memory).
     \item \textbf{Logic Errors}: The program runs but produces incorrect results because the algorithm or its implementation is flawed. These are often the hardest to find.
 \end{itemize}
-
-\textbf{Overflow Error}: Computers use a fixed number of bits (e.g., 8 bits) to represent numbers. This limits the largest value they can store (for 8 bits, often 255). An overflow error happens when a calculation's result is too large for the available bits. When this occurs, the result often "wraps around." For example, adding 1 to the maximum value might result in 0, or even a negative number if signed numbers are being used. This unexpected wrap-around leads to incorrect results.
-
-\textbf{Round-off Error}: Similarly, computers use a finite number of bits to represent real numbers (like decimals or fractions), which can have infinite precision. This means computers often store an \textit{approximation} rather than the exact value. This small difference is called a round-off error. While often tiny, these errors can accumulate during calculations, potentially leading to noticeable inaccuracies in the final result (e.g., 0.1 + 0.2 might be stored as something like 0.30000000000000004 instead of exactly 0.3).
-
 % =============================================
 % Chapter 2: Data
 % =============================================
@@ -345,18 +340,18 @@ Programming enables us to implement algorithms that solve problems. This involve
 Variables are named storage locations for data values that can change during program execution. You can think of a variable as a box with a label on it. We can look at what value is in the box or put a new value in the box.
 
 \begin{itemize}
-    \item \textbf{Declaration/Assignment}: In AP Pseudocode, variables are often declared implicitly when they are first assigned a value using the assignment operator (<-). In other languages, you might need to declare the type first.
-    \begin{lstlisting}[language={}, label={lst:assignment_detail}, caption={AP Pseudocode: Assignment Examples}]
-    x <- 5          // Assigns the value 5 to variable x
-    y <- 10
-    z <- x + y      // Assigns the value of x + y (15) to z
-    message <- "Hello" // Assigns a string value
-    isValid <- true   // Assigns a boolean value
+\item \textbf{Declaration/Assignment}: In AP Pseudocode, variables are often declared implicitly when they are first assigned a value using the assignment operator (<-). In other languages, you might need to declare the type first.
+\begin{lstlisting}[language={}, label={lst:assignment_detail}, caption={AP Pseudocode: Assignment Examples}]
+x <- 5          // Assigns the value 5 to variable x
+y <- 10
+z <- x + y      // Assigns the value of x + y (15) to z
+message <- "Hello" // Assigns a string value
+isValid <- true   // Assigns a boolean value
 
-    // Updating a variable's value
-    x <- x + 1      // Reads the current value of x (5), adds 1, assigns the result (6) back to x
-    \end{lstlisting}
-    \item \textbf{Naming}: Meaningful variable names (e.g., \texttt{totalScore} instead of just \texttt{s}) significantly improve code readability and understanding.
+// Updating a variable's value
+x <- x + 1      // Reads the current value of x (5), adds 1, assigns the result (6) back to x
+\end{lstlisting}
+\item \textbf{Naming}: Meaningful variable names (e.g., \texttt{totalScore} instead of just \texttt{s}) significantly improve code readability and understanding.
 \end{itemize}
 
 \subsection*{Common Data Types in Programming}
@@ -386,9 +381,9 @@ Use arithmetic operators to perform calculations.
     \item Order of Operations: Follows standard mathematical precedence (PEMDAS/BODMAS). Parentheses \hlc[hlblue]{( )} can be used to force a specific evaluation order.
 \end{itemize}
 \begin{lstlisting}[language={}, label={lst:math_expr_detail}, caption={AP Pseudocode: Math Expressions}]
-    totalCost <- price * quantity
-    remainder <- 17 MOD 5 // remainder will be 2
-    average <- (a + b + c) / 3 // Parentheses ensure addition happens before division
+totalCost <- price * quantity
+remainder <- 17 MOD 5 // remainder will be 2
+average <- (a + b + c) / 3 // Parentheses ensure addition happens before division
 \end{lstlisting}
 
 \subsection*{Relational Operators}
@@ -422,21 +417,21 @@ Use arithmetic operators to perform calculations.
 
 \subsection*{Boolean Expression Examples}
 \begin{itemize}
-    \item \textit{Example 1:}
-    \begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
-    (x > 10) AND (y < 20)
-    \end{lstlisting}
-    Evaluates to \texttt{true} if \texttt{x} is greater than 10 \textit{and} \texttt{y} is less than 20. (e.g., true for \texttt{x = 11, y = 19}; false for \texttt{x = 11, y = 21})
-    \item \textit{Example 2:}
-    \begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
-    NOT (a = b)
-    \end{lstlisting}
-    Evaluates to \texttt{true} if \texttt{a} is \textit{not} equal to \texttt{b}. (e.g., true for \texttt{a = 5, b = 2}; false for \texttt{a = 11, b = 11})
-    \item \textit{Example 3 (Combined):}
-    \begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
-    (score >= 70 AND score < 100) OR (isBonusEligible = true)
-    \end{lstlisting}
-    Evaluates to \texttt{true} if the score is between 70 (inclusive) and 100 (exclusive), \textit{or} if the student is eligible for a bonus.
+\item \textit{Example 1:}
+\begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
+(x > 10) AND (y < 20)
+\end{lstlisting}
+Evaluates to \texttt{true} if \texttt{x} is greater than 10 \textit{and} \texttt{y} is less than 20. (e.g., true for \texttt{x = 11, y = 19}; false for \texttt{x = 11, y = 21})
+\item \textit{Example 2:}
+\begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
+NOT (a = b)
+\end{lstlisting}
+Evaluates to \texttt{true} if \texttt{a} is \textit{not} equal to \texttt{b}. (e.g., true for \texttt{a = 5, b = 2}; false for \texttt{a = 11, b = 11})
+\item \textit{Example 3 (Combined):}
+\begin{lstlisting}[language={}, basicstyle=\ttfamily\small]
+(score >= 70 AND score < 100) OR (isBonusEligible = true)
+\end{lstlisting}
+Evaluates to \texttt{true} if the score is between 70 (inclusive) and 100 (exclusive), \textit{or} if the student is eligible for a bonus.
 \end{itemize}
 
 \subsection*{Operator Comparison (JavaScript vs AP Pseudocode)}
@@ -469,176 +464,176 @@ Control structures determine the order in which instructions are executed.
 \subsubsection*{Basic IF Statement}
 Executes a block of code only if a condition is true.
 \begin{lstlisting}[language={}, label={lst:basic_if}, caption={AP Pseudocode: Basic IF}]
-    IF (condition)
-    {
-        // Statements executed if condition is true
-        statements
-    }
-    // Code here executes regardless
+IF (condition)
+{
+    // Statements executed if condition is true
+    statements
+}
+// Code here executes regardless
 \end{lstlisting}
 Example:
 \begin{lstlisting}[language={}]
-    score <- 100
-    IF (score = 100) // Note: AP uses = for comparison
-    {
-        DISPLAY("Perfect score!")
-    }
+score <- 100
+IF (score = 100) // Note: AP uses = for comparison
+{
+    DISPLAY("Perfect score!")
+}
 \end{lstlisting}
 
 \subsubsection*{IF-ELSE Statement}
 Executes one block of code if the condition is true, and a different block if the condition is false.
 \begin{lstlisting}[language={}, label={lst:if_else}, caption={AP Pseudocode: IF-ELSE}]
-    IF (condition)
-    {
-        // Statements executed if condition is true
-        statements_if_true
-    }
-    ELSE
-    {
-        // Statements executed if condition is false
-        statements_if_false
-    }
+IF (condition)
+{
+    // Statements executed if condition is true
+    statements_if_true
+}
+ELSE
+{
+    // Statements executed if condition is false
+    statements_if_false
+}
 \end{lstlisting}
 Example:
 \begin{lstlisting}[language={}]
-    temperature <- 15
-    IF (temperature > 20)
-    {
-        DISPLAY("It's warm.")
-    }
-    ELSE
-    {
-        DISPLAY("It's cool.") // This will be displayed
-    }
+temperature <- 15
+IF (temperature > 20)
+{
+    DISPLAY("It's warm.")
+}
+ELSE
+{
+    DISPLAY("It's cool.") // This will be displayed
+}
 \end{lstlisting}
 
 \subsubsection*{IF - ELSE IF - ELSE Statement}
 Checks multiple conditions in order. The first condition that evaluates to true has its corresponding block executed. If none are true, the optional \texttt{ELSE} block is executed.
 \begin{lstlisting}[language={}, label={lst:if_elseif_else}, caption={AP Pseudocode: IF - ELSE IF - ELSE}]
-    IF (condition1)
-    {
-        // Statements executed if condition1 is true
-        statements1
-    }
-    ELSE IF (condition2)
-    {
-        // Statements executed if condition1 is false AND condition2 is true
-        statements2
-    }
-    ELSE // Optional
-    {
-        // Statements executed if all preceding conditions are false
-        statements_else
-    }
+IF (condition1)
+{
+    // Statements executed if condition1 is true
+    statements1
+}
+ELSE IF (condition2)
+{
+    // Statements executed if condition1 is false AND condition2 is true
+    statements2
+}
+ELSE // Optional
+{
+    // Statements executed if all preceding conditions are false
+    statements_else
+}
 \end{lstlisting}
 Example (Grading):
 \begin{lstlisting}[language={}, label={lst:grading_example}]
-    score <- 85
-    grade <- ""
-    IF (score >= 90)
-    {
-        grade <- "A"
-    }
-    ELSE IF (score >= 80)
-    {
-        grade <- "B" // This block executes, grade becomes "B"
-    }
-    ELSE IF (score >= 70)
-    {
-        grade <- "C"
-    }
-    ELSE
-    {
-        grade <- "D"
-    }
-    DISPLAY(grade)
+score <- 85
+grade <- ""
+IF (score >= 90)
+{
+    grade <- "A"
+}
+ELSE IF (score >= 80)
+{
+    grade <- "B" // This block executes, grade becomes "B"
+}
+ELSE IF (score >= 70)
+{
+    grade <- "C"
+}
+ELSE
+{
+    grade <- "D"
+}
+DISPLAY(grade)
 \end{lstlisting}
 \textbf{Important:} Only one block (the first one whose condition is met) in an IF-ELSE IF-...-ELSE structure will execute.
 
 \subsubsection*{Multiple Independent IF Statements}
 Unlike ELSE IF, separate IF statements are evaluated independently.
 \begin{lstlisting}[language={}, label={lst:multiple_if}, caption={AP Pseudocode: Multiple Independent IFs}]
-    score <- 100
-    count <- 0
-    IF (score >= 80) // Condition is true
-    {
-        count <- count + 1 // count becomes 1
-    }
-    // This IF is checked regardless of the previous one
-    IF (score >= 90) // Condition is true
-    {
-        count <- count + 1 // count becomes 2
-    }
-    count <- count + 1 // count becomes 3 (unconditional)
-    // This IF is also checked independently
-    IF (score >= 100) // Condition is true
-    {
-        count <- count + 1 // count becomes 4
-    }
-    DISPLAY(count) // Displays 4
+score <- 100
+count <- 0
+IF (score >= 80) // Condition is true
+{
+    count <- count + 1 // count becomes 1
+}
+// This IF is checked regardless of the previous one
+IF (score >= 90) // Condition is true
+{
+    count <- count + 1 // count becomes 2
+}
+count <- count + 1 // count becomes 3 (unconditional)
+// This IF is also checked independently
+IF (score >= 100) // Condition is true
+{
+    count <- count + 1 // count becomes 4
+}
+DISPLAY(count) // Displays 4
 \end{lstlisting}
 Here, multiple IF blocks can execute if their respective conditions are true.
 
 \subsubsection*{Nested Conditionals}
 An IF statement can be placed inside another IF or ELSE block.
 \begin{lstlisting}[language={}, label={lst:nested_if}, caption={AP Pseudocode: Nested IFs}]
-    homeworkComplete <- true
-    score <- 95
-    grade <- ""
+homeworkComplete <- true
+score <- 95
+grade <- ""
 
-    IF (homeworkComplete = true) // Outer condition
+IF (homeworkComplete = true) // Outer condition
+{
+    // This block executes only if homeworkComplete is true
+    DISPLAY("Checking score because homework is complete...")
+    IF (score >= 90) // Inner condition
     {
-        // This block executes only if homeworkComplete is true
-        DISPLAY("Checking score because homework is complete...")
-        IF (score >= 90) // Inner condition
-        {
-            grade <- "A" // This executes
-        }
-        ELSE
-        {
-            grade <- "B"
-        }
+        grade <- "A" // This executes
     }
     ELSE
     {
-        grade <- "Incomplete"
+        grade <- "B"
     }
-    DISPLAY(grade) // Displays "A"
+}
+ELSE
+{
+    grade <- "Incomplete"
+}
+DISPLAY(grade) // Displays "A"
 \end{lstlisting}
 Indentation helps visualize the structure of nested blocks.
 
 \subsection*{Iteration / Loops (Detailed)}
 Loops repeat blocks of code.
 \begin{itemize}
-    \item \textbf{\texttt{REPEAT n TIMES}}: Executes the block a fixed number of times.\\[1ex]
-    \begin{lstlisting}[language={}, label={lst:repeat_n_detail}, caption={AP Pseudocode: REPEAT n TIMES}]
-    count <- 0
-    REPEAT 5 TIMES
-    {
-        count <- count + 1
-        DISPLAY(count) // Displays 1, 2, 3, 4, 5
-    }
-    \end{lstlisting}
-    \item \textbf{\texttt{REPEAT UNTIL (condition)}}: Executes the block \textit{first}, then checks the condition. Repeats as long as the condition is \texttt{false}. The block always executes at least once.\\[1ex]
-    \begin{lstlisting}[language={}, label={lst:repeat_until_detail}, caption={AP Pseudocode: REPEAT UNTIL}]
-    input <- ""
-    REPEAT UNTIL (input = "quit")
-    {
-        DISPLAY("Enter command (or 'quit'):")
-        input <- INPUT()
-        // Process input...
-        DISPLAY("You entered: " + input)
-    }
-    DISPLAY("Exiting loop.")
-    \end{lstlisting}
-    \item \textbf{\texttt{FOR EACH item IN list}} (Covered more in Lists): Iterates through each element in a list sequentially.\\[1ex]
-    \begin{lstlisting}[language={}, label={lst:for_each_detail}, caption={AP Pseudocode: FOR EACH}]
-    names <- ["Alice", "Bob", "Charlie"]
-    FOR EACH name IN names
-    {
-        DISPLAY("Hello, " + name)
-    }
-    \end{lstlisting}
+\item \textbf{\texttt{REPEAT n TIMES}}: Executes the block a fixed number of times.\\[1ex]
+\begin{lstlisting}[language={}, label={lst:repeat_n_detail}, caption={AP Pseudocode: REPEAT n TIMES}]
+count <- 0
+REPEAT 5 TIMES
+{
+    count <- count + 1
+    DISPLAY(count) // Displays 1, 2, 3, 4, 5
+}
+\end{lstlisting}
+\item \textbf{\texttt{REPEAT UNTIL (condition)}}: Executes the block \textit{first}, then checks the condition. Repeats as long as the condition is \texttt{false}. The block always executes at least once.\\[1ex]
+\begin{lstlisting}[language={}, label={lst:repeat_until_detail}, caption={AP Pseudocode: REPEAT UNTIL}]
+input <- ""
+REPEAT UNTIL (input = "quit")
+{
+    DISPLAY("Enter command (or 'quit'):")
+    input <- INPUT()
+    // Process input...
+    DISPLAY("You entered: " + input)
+}
+DISPLAY("Exiting loop.")
+\end{lstlisting}
+\item \textbf{\texttt{FOR EACH item IN list}} (Covered more in Lists): Iterates through each element in a list sequentially.\\[1ex]
+\begin{lstlisting}[language={}, label={lst:for_each_detail}, caption={AP Pseudocode: FOR EACH}]
+names <- ["Alice", "Bob", "Charlie"]
+FOR EACH name IN names
+{
+    DISPLAY("Hello, " + name)
+}
+\end{lstlisting}
 \end{itemize}
 These three structures (Sequence, Selection, Iteration) are the fundamental building blocks for constructing any algorithm.
 
@@ -692,15 +687,15 @@ Lists (or arrays in some languages) are ordered collections of items (elements).
     \item \textbf{Common Operations}: Adding items (\texttt{APPEND}), removing items (\texttt{REMOVE}), inserting items (\texttt{INSERT}).
     \item \textbf{Iteration with Lists}: Using \texttt{FOR EACH}.
     \begin{lstlisting}[language={}, label={lst:list_iteration}, caption={AP Pseudocode: List Iteration}]
-    scores <- [85, 92, 78, 95]
-    sum <- 0
-    FOR EACH score IN scores
-    {
-        sum <- sum + score
-    }
-    average <- sum / LENGTH(scores)
-    DISPLAY(average)
-    \end{lstlisting}
+scores <- [85, 92, 78, 95]
+sum <- 0
+FOR EACH score IN scores
+{
+    sum <- sum + score
+}
+average <- sum / LENGTH(scores)
+DISPLAY(average)
+\end{lstlisting}
 \end{itemize}
 
 \section{Algorithm Analysis}
@@ -738,17 +733,17 @@ Simulations involve designing models with specific rules, variables, and interac
 % Placeholder for Big Idea 4 content
 Computing requires hardware and software working together. Networks, especially the Internet, connect computers globally, enabling communication and information sharing.
 
-\section{Computer Components}
-\label{sec:computer_components}
-While CSP focuses less on deep hardware details, a basic understanding is helpful.
-\begin{itemize}
-    \item \textbf{Hardware}: The physical parts (CPU, memory/RAM, storage devices like HDDs/SSDs, input devices like keyboards/mice, output devices like monitors/printers).
-    \item \textbf{Software}: Instructions that tell the hardware what to do (Operating Systems like Windows/macOS/Linux, Applications like browsers/word processors).
-    \item \textbf{CPU (Central Processing Unit)}: Executes program instructions.
-    \item \textbf{Memory (RAM)}: Temporary storage for data and programs currently in use. Volatile (data lost when power is off).
-    \item \textbf{Storage}: Permanent storage for data and programs (Hard Drives, Solid State Drives). Non-volatile.
-\end{itemize}
-Hardware and software interact through layers of abstraction.
+% \section{Computer Components}
+% \label{sec:computer_components}
+% While CSP focuses less on deep hardware details, a basic understanding is helpful.
+% \begin{itemize}
+%     \item \textbf{Hardware}: The physical parts (CPU, memory/RAM, storage devices like HDDs/SSDs, input devices like keyboards/mice, output devices like monitors/printers).
+%     \item \textbf{Software}: Instructions that tell the hardware what to do (Operating Systems like Windows/macOS/Linux, Applications like browsers/word processors).
+%     \item \textbf{CPU (Central Processing Unit)}: Executes program instructions.
+%     \item \textbf{Memory (RAM)}: Temporary storage for data and programs currently in use. Volatile (data lost when power is off).
+%     \item \textbf{Storage}: Permanent storage for data and programs (Hard Drives, Solid State Drives). Non-volatile.
+% \end{itemize}
+% Hardware and software interact through layers of abstraction.
 
 \section{The Internet}
 \label{sec:internet}
@@ -829,20 +824,20 @@ These approaches use multiple computers or processors to solve large problems fa
 \label{sec:cybersecurity}
 Protecting computer systems, networks, and data from unauthorized access, attacks, damage, or theft.
 \begin{itemize}
-    \item \textbf{CIA Triad}: Core security goals:
-        \begin{itemize}
-            \item \textbf{Confidentiality}: Preventing unauthorized disclosure of information (achieved via encryption, access controls).
-            \item \textbf{Integrity}: Ensuring data is accurate and hasn't been tampered with (achieved via hashing, digital signatures).
-            \item \textbf{Availability}: Ensuring systems and data are accessible when needed (achieved via redundancy, backups, denial-of-service protection).
-        \end{itemize}
+    % \item \textbf{CIA Triad}: Core security goals:
+    %     \begin{itemize}
+    %         \item \textbf{Confidentiality}: Preventing unauthorized disclosure of information (achieved via encryption, access controls).
+    %         \item \textbf{Integrity}: Ensuring data is accurate and hasn't been tampered with (achieved via hashing, digital signatures).
+    %         \item \textbf{Availability}: Ensuring systems and data are accessible when needed (achieved via redundancy, backups, denial-of-service protection).
+    %     \end{itemize}
     \item \textbf{Common Threats}:
         \begin{itemize}
             \item \textbf{Malware}: Malicious software (viruses, worms, ransomware, spyware).
-            \item \textbf{Phishing}: Tricking users into revealing sensitive information (passwords, credit card numbers) often via deceptive emails, messages, or websites designed to look legitimate. \hlc[hlred]{(Frequently Tested!)}
-            \item \textbf{Denial-of-Service (DoS/DDoS) Attacks}: Overwhelming a system with traffic to make it unavailable to legitimate users.
+            \item \textbf{Phishing}: Tricking users into revealing sensitive information (passwords, credit card numbers) often via deceptive emails, messages, or websites designed to look legitimate.
+            % \item \textbf{Denial-of-Service (DoS/DDoS) Attacks}: Overwhelming a system with traffic to make it unavailable to legitimate users.
             \item \textbf{Rogue Access Point}: An unauthorized wireless access point installed on a network, potentially allowing attackers to intercept traffic or gain unauthorized access.
             \item \textbf{Keylogger}: Malware or hardware that records keystrokes entered on a keyboard, often used to steal passwords or other sensitive information.
-            \item \textbf{Social Engineering}: Manipulating people to gain access or information.
+            % \item \textbf{Social Engineering}: Manipulating people to gain access or information.
         \end{itemize}
     \item \textbf{Countermeasures}:
         \begin{itemize}
@@ -886,9 +881,9 @@ Protecting computer systems, networks, and data from unauthorized access, attack
                 \caption{Public Key Encryption Example: Alice encrypts a message using Bob's public key. Only Bob, with his corresponding private key, can decrypt it.}
                 \label{fig:public-key-encryption}
             \end{figure}
-            \item \textbf{Firewalls}: Network security systems that monitor and control incoming/outgoing traffic based on rules.
-            \item \textbf{Software Updates}: Patching vulnerabilities discovered in software.
-            \item \textbf{User Education}: Awareness about phishing and safe practices.
+            % \item \textbf{Firewalls}: Network security systems that monitor and control incoming/outgoing traffic based on rules.
+            % \item \textbf{Software Updates}: Patching vulnerabilities discovered in software.
+            % \item \textbf{User Education}: Awareness about phishing and safe practices.
         \end{itemize}
 \end{itemize}
 Cybersecurity is an ongoing challenge due to evolving threats and system complexity.
