@@ -181,6 +181,8 @@ Computers use binary internally, but humans often use other systems for convenie
     \item \textbf{Decimal (Base-10)}: The system we use daily, with digits 0-9. Each position represents a power of 10.
 \end{itemize}
 
+\textbf{Overflow Error}: Since computers use a fixed number of bits (like 8, 16, 32, 64) to store numbers, there's a maximum value they can represent. An overflow error occurs when a calculation produces a result that is larger than this maximum value, leading to incorrect results (often the number "wraps around"). For example, if the maximum is 255 (using 8 bits), calculating $250 + 10$ would cause an overflow.
+
 % Figure: Binary to Decimal Conversion (simplified to match image)
 \begin{figure}[h!]
     \centering
@@ -286,7 +288,24 @@ Large datasets can reveal patterns, trends, and insights not obvious from indivi
     \item \textbf{Visualization}: Creating charts and graphs (bar charts, scatter plots, heat maps) to make patterns easier to understand.
     \item \textbf{Data Mining / Machine Learning}: Using algorithms to discover complex patterns, make predictions, or classify data automatically.
 \end{itemize}
-Computers are essential for processing large datasets efficiently.
+Computers are essential for processing large datasets efficiently. These extraction techniques are often implemented using programming algorithms that iterate through data structures like lists (see Section \ref{sec:lists}) to filter, aggregate, or transform information based on specific criteria.
+
+\begin{lstlisting}[language={}, label={lst:data_filtering_example}, caption={AP Pseudocode: Filtering Data in a List}]
+// Example: Find all scores above 90 in a list
+highScores <- [] // Create an empty list to store results
+allScores <- [75, 92, 88, 95, 60, 100]
+
+FOR EACH score IN allScores
+{
+    IF (score > 90)
+    {
+        APPEND(highScores, score) // Add score to the highScores list
+    }
+}
+
+DISPLAY("High scores found:")
+DISPLAY(highScores) // Output: [92, 95, 100]
+\end{lstlisting}
 
 \section{Digital Data Security and Privacy}
 \label{sec:data_security_privacy}
@@ -324,6 +343,7 @@ Variables are named storage locations for data values that can change during pro
     \end{lstlisting}
     \item \textbf{Naming}: Meaningful variable names (e.g., \texttt{totalScore} instead of just \texttt{s}) significantly improve code readability and understanding.
 \end{itemize}
+Strings, like `message` above, are sequences of characters. Common operations on strings include concatenation (joining strings), finding the length, and extracting substrings.
 
 \section{Mathematical and Logical Expressions}
 \label{sec:expressions}
@@ -635,6 +655,7 @@ roomArea <- calculateArea(roomLength, roomWidth)
 DISPLAY("The area is: ")
 DISPLAY(roomArea)
 \end{lstlisting}
+When `calculateArea` is called, the value of `roomLength` (10) is passed as the argument for the `length` parameter, and `roomWidth` (8) is passed as the argument for the `width` parameter. Inside the procedure, these values are used to calculate `area`. The `RETURN(area)` statement sends the calculated value (80) back to where the procedure was called. This returned value is then assigned to the `roomArea` variable.
 
 \section{Lists (Arrays)}
 \label{sec:lists}
@@ -668,10 +689,12 @@ Comparing algorithms that solve the same problem.
 \end{itemize}
 Different algorithms can have vastly different efficiencies. For example, linear search vs. binary search (requires sorted list).
 \begin{itemize}
-    \item \textbf{Linear Search}: Checks each element sequentially. Reasonable for small or unsorted lists.
-    \item \textbf{Binary Search}: Efficiently finds items in sorted lists by repeatedly dividing the search interval in half. Much faster than linear search for large lists.
+    \item \textbf{Linear Search}: Checks each element sequentially. Reasonable for small or unsorted lists. In the worst case, it takes a number of steps proportional to the size of the list (approximately n steps if the list has n items).
+    \item \textbf{Binary Search}: Efficiently finds items in \textit{sorted} lists by repeatedly dividing the search interval in half. It compares the target value to the middle element; if they don't match, it eliminates half the list where the item cannot be and repeats the process on the remaining half. Much faster than linear search for large lists, taking significantly fewer steps (proportional to log n steps) for a list of size n.
 \end{itemize}
 \textbf{Heuristics}: Sometimes, finding an exact, optimal solution is too slow (computationally intractable). A heuristic is an approach that finds an approximate solution that is "good enough" for practical purposes, often much faster.
+
+\textbf{Undecidable Problem}: A problem for which no algorithm can be constructed that always leads to a correct yes-or-no answer for every possible input (e.g., the Halting Problem - determining whether an arbitrary program will eventually stop running or continue forever).
 
 \section{Simulations}
 \label{sec:simulations}
@@ -709,7 +732,7 @@ The Internet is a global network of interconnected computer networks. It's a sys
 \begin{itemize}
     \item \textbf{Decentralized}: No single point of control or failure.
     \item \textbf{Interoperability}: Uses standardized, open protocols (rules for communication) allowing different types of devices and networks to connect.
-    \item \textbf{World Wide Web (WWW)}: A system of linked hypertext documents accessed via the Internet (using protocols like HTTP/HTTPS). The Web is *part* of the Internet, not the same thing.
+    \item \textbf{World Wide Web (WWW)}: A system of linked hypertext documents accessed via the Internet (using protocols like HTTP/HTTPS). The Web is *part* of the Internet, not the same thing. \textbf{Crucially, the Internet is the underlying network infrastructure (hardware and protocols), while the WWW is an information system built on top of the Internet.}
 \end{itemize}
 
 \section{How the Internet Works}
@@ -791,13 +814,17 @@ Protecting computer systems, networks, and data from unauthorized access, attack
     \item \textbf{Common Threats}:
         \begin{itemize}
             \item \textbf{Malware}: Malicious software (viruses, worms, ransomware, spyware).
-            \item \textbf{Phishing}: Tricking users into revealing sensitive information (passwords, credit card numbers) often via fake emails or websites.
+            \item \textbf{Phishing}: Tricking users into revealing sensitive information (passwords, credit card numbers) often via deceptive emails, messages, or websites designed to look legitimate. \hlc[hlred]{(Frequently Tested!)}
             \item \textbf{Denial-of-Service (DoS/DDoS) Attacks}: Overwhelming a system with traffic to make it unavailable to legitimate users.
+            \item \textbf{Rogue Access Point}: An unauthorized wireless access point installed on a network, potentially allowing attackers to intercept traffic or gain unauthorized access.
             \item \textbf{Social Engineering}: Manipulating people to gain access or information.
         \end{itemize}
     \item \textbf{Countermeasures}:
         \begin{itemize}
-            \item \textbf{Authentication}: Verifying identity (passwords, multi-factor authentication).
+            \item \textbf{Authentication}: Verifying identity (passwords, biometrics).
+                \begin{itemize}
+                    \item \textbf{Multifactor Authentication (MFA)}: Enhances security by requiring two or more distinct pieces of evidence (factors) to verify identity (e.g., something you know like a password + something you have like a code from your phone).
+                \end{itemize}
             \item \textbf{Encryption}: Scrambling data so it's unreadable without a key. Used for secure communication (HTTPS, WPA2) and data storage.
             \item \textbf{Firewalls}: Network security systems that monitor and control incoming/outgoing traffic based on rules.
             \item \textbf{Software Updates}: Patching vulnerabilities discovered in software.
@@ -825,6 +852,7 @@ Computing innovations have driven progress in many areas:
     \item \textbf{Automation}: Performing repetitive or dangerous tasks, increasing efficiency in various industries.
     \item \textbf{Economic Growth}: Creating new industries, jobs, and markets.
     \item \textbf{Scientific Advancement}: Enabling complex simulations, data analysis, and discovery in fields like medicine, climate science, and physics.
+    \item \textbf{Crowdsourcing / Citizen Science}: Leveraging the skills, knowledge, or computing power of large numbers of people, often via the internet, to solve complex problems, gather data, or contribute to research (e.g., protein folding projects, identifying galaxies, transcribing historical documents).
     \item \textbf{Accessibility}: Providing assistive technologies for people with disabilities.
 \end{itemize}
 
