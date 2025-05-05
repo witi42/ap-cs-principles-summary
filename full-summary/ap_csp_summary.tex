@@ -92,7 +92,26 @@
 
 % --- Document Start ---
 \begin{document}
-\maketitle
+% Replace \maketitle with a custom titlepage that includes the disclaimer
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\LARGE\bfseries AP Computer Science Principles \\ Summary\par}
+    \vspace{1cm}
+    {\large\href{https://rowi.dev/}{Robin Wiethüchter} (AI Assisted)\par}
+    \vspace{1cm}
+    {\large\today\par}
+    
+    \vspace{2cm}
+    
+    % Disclaimer box
+    \fbox{\parbox{0.8\textwidth}{
+    \centering
+    \large\textbf{DISCLAIMER: WORK IN PROGRESS}\\[0.5em]
+    \normalsize This document is currently under development. Sections may be incomplete, contain errors, or be subject to significant changes.
+    }}
+\end{titlepage}
 
 \frontmatter % Use frontmatter for ToC, etc.
 \tableofcontents
