@@ -822,6 +822,7 @@ Protecting computer systems, networks, and data from unauthorized access, attack
             \item \textbf{Phishing}: Tricking users into revealing sensitive information (passwords, credit card numbers) often via deceptive emails, messages, or websites designed to look legitimate. \hlc[hlred]{(Frequently Tested!)}
             \item \textbf{Denial-of-Service (DoS/DDoS) Attacks}: Overwhelming a system with traffic to make it unavailable to legitimate users.
             \item \textbf{Rogue Access Point}: An unauthorized wireless access point installed on a network, potentially allowing attackers to intercept traffic or gain unauthorized access.
+            \item \textbf{Keylogger}: Malware or hardware that records keystrokes entered on a keyboard, often used to steal passwords or other sensitive information.
             \item \textbf{Social Engineering}: Manipulating people to gain access or information.
         \end{itemize}
     \item \textbf{Countermeasures}:
@@ -830,7 +831,40 @@ Protecting computer systems, networks, and data from unauthorized access, attack
                 \begin{itemize}
                     \item \textbf{Multifactor Authentication (MFA)}: Enhances security by requiring two or more distinct pieces of evidence (factors) to verify identity (e.g., something you know like a password + something you have like a code from your phone).
                 \end{itemize}
-            \item \textbf{Encryption}: Scrambling data so it's unreadable without a key. Used for secure communication (HTTPS, WPA2) and data storage.
+            \item \textbf{Encryption}: Scrambling data (plaintext) into an unreadable format (ciphertext) using an algorithm and a secret key, so it's unintelligible without the key. Used for secure communication (HTTPS, WPA2) and data storage.
+                \begin{itemize}
+                    \item \textbf{Symmetric Key Encryption}: Uses the \textbf{same secret key} for both encryption and decryption. Faster, but requires a secure way to share the secret key beforehand between the sender and receiver.
+                    \item \textbf{Public Key (Asymmetric) Encryption}: Uses \textbf{two keys}: a \textit{public key} (shared freely) for encryption and a corresponding \textit{private key} (kept secret by the owner) for decryption. Anyone can encrypt a message using the recipient's public key, but only the recipient with the matching private key can decrypt it. This solves the key sharing problem of symmetric encryption but is computationally slower.
+                        \begin{itemize}
+                            \item \textbf{Public Key}: Can be shared with anyone without compromising security. Used to encrypt messages intended for the owner of the corresponding private key.
+                            \item \textbf{Private Key}: Must be kept secret by the owner. Used to decrypt messages encrypted with the corresponding public key.
+                        \end{itemize}
+                \end{itemize}
+            \begin{figure}[h!]
+                \centering
+                \begin{tikzpicture}[node distance=2cm and 1cm, every node/.style={draw, rounded corners, align=center}]
+                    % Nodes
+                    \node (Alice) {Alice};
+                    \node (Bob) [right=4cm of Alice] {Bob};
+                    \node (Message) [below left=0.5cm and -0.5cm of Alice] {Plaintext\Message};
+                    \node (Encrypt) [right=of Message] {Encrypt using\Bob's Public Key};
+                    \node (Ciphertext) [right=of Encrypt] {Ciphertext\(Unreadable)};
+                    \node (Decrypt) [right=of Ciphertext] {Decrypt using\Bob's Private Key};
+                    \node (Received) [below right=0.5cm and -0.5cm of Bob] {Plaintext\Message};
+                    
+                    % Arrows
+                    \draw[->] (Message) -- (Encrypt);
+                    \draw[->] (Encrypt) -- (Ciphertext);
+                    \draw[->] (Ciphertext) -- (Decrypt);
+                    \draw[->] (Decrypt) -- (Received);
+                    
+                    % Key indication (simplified)
+                    \node (PubKey) [above=0.2cm of Encrypt, draw=none] {Bob's Public Key \$\rightarrow$}; 
+                    \node (PrivKey) [above=0.2cm of Decrypt, draw=none] {Bob's Private Key \$\rightarrow$};
+                \end{tikzpicture}
+                \caption{Public Key Encryption Example: Alice encrypts a message using Bob's public key. Only Bob, with his corresponding private key, can decrypt it.}
+                \label{fig:public-key-encryption}
+            \end{figure}
             \item \textbf{Firewalls}: Network security systems that monitor and control incoming/outgoing traffic based on rules.
             \item \textbf{Software Updates}: Patching vulnerabilities discovered in software.
             \item \textbf{User Education}: Awareness about phishing and safe practices.
