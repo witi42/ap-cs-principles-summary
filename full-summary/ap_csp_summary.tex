@@ -157,6 +157,10 @@ Different types of errors exist:
     \item \textbf{Logic Errors}: The program runs but produces incorrect results because the algorithm or its implementation is flawed. These are often the hardest to find.
 \end{itemize}
 
+\textbf{Overflow Error}: Computers use a fixed number of bits (e.g., 8 bits) to represent numbers. This limits the largest value they can store (for 8 bits, often 255). An overflow error happens when a calculation's result is too large for the available bits. When this occurs, the result often "wraps around." For example, adding 1 to the maximum value might result in 0, or even a negative number if signed numbers are being used. This unexpected wrap-around leads to incorrect results.
+
+\textbf{Round-off Error}: Similarly, computers use a finite number of bits to represent real numbers (like decimals or fractions), which can have infinite precision. This means computers often store an \textit{approximation} rather than the exact value. This small difference is called a round-off error. While often tiny, these errors can accumulate during calculations, potentially leading to noticeable inaccuracies in the final result (e.g., 0.1 + 0.2 might be stored as something like 0.30000000000000004 instead of exactly 0.3).
+
 % =============================================
 % Chapter 2: Data
 % =============================================
@@ -181,7 +185,9 @@ Computers use binary internally, but humans often use other systems for convenie
     \item \textbf{Decimal (Base-10)}: The system we use daily, with digits 0-9. Each position represents a power of 10.
 \end{itemize}
 
-\textbf{Overflow Error}: Since computers use a fixed number of bits (like 8, 16, 32, 64) to store numbers, there's a maximum value they can represent. An overflow error occurs when a calculation produces a result that is larger than this maximum value, leading to incorrect results (often the number "wraps around"). For example, if the maximum is 255 (using 8 bits), calculating $250 + 10$ would cause an overflow.
+\textbf{Overflow Error}: Computers use a fixed number of bits (e.g., 8 bits) to represent numbers. This limits the largest value they can store (for 8 bits, often 255). An overflow error happens when a calculation's result is too large for the available bits. When this occurs, the result often "wraps around." For example, adding 1 to the maximum value might result in 0, or even a negative number if signed numbers are being used. This unexpected wrap-around leads to incorrect results.
+
+\textbf{Round-off Error}: Similarly, computers use a finite number of bits to represent real numbers (like decimals or fractions), which can have infinite precision. This means computers often store an \textit{approximation} rather than the exact value. This small difference is called a round-off error. While often tiny, these errors can accumulate during calculations, potentially leading to noticeable inaccuracies in the final result (e.g., 0.1 + 0.2 might be stored as something like 0.30000000000000004 instead of exactly 0.3).
 
 % Figure: Binary to Decimal Conversion (simplified to match image)
 \begin{figure}[h!]
@@ -217,7 +223,7 @@ Computers use binary internally, but humans often use other systems for convenie
         \node at (1,1) {0};
         \node at (2,1) {1};
         \node at (3,1) {1};
-        \node at (4.5,1) {$= 11_{10}$};
+        \node at (4.5,1) {$ = 11_{10}$};
         
         % Plus and second number
         \node at (-0.5,0) {$+$};
@@ -228,7 +234,7 @@ Computers use binary internally, but humans often use other systems for convenie
         \node at (2,0) {0};
         \node[text=red] at (3,0.5) {1};
         \node at (3,0) {1};
-        \node at (4.5,0) {$+13_{10}$};
+        \node at (4.5,0) {$ + 13_{10}$};
         
         % Line
         \draw (-0.5,-0.3) -- (3.5,-0.3);
@@ -239,35 +245,25 @@ Computers use binary internally, but humans often use other systems for convenie
         \node at (1,-1) {0};
         \node at (2,-1) {0};
         \node at (3,-1) {0};
-        \node at (4.5,-1) {$= 24_{10}$};
+        \node at (4.5,-1) {$ = 24_{10}$};
     \end{tikzpicture}
     \caption{Binary addition example (1011 + 1101 = 11000) showing carry bits in red}
     \label{fig:binary-addition}
 \end{figure}
 
-\section{Representing Data}
-\label{sec:representing_data}
-Data is encoded using bits to represent various types of information.
-
-\subsection*{Sampling and Quantization}
-\label{subsec:sampling}
-To represent continuous, real-world phenomena (like sound waves or visual scenes) digitally, we need to convert them into discrete values. This involves two main steps:
+\section{Sampling and Representing Analog Data}
+\label{sec:sampling}
+To represent continuous, real-world phenomena (like sound waves or visual scenes) digitally, we need to convert them into discrete values. This involves:
 \begin{itemize}
     \item \textbf{Sampling}: Measuring the phenomenon's value at regular intervals in either time (for sound) or space (for images). The \textbf{sampling rate} (or resolution) determines how frequently these measurements are taken. More samples generally lead to a more accurate representation but require more data.
-    \item \textbf{Quantization}: Assigning each sample a value from a finite set of possible values. This typically involves rounding the measured value to the nearest representable level. The number of levels is determined by the \textbf{bit depth} – the number of bits used to store each sample. A higher bit depth allows for finer distinctions (more levels) but increases data size.
 \end{itemize}
-This process inherently involves approximation, as the continuous reality is represented by discrete digital data.
+This process inherently involves approximation, as the continuous reality is represented by discrete digital data. The number of bits used to store each sample (bit depth) determines the level of detail or number of distinct values that can be represented.
 
-\subsection*{Common Data Types}
-\begin{itemize}
-    \item \textbf{Numbers}: Integers are represented using binary (like unsigned binary or two's complement for signed integers). Real numbers (floating-point) use formats like IEEE 754, involving a sign, mantissa, and exponent.
-    \item \textbf{Text}: Characters are mapped to numerical codes using standards like ASCII (7 or 8 bits per character) or Unicode (uses variable bits, supports many languages).
-    \item \textbf{Images}: Images are represented by sampling visual information across a 2D space. The image is divided into a grid of \textbf{pixels} (picture elements), each representing a sample point. For each pixel, color information is quantized, often using RGB (Red, Green, Blue) values, each with a certain bit depth. Image file formats (JPEG, PNG, GIF) use different encoding and compression techniques.
-        \begin{itemize}
-            \item Metadata: Image files often contain metadata (data about data), like camera settings, location, date, dimensions.
-        \end{itemize}
-    \item \textbf{Sound}: Sound is represented by sampling an analog sound wave's amplitude at regular time intervals (the sampling rate). Each sample's amplitude is then quantized based on the bit depth. Higher sampling rates and bit depths capture the original sound more accurately, resulting in higher fidelity but larger file sizes.
-\end{itemize}
+\subsection*{Representing Images}
+Images are represented by sampling visual information across a 2D space. The image is divided into a grid of \textbf{pixels} (picture elements), each representing a sample point. For each pixel, color information is captured, often using RGB (Red, Green, Blue) values, each stored with a certain number of bits (bit depth) to represent different color intensities. Image file formats (JPEG, PNG, GIF) use different encoding and compression techniques.
+
+\subsection*{Representing Sound}
+Sound is represented by sampling an analog sound wave's amplitude (height) at regular time intervals (the sampling rate). Each sample's amplitude is then stored using a specific number of bits (bit depth). Higher sampling rates and bit depths capture the original sound more accurately, resulting in higher fidelity but larger file sizes.
 
 \section{Data Compression}
 \label{sec:data_compression}
@@ -343,7 +339,16 @@ Variables are named storage locations for data values that can change during pro
     \end{lstlisting}
     \item \textbf{Naming}: Meaningful variable names (e.g., \texttt{totalScore} instead of just \texttt{s}) significantly improve code readability and understanding.
 \end{itemize}
-Strings, like `message` above, are sequences of characters. Common operations on strings include concatenation (joining strings), finding the length, and extracting substrings.
+
+\subsection*{Common Data Types in Programming}
+Variables hold different kinds of data, known as data types. Common types include:
+\begin{itemize}
+    \item \textbf{Numbers}: Used for mathematical values. Can be integers (whole numbers, like `5`, `-10`) or real numbers (with decimals, like `3.14`). Internally represented using binary (see Section \ref{sec:number_systems}). Be aware of potential \textbf{overflow} and \textbf{round-off errors} (Section \ref{sec:number_systems}).
+    \item \textbf{Text (Strings)}: Sequences of characters (letters, numbers, symbols) enclosed in quotes, like `"Hello"` or `"CSP2024"`. Characters are represented internally using standards like ASCII or Unicode.
+    \item \textbf{Booleans}: Represent logical values, either `true` or `false`. Essential for making decisions in programs (see Section \ref{sec:control_structures}).
+    \item \textbf{Lists (Arrays)}: Ordered collections of items, which can be of any data type (including other lists). Covered in detail in Section \ref{sec:lists}.
+\end{itemize}
+The type of data determines the operations that can be performed on it (e.g., you can do arithmetic on numbers, but not directly on strings).
 
 \section{Mathematical and Logical Expressions}
 \label{sec:expressions}
@@ -621,12 +626,12 @@ These three structures (Sequence, Selection, Iteration) are the fundamental buil
 \section{Algorithms}
 \label{sec:algorithms}
 An algorithm is a finite sequence of well-defined, computer-implementable instructions to solve a class of problems or perform a computation.
-\begin{itemize}
-    \item \textbf{Clarity}: Steps must be unambiguous.
-    \item \textbf{Effectiveness}: Steps must be executable.
-    \item \textbf{Finiteness}: Must eventually terminate.
-    \item \textbf{Correctness}: Must produce the correct output for all valid inputs.
-\end{itemize}
+% \begin{itemize}
+%     \item \textbf{Clarity}: Steps must be unambiguous.
+%     \item \textbf{Effectiveness}: Steps must be executable.
+%     \item \textbf{Finiteness}: Must eventually terminate.
+%     \item \textbf{Correctness}: Must produce the correct output for all valid inputs.
+% \end{itemize}
 Algorithms can be expressed in natural language, flowcharts, or pseudocode before being implemented in a programming language.
 
 \section{Procedures (Functions/Methods)}
