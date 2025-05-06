@@ -188,7 +188,7 @@ Computers store, process, and transmit information digitally using binary data. 
 The fundamental unit of digital information is the \textbf{bit} (binary digit), which can represent one of two states: 0 or 1. Bits are grouped together to represent more complex data.
 \begin{itemize}
     \item \textbf{Byte}: A group of 8 bits. A common unit for measuring data size.
-    \item \textbf{Number of States}: With $n$ bits, you can represent $2^n$ distinct states or values. For example, 8 bits (1 byte) can represent $2^8 = 256$ different values (often 0-255).
+    \item \textbf{Number of States}: With $n$ bits, you can represent $2^n$ distinct states or values. For example, 8 bits (1 byte) can represent $2^8 = 256$ different values (often 0-255). Adding one more bit doubles the number of possible values.
 \end{itemize}
 
 \section{Number Systems}
@@ -296,7 +296,8 @@ Large datasets can reveal patterns, trends, and insights not obvious from indivi
     \item \textbf{Sorting}: Arranging data in a specific order (e.g., alphabetically, numerically).
     \item \textbf{Aggregation}: Summarizing data (e.g., calculating averages, sums, counts).
     \item \textbf{Visualization}: Creating charts and graphs (bar charts, scatter plots, heat maps) to make patterns easier to understand.
-    \item \textbf{Data Mining / Machine Learning}: Using algorithms to discover complex patterns, make predictions, or classify data automatically.
+    \item \textbf{Data Mining}: Using algorithms to discover complex patterns and relationships in large datasets.
+    \item \textbf{Machine Learning}: Using algorithms that can learn from data to make predictions or classify information automatically.
 \end{itemize}
 Computers are essential for processing large datasets efficiently. These extraction techniques are often implemented using programming algorithms that iterate through data structures like lists (see Section \ref{sec:lists}) to filter, aggregate, or transform information based on specific criteria.
 
@@ -323,7 +324,7 @@ Collecting and storing digital data raises significant concerns:
 \begin{itemize}
     \item \textbf{Security}: Protecting data from unauthorized access, modification, or destruction (e.g., using passwords, encryption, firewalls).
     \item \textbf{Privacy}: Controlling how personal information is collected, used, and shared. This includes issues like data breaches, surveillance, and PII (Personally Identifiable Information).
-    \item \textbf{Anonymization}: Removing PII from datasets to protect privacy while still allowing analysis. However, re-identification can sometimes be possible by combining anonymized data with other sources.
+    \item \textbf{Anonymization}: Removing PII (Personal Identifiable Information, i.e., name, address, phone number, etc.) from datasets to protect privacy while still allowing analysis. However, re-identification can sometimes be possible by combining anonymized data with other sources.
     \item \textbf{Metadata Concerns}: Even metadata (e.g., file creation times, locations in photos) can reveal sensitive information.
 \end{itemize}
 
@@ -393,7 +394,7 @@ average <- (a + b + c) / 3 // Parentheses ensure addition happens before divisio
 \toprule
 \textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
 \midrule
-\hlc[hlyellow]{==} (often) & \hlc[hlyellow]{=} & Equal to \\
+\hlc[hlyellow]{==} & \hlc[hlyellow]{=} & Equal to \\
 \hlc[hlyellow]{!=} & \hlc[hlyellow]{$\neq$} & Not equal to \\
 \hlc[hlyellow]{>} & \hlc[hlyellow]{>} & Greater than \\
 \hlc[hlyellow]{<} & \hlc[hlyellow]{<} & Less than \\
@@ -409,9 +410,9 @@ average <- (a + b + c) / 3 // Parentheses ensure addition happens before divisio
 \toprule
 \textbf{Code Symbol} & \textbf{AP Symbol} & \textbf{Meaning} \\
 \midrule
-\hlc[hlred]{\&\&} (often) & \hlc[hlred]{AND} & Logical AND (true only if \textit{both} operands are true) \\
-\hlc[hlred]{||} (often) & \hlc[hlred]{OR} & Logical OR (true if \textit{at least one} operand is true) \\
-\hlc[hlred]{!} (often) & \hlc[hlred]{NOT} & Logical NOT (evaluates to true if the operand is false, and vice versa) \\
+\hlc[hlred]{\&\&} & \hlc[hlred]{AND} & Logical AND (true only if \textit{both} operands are true) \\
+\hlc[hlred]{||} & \hlc[hlred]{OR} & Logical OR (true if \textit{at least one} operand is true) \\
+\hlc[hlred]{!} & \hlc[hlred]{NOT} & Logical NOT (evaluates to true if the operand is false, and vice versa) \\
 \bottomrule
 \end{tabularx}
 
@@ -951,17 +952,17 @@ Computing raises complex legal and ethical questions:
     \item \textbf{Ethical Use}: Considering the potential consequences of technology and using it responsibly.
 \end{itemize}
 
-\section{Safe Computing}
-\label{sec:safe_computing}
-Refers to practices for protecting oneself and one's data online.
-\begin{itemize}
-    \item \textbf{Strong Passwords \& Authentication}: Using unique, complex passwords and enabling multi-factor authentication where possible.
-    \item \textbf{Recognizing Phishing}: Being wary of suspicious emails, links, or requests for personal information.
-    \item \textbf{Secure Connections}: Using HTTPS websites (look for the padlock) and being cautious on public Wi-Fi.
-    \item \textbf{Software Updates}: Keeping operating systems and applications updated to patch security vulnerabilities.
-    \item \textbf{Data Backups}: Regularly backing up important files.
-    \item \textbf{Privacy Settings}: Reviewing and adjusting privacy settings on social media and other online accounts.
-    \item \textbf{Sharing Appropriately}: Being mindful of what personal information is shared online.
-\end{itemize}
+% \section{Safe Computing}
+% \label{sec:safe_computing}
+% Refers to practices for protecting oneself and one's data online.
+% \begin{itemize}
+%     \item \textbf{Strong Passwords \& Authentication}: Using unique, complex passwords and enabling multi-factor authentication where possible.
+%     \item \textbf{Recognizing Phishing}: Being wary of suspicious emails, links, or requests for personal information.
+%     \item \textbf{Secure Connections}: Using HTTPS websites (look for the padlock) and being cautious on public Wi-Fi.
+%     \item \textbf{Software Updates}: Keeping operating systems and applications updated to patch security vulnerabilities.
+%     \item \textbf{Data Backups}: Regularly backing up important files.
+%     \item \textbf{Privacy Settings}: Reviewing and adjusting privacy settings on social media and other online accounts.
+%     \item \textbf{Sharing Appropriately}: Being mindful of what personal information is shared online.
+% \end{itemize}
 
 \end{document} 
