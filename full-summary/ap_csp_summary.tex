@@ -720,17 +720,55 @@ DISPLAY(average)
 Comparing algorithms that solve the same problem.
 \begin{itemize}
     \item \textbf{Correctness}: Does the algorithm always produce the correct result?
-    \item \textbf{Efficiency}: How many resources (time, memory) does the algorithm use, especially as the input size grows? Measured often using Big O notation (though not explicitly required by CSP, understanding relative efficiency is).
+    \item \textbf{Efficiency}: How many resources (primarily time, measured often by the number of steps relative to the input size) does the algorithm use, especially as the input size grows?
     \item \textbf{Readability/Simplicity}: Is the algorithm easy to understand and implement?
 \end{itemize}
-Different algorithms can have vastly different efficiencies. For example, linear search vs. binary search (requires sorted list).
-\begin{itemize}
-    \item \textbf{Linear Search}: Checks each element sequentially. Reasonable for small or unsorted lists. In the worst case, it takes a number of steps proportional to the size of the list (approximately n steps if the list has n items).
-    \item \textbf{Binary Search}: Efficiently finds items in \textit{sorted} lists by repeatedly dividing the search interval in half. It compares the target value to the middle element; if they don't match, it eliminates half the list where the item cannot be and repeats the process on the remaining half. Much faster than linear search for large lists, taking significantly fewer steps (proportional to log n steps) for a list of size n.
-\end{itemize}
-\textbf{Heuristics}: Sometimes, finding an exact, optimal solution is too slow (computationally intractable). A heuristic is an approach that finds an approximate solution that is "good enough" for practical purposes, often much faster.
 
-\textbf{Undecidable Problem}: A problem for which no algorithm can be constructed that always leads to a correct yes-or-no answer for every possible input (e.g., the Halting Problem - determining whether an arbitrary program will eventually stop running or continue forever).
+Efficiency is crucial when dealing with large inputs. We categorize algorithms based on how their runtime grows with the input size:
+
+\begin{itemize}
+    \item \textbf{Reasonable Time}: Algorithms whose runtime grows polynomially (or slower) with the input size. These algorithms remain practical even for relatively large inputs. Examples include logarithmic, linear, and polynomial growth rates.
+    \item \textbf{Unreasonable Time}: Algorithms whose runtime grows extremely fast (e.g., exponentially or factorially) with the input size. While correct, these algorithms quickly become impractical for all but the smallest inputs.
+\end{itemize}
+
+\subsubsection*{Common Algorithm Examples and Efficiency}
+Different algorithms solving the same problem can have vastly different efficiencies.
+
+\begin{itemize}
+    \item \textbf{Linear Search}: Checks each element in a list sequentially until the target is found or the list ends.
+        \begin{itemize}
+            \item \textbf{Efficiency}: Reasonable. In the worst case, it takes a number of steps roughly proportional to the size of the list (approximately $n$ steps if the list has $n$ items). Suitable for small or unsorted lists.
+        \end{itemize}
+    \item \textbf{Binary Search}: Efficiently finds items in a \textit{sorted} list by repeatedly dividing the search interval in half. It compares the target value to the middle element; if they don't match, it eliminates half the list where the item cannot be and repeats the process on the remaining half.
+        \begin{itemize}
+            \item \textbf{Efficiency}: Reasonable. Much faster than linear search for large lists. The number of steps grows very slowly compared to the list size (proportional to $\log n$ steps for a list of size $n$). Requires the list to be sorted first.
+        \end{itemize}
+    \item \textbf{Traveling Salesman Problem (TSP) - Brute Force}: The problem is to find the shortest possible route that visits each city in a given list exactly once and returns to the starting city. A brute-force algorithm checks every possible route.
+        \begin{itemize}
+            \item \textbf{Efficiency}: Unreasonable. The number of possible routes grows factorially ($n!$) with the number of cities ($n$). This becomes computationally infeasible extremely quickly, even for a moderate number of cities (e.g., 20 cities have $20! \approx 2.4 \times 10^{18}$ possible routes).
+        \end{itemize}
+\end{itemize}
+
+\subsubsection*{Runtime Classification Table}
+
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Classification} & \textbf{Example Growth Rate} & \textbf{Description} \\
+\midrule
+\textbf{Reasonable} & & \\
+\hspace{1em} Logarithmic & $\log n$, $5 \times \log n$ & Very efficient; runtime increases very slowly as input size grows (e.g., Binary Search). \\
+\hspace{1em} Linear & $n$, $2n + 5$ & Runtime grows directly proportional to input size (e.g., Linear Search). \\
+\hspace{1em} Polynomial & $n^2$, $n^3 + n$, $10n^2$ & Runtime grows faster but still manageable for moderately large inputs (e.g., many basic sorting algorithms). \\
+\midrule
+\textbf{Unreasonable} & & \\
+\hspace{1em} Exponential & $2^n$, $1.5^n + n^2$ & Runtime grows extremely rapidly; impractical for large inputs. \\
+\hspace{1em} Factorial & $n!$ & Runtime grows even faster than exponential; only feasible for very small inputs (e.g., Brute-force TSP). \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Heuristics}: Sometimes, finding an exact, optimal solution using a reasonable time algorithm is not known or practical (especially for problems where the best known exact solutions run in unreasonable time, like TSP). A \textbf{heuristic} is an approach that finds an \textit{approximate} solution that is "good enough" for practical purposes, often much faster than finding the perfect solution. It's a shortcut or rule of thumb used when an exact solution is too hard or slow to find.
+
+\textbf{Undecidable Problem}: A problem for which no algorithm can ever be constructed that always leads to a correct yes-or-no answer for every possible input (e.g., the Halting Problem - determining whether an arbitrary program will eventually stop running or continue forever).
 
 \section{Simulations}
 \label{sec:simulations}
