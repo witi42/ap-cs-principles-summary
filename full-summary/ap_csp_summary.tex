@@ -32,6 +32,7 @@
 \definecolor{codeblue}{rgb}{0,0,0.9} % New dark blue for keywords
 \definecolor{codeorange}{rgb}{0.8,0.4,0} % New orange for function names
 \definecolor{commentcolor}{rgb}{0.5,0.5,0.5} % Grey for comments
+\definecolor{outputback}{rgb}{0.9,0.95,0.9} % Light green for output boxes
 
 % --- Define AP CSP pseudocode language ---
 \lstdefinelanguage{APCSP}{
@@ -63,6 +64,10 @@
     showtabs=false,
     tabsize=2,
     mathescape=true, % Added to allow math mode in listings
+    literate={<-}{$\leftarrow$}2 % Auto-replace with AP CSP symbols
+             {>=}{$\geq$}1
+             {<=}{$\leq$}1
+             {!=}{$\neq$}1,
 }
 
 % Apply style globally and set the default language
@@ -76,6 +81,20 @@
     colback=blue!5!white,
     colframe=blue!75!black,
     fonttitle=\bfseries
+}
+
+% Output box for showing program output
+\newtcolorbox{outputbox}{
+    colback=outputback,
+    colframe=green!40!black,
+    fonttitle=\bfseries,
+    title=Output,
+    boxrule=0.5pt,
+    arc=2pt,
+    left=5pt,
+    right=5pt,
+    top=2pt,
+    bottom=2pt
 }
 
 % --- Title Formatting ---
@@ -103,7 +122,7 @@
 % --- Document Title ---
 % Removed helper commands, placing text directly
 \title{AP Computer Science Principles \\ Summary}
-\author{\href{https://rowi.dev/}{Robin Wiethüchter} (AI Assisted)}
+\author{\href{https://rowi.dev/}{Robin Wiethüchter}}
 \date{\today}
 
 % --- Document Start ---
@@ -115,7 +134,7 @@
     
     {\LARGE\bfseries AP Computer Science Principles \\ Summary\par}
     \vspace{1cm}
-    {\large\href{https://rowi.dev/}{Robin Wiethüchter} (AI Assisted)\par}
+    {\large\href{https://rowi.dev/}{Robin Wiethüchter}\par}
     \vspace{1cm}
     {\large\today\par}
     
@@ -331,8 +350,12 @@ FOR EACH score IN allScores
 }
 
 DISPLAY("High scores found:")
-DISPLAY(highScores) // Output: [92, 95, 100]
+DISPLAY(highScores)
 \end{lstlisting}
+\begin{outputbox}
+\texttt{High scores found:}\\
+\texttt{[92, 95, 100]}
+\end{outputbox}
 
 \section{Digital Data Security and Privacy}
 \label{sec:data_security_privacy}
@@ -357,7 +380,7 @@ Programming enables us to implement algorithms that solve problems. This involve
 Variables are named storage locations for data values that can change during program execution. You can think of a variable as a box with a label on it. We can look at what value is in the box or put a new value in the box.
 
 \begin{itemize}
-\item \textbf{Declaration/Assignment}: In AP Pseudocode, variables are often declared implicitly when they are first assigned a value using the assignment operator (<-). In other languages, you might need to declare the type first.
+\item \textbf{Declaration/Assignment}: In AP Pseudocode, variables are often declared implicitly when they are first assigned a value using the assignment operator ($\leftarrow$). In other languages, you might need to declare the type first.
 \begin{lstlisting}[language=APCSP, label={lst:assignment_detail}, caption={AP Pseudocode: Assignment Examples}]
 x <- 5          // Assigns the value 5 to variable x
 y <- 10
@@ -458,7 +481,7 @@ Different programming languages may use different symbols for the same operation
 \toprule
 \textbf{Operation} & \textbf{Common Code (e.g., JS)} & \textbf{AP Pseudocode} \\
 \midrule
-Assignment & x = 5 & x <- 5 \\
+Assignment & x = 5 & x $\leftarrow$ 5 \\
 Equal to & \hlc[hlyellow]{a == b} & \hlc[hlyellow]{a = b} \\
 Not Equal to & \hlc[hlyellow]{a != b} & \hlc[hlyellow]{a $\neq$ b} \\
 Logical OR & \hlc[hlred]{a || b} & \hlc[hlred]{a OR b} \\
@@ -491,11 +514,14 @@ IF (condition)
 Example:
 \begin{lstlisting}[language=APCSP]
 score <- 100
-IF (score = 100) // Note: AP uses = for comparison
+IF (score = 100)
 {
     DISPLAY("Perfect score!")
 }
 \end{lstlisting}
+\begin{outputbox}
+\texttt{Perfect score!}
+\end{outputbox}
 
 \subsubsection*{IF-ELSE Statement}
 Executes one block of code if the condition is true, and a different block if the condition is false.
@@ -520,9 +546,12 @@ IF (temperature > 20)
 }
 ELSE
 {
-    DISPLAY("It's cool.") // This will be displayed
+    DISPLAY("It's cool.")
 }
 \end{lstlisting}
+\begin{outputbox}
+\texttt{It's cool.}
+\end{outputbox}
 
 \subsubsection*{IF - ELSE IF - ELSE Statement}
 Checks multiple conditions in order. The first condition that evaluates to true has its corresponding block executed. If none are true, the optional \texttt{ELSE} block is executed.
@@ -565,6 +594,9 @@ ELSE
 }
 DISPLAY(grade)
 \end{lstlisting}
+\begin{outputbox}
+\texttt{B}
+\end{outputbox}
 \textbf{Important:} Only one block (the first one whose condition is met) in an IF-ELSE IF-...-ELSE structure will execute.
 
 \subsubsection*{Multiple Independent IF Statements}
@@ -587,8 +619,11 @@ IF (score >= 100) // Condition is true
 {
     count <- count + 1 // count becomes 4
 }
-DISPLAY(count) // Displays 4
+DISPLAY(count)
 \end{lstlisting}
+\begin{outputbox}
+\texttt{4}
+\end{outputbox}
 Here, multiple IF blocks can execute if their respective conditions are true.
 
 \subsubsection*{Nested Conditionals}
@@ -615,8 +650,12 @@ ELSE
 {
     grade <- "Incomplete"
 }
-DISPLAY(grade) // Displays "A"
+DISPLAY(grade)
 \end{lstlisting}
+\begin{outputbox}
+\texttt{Checking score because homework is complete...}\\
+\texttt{A}
+\end{outputbox}
 Indentation helps visualize the structure of nested blocks.
 
 \subsection*{Iteration / Loops (Detailed)}
@@ -628,9 +667,16 @@ count <- 0
 REPEAT 5 TIMES
 {
     count <- count + 1
-    DISPLAY(count) // Displays 1, 2, 3, 4, 5
+    DISPLAY(count)
 }
 \end{lstlisting}
+\begin{outputbox}
+\texttt{1}\\
+\texttt{2}\\
+\texttt{3}\\
+\texttt{4}\\
+\texttt{5}
+\end{outputbox}
 \item \textbf{\texttt{REPEAT UNTIL (condition)}}: Executes the block \textit{first}, then checks the condition. Repeats as long as the condition is \texttt{false}. The block always executes at least once.\\[1ex]
 \begin{lstlisting}[language=APCSP, label={lst:repeat_until_detail}, caption={AP Pseudocode: REPEAT UNTIL}]
 input <- ""
@@ -651,6 +697,11 @@ FOR EACH name IN names
     DISPLAY("Hello, " + name)
 }
 \end{lstlisting}
+\begin{outputbox}
+\texttt{Hello, Alice}\\
+\texttt{Hello, Bob}\\
+\texttt{Hello, Charlie}
+\end{outputbox}
 \end{itemize}
 These three structures (Sequence, Selection, Iteration) are the fundamental building blocks for constructing any algorithm.
 
@@ -691,19 +742,99 @@ roomArea <- calculateArea(roomLength, roomWidth)
 DISPLAY("The area is: ")
 DISPLAY(roomArea)
 \end{lstlisting}
+\begin{outputbox}
+\texttt{The area is: }\\
+\texttt{80}
+\end{outputbox}
 When `calculateArea` is called, the value of `roomLength` (10) is passed as the argument for the `length` parameter, and `roomWidth` (8) is passed as the argument for the `width` parameter. Inside the procedure, these values are used to calculate `area`. The `RETURN(area)` statement sends the calculated value (80) back to where the procedure was called. This returned value is then assigned to the `roomArea` variable.
 
 \section{Lists (Arrays)}
 \label{sec:lists}
-Lists (or arrays in some languages) are ordered collections of items (elements). AP Pseudocode uses 1-based indexing.
+Lists (or arrays in some languages) are ordered collections of items (elements). They allow you to store multiple values under a single variable name.
+
+\subsection*{List Indexing: AP CSP Uses 1-Based Indexing}
+\textbf{Important:} AP Pseudocode uses \textbf{1-based indexing}, meaning the first element is at index 1. This differs from most programming languages (like JavaScript and Python) which use 0-based indexing where the first element is at index 0.
+
+% Visual representation of a list with indexes
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % List elements
+        \foreach \i/\val in {0/"Apple",1/"Banana",2/"Cherry",3/"Date"} {
+            \draw (\i*2.2,0) rectangle ++(2,1);
+            \node at (\i*2.2+1,0.5) {\val};
+        }
+        % AP CSP indexes (1-based)
+        \node at (-0.8,-0.5) {\textbf{AP CSP:}};
+        \foreach \i/\idx in {0/1,1/2,2/3,3/4} {
+            \node[text=blue] at (\i*2.2+1,-0.5) {\texttt{[\idx]}};
+        }
+        % Most languages indexes (0-based)
+        \node at (-0.8,-1.2) {\textbf{JS/Python:}};
+        \foreach \i/\idx in {0/0,1/1,2/2,3/3} {
+            \node[text=red] at (\i*2.2+1,-1.2) {\texttt{[\idx]}};
+        }
+    \end{tikzpicture}
+    \caption{List indexing comparison: AP CSP starts at 1, while JavaScript and Python start at 0}
+    \label{fig:list-indexing}
+\end{figure}
+
+\subsection*{Creating and Accessing Lists}
 \begin{itemize}
     \item \textbf{Creating Lists}: \texttt{myList <- [item1, item2, item3]}
     \item \textbf{Accessing Elements}: By index. \texttt{firstItem <- myList[1]}, \texttt{thirdItem <- myList[3]}
     \item \textbf{Modifying Elements}: \texttt{myList[2] <- newItem}
     \item \textbf{Length}: Finding the number of elements. \texttt{len <- LENGTH(myList)}
-    \item \textbf{Common Operations}: Adding items (\texttt{APPEND}), removing items (\texttt{REMOVE}), inserting items (\texttt{INSERT}).
-    \item \textbf{Iteration with Lists}: Using \texttt{FOR EACH}.
-    \begin{lstlisting}[language=APCSP, label={lst:list_iteration}, caption={AP Pseudocode: List Iteration}]
+\end{itemize}
+
+\begin{lstlisting}[language=APCSP, caption={AP Pseudocode: Creating and Accessing Lists}]
+fruits <- ["Apple", "Banana", "Cherry", "Date"]
+first <- fruits[1]
+DISPLAY(first)
+\end{lstlisting}
+\begin{outputbox}
+\texttt{Apple}
+\end{outputbox}
+
+\subsection*{List Operations}
+AP Pseudocode provides several built-in operations for manipulating lists:
+
+\begin{tabularx}{\textwidth}{>{\ttfamily}l X}
+\toprule
+\textbf{Operation} & \textbf{Description} \\
+\midrule
+APPEND(list, value) & Adds \texttt{value} to the end of \texttt{list} \\
+INSERT(list, i, value) & Inserts \texttt{value} at index \texttt{i}, shifting elements to the right \\
+REMOVE(list, i) & Removes the element at index \texttt{i}, shifting elements to the left \\
+LENGTH(list) & Returns the number of elements in \texttt{list} \\
+\bottomrule
+\end{tabularx}
+
+\begin{lstlisting}[language=APCSP, caption={AP Pseudocode: List Operations}]
+colors <- ["Red", "Blue"]
+
+APPEND(colors, "Green")
+DISPLAY(colors)
+
+INSERT(colors, 2, "Yellow")
+DISPLAY(colors)
+
+REMOVE(colors, 1)
+DISPLAY(colors)
+
+DISPLAY(LENGTH(colors))
+\end{lstlisting}
+\begin{outputbox}
+\texttt{["Red", "Blue", "Green"]}\\
+\texttt{["Red", "Yellow", "Blue", "Green"]}\\
+\texttt{["Yellow", "Blue", "Green"]}\\
+\texttt{3}
+\end{outputbox}
+
+\subsection*{Iteration with FOR EACH}
+The \texttt{FOR EACH} loop iterates through each element in a list sequentially. The loop variable takes on the value of each element (not the index).
+
+\begin{lstlisting}[language=APCSP, caption={AP Pseudocode: FOR EACH Loop}]
 scores <- [85, 92, 78, 95]
 sum <- 0
 FOR EACH score IN scores
@@ -711,9 +842,15 @@ FOR EACH score IN scores
     sum <- sum + score
 }
 average <- sum / LENGTH(scores)
-DISPLAY(average)
+DISPLAY("Sum: " + sum)
+DISPLAY("Average: " + average)
 \end{lstlisting}
-\end{itemize}
+\begin{outputbox}
+\texttt{Sum: 350}\\
+\texttt{Average: 87.5}
+\end{outputbox}
+
+\textbf{Note:} In a \texttt{FOR EACH} loop, the loop variable (\texttt{score} in the example above) holds the \textit{value} of the current element, not its index. If you need the index, you would use a counter variable with a \texttt{REPEAT} loop instead.
 
 \section{Algorithm Analysis}
 \label{sec:algorithm_analysis}
@@ -769,6 +906,69 @@ Different algorithms solving the same problem can have vastly different efficien
 \textbf{Heuristics}: Sometimes, finding an exact, optimal solution using a reasonable time algorithm is not known or practical (especially for problems where the best known exact solutions run in unreasonable time, like TSP). A \textbf{heuristic} is an approach that finds an \textit{approximate} solution that is "good enough" for practical purposes, often much faster than finding the perfect solution. It's a shortcut or rule of thumb used when an exact solution is too hard or slow to find.
 
 \textbf{Undecidable Problem}: A problem for which no algorithm can ever be constructed that always leads to a correct yes-or-no answer for every possible input (e.g., the Halting Problem - determining whether an arbitrary program will eventually stop running or continue forever).
+
+\section{Language Comparison: AP CSP vs JavaScript vs Python}
+\label{sec:language_comparison}
+Different programming languages use different syntax for the same concepts. Here is a comparison of common operations:
+
+\subsection*{Assignment and Basic Operations}
+\begin{tabularx}{\textwidth}{l >{\ttfamily\small}l >{\ttfamily\small}l >{\ttfamily\small}l}
+\toprule
+\textbf{Operation} & \textbf{AP CSP} & \textbf{JavaScript} & \textbf{Python} \\
+\midrule
+Assignment & x $\leftarrow$ 5 & x = 5 & x = 5 \\
+Equality & a = b & a == b & a == b \\
+Not equal & a $\neq$ b & a != b & a != b \\
+Greater/Less & >, <, $\geq$, $\leq$ & >, <, >=, <= & >, <, >=, <= \\
+Logical AND & a AND b & a \&\& b & a and b \\
+Logical OR & a OR b & a || b & a or b \\
+Logical NOT & NOT a & !a & not a \\
+Modulus & a MOD b & a \% b & a \% b \\
+\bottomrule
+\end{tabularx}
+
+\subsection*{Procedures and Functions}
+\begin{tabularx}{\textwidth}{l >{\ttfamily\small}l >{\ttfamily\small}l >{\ttfamily\small}l}
+\toprule
+\textbf{Concept} & \textbf{AP CSP} & \textbf{JavaScript} & \textbf{Python} \\
+\midrule
+Define & PROCEDURE name() & function name() \{\} & def name(): \\
+With params & PROCEDURE f(a, b) & function f(a, b) \{\} & def f(a, b): \\
+Return value & RETURN(value) & return value & return value \\
+Call & name() & name() & name() \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Note:} AP CSP uses the term ``procedure'' for all callable blocks of code. JavaScript and Python distinguish between functions (which return values) and procedures/methods (which may not), but in practice both terms are often used interchangeably.
+
+\subsection*{Lists and Indexing}
+\begin{tabularx}{\textwidth}{l >{\ttfamily\small}l >{\ttfamily\small}l >{\ttfamily\small}l}
+\toprule
+\textbf{Operation} & \textbf{AP CSP} & \textbf{JavaScript} & \textbf{Python} \\
+\midrule
+Create list & [1, 2, 3] & [1, 2, 3] & [1, 2, 3] \\
+First index & \textbf{1} & \textbf{0} & \textbf{0} \\
+Access first & list[1] & list[0] & list[0] \\
+Access last & list[LENGTH(list)] & list[list.length-1] & list[-1] \\
+Length & LENGTH(list) & list.length & len(list) \\
+Append & APPEND(list, val) & list.push(val) & list.append(val) \\
+Remove at i & REMOVE(list, i) & list.splice(i-1, 1) & list.pop(i) \\
+Insert at i & INSERT(list, i, val) & list.splice(i-1, 0, val) & list.insert(i, val) \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Important:} Remember that AP CSP uses \textbf{1-based indexing} while JavaScript and Python use \textbf{0-based indexing}. This is a common source of errors when translating between them.
+
+\subsection*{Loops}
+\begin{tabularx}{\textwidth}{l >{\ttfamily\small}l >{\ttfamily\small}l >{\ttfamily\small}l}
+\toprule
+\textbf{Loop Type} & \textbf{AP CSP} & \textbf{JavaScript} & \textbf{Python} \\
+\midrule
+Repeat n times & REPEAT n TIMES & for(let i=0; i<n; i++) & for i in range(n): \\
+For each & FOR EACH x IN list & for(let x of list) & for x in list: \\
+Repeat until & REPEAT UNTIL(cond) & while(!cond) \{\} & while not cond: \\
+\bottomrule
+\end{tabularx}
 
 \section{Simulations}
 \label{sec:simulations}

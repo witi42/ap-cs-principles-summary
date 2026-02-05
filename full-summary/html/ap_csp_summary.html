@@ -1,0 +1,1457 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title></title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='ap_csp_summary.css' rel='stylesheet' type='text/css' /> 
+<meta content='ap_csp_summary.tex' name='src' /> 
+</head><body>
+                                                                                         
+                                                                                         
+<!-- l. 131 --><p class='indent'>
+                                                                                         
+                                                                                         
+</p><!-- l. 135 --><p class='noindent'><span class='cmbx-12x-x-144'>AP Computer Science Principles</span><br />
+<span class='cmbx-12x-x-144'>Summary</span>
+</p><!-- l. 137 --><p class='noindent'> <a href='https://rowi.dev/'><span class='cmr-12'>Robin Wiethüchter</span></a>
+</p><!-- l. 139 --><p class='noindent'><span class='cmr-12'>February 5, 2026</span>
+</p>
+<div class='fbox'><span class='cmbx-12'>DISCLAIMER: WORK IN PROGRESS</span><br />
+This document is currently under development. Sections may be incomplete,
+contain errors, or be subject to significant changes.                         </div>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+   <h2 class='likechapterHead' id='contents'><a id='x1-1000'></a>Contents</h2>
+   <div class='tableofcontents'>
+   <span class='chapterToc'>1 <a href='#big-idea-creative-development' id='QQ2-1-2'>Big Idea 1: Creative Development</a></span>
+<br />   <span class='sectionToc'>1.1 <a href='#collaboration' id='QQ2-1-3'>Collaboration</a></span>
+<br />   <span class='sectionToc'>1.2 <a href='#program-function-and-purpose' id='QQ2-1-4'>Program Function and Purpose</a></span>
+<br />   <span class='sectionToc'>1.3 <a href='#program-design-and-development' id='QQ2-1-5'>Program Design and Development</a></span>
+<br />   <span class='sectionToc'>1.4 <a href='#identifying-and-correcting-errors-debugging' id='QQ2-1-6'>Identifying and Correcting Errors (Debugging)</a></span>
+<br />   <span class='chapterToc'>2 <a href='#big-idea-data' id='QQ2-1-7'>Big Idea 2: Data</a></span>
+<br />   <span class='sectionToc'>2.1 <a href='#bits-and-bytes' id='QQ2-1-8'>Bits and Bytes</a></span>
+<br />   <span class='sectionToc'>2.2 <a href='#number-systems' id='QQ2-1-9'>Number Systems</a></span>
+<br />   <span class='sectionToc'>2.3 <a href='#sampling-and-representing-analog-data' id='QQ2-1-12'>Sampling and Representing Analog Data</a></span>
+<br />   <span class='sectionToc'>2.4 <a href='#data-compression' id='QQ2-1-15'>Data Compression</a></span>
+<br />   <span class='sectionToc'>2.5 <a href='#extracting-information-from-data' id='QQ2-1-16'>Extracting Information from Data</a></span>
+<br />   <span class='sectionToc'>2.6 <a href='#digital-data-security-and-privacy' id='QQ2-1-19'>Digital Data Security and Privacy</a></span>
+<br />   <span class='chapterToc'>3 <a href='#big-idea-algorithms-and-programming' id='QQ2-1-20'>Big Idea 3: Algorithms and Programming</a></span>
+<br />   <span class='sectionToc'>3.1 <a href='#variables-and-assignments' id='QQ2-1-21'>Variables and Assignments</a></span>
+<br />   <span class='sectionToc'>3.2 <a href='#mathematical-and-logical-expressions' id='QQ2-1-25'>Mathematical and Logical Expressions</a></span>
+<br />   <span class='sectionToc'>3.3 <a href='#control-structures' id='QQ2-1-33'>Control Structures</a></span>
+<br />   <span class='sectionToc'>3.4 <a href='#algorithms' id='QQ2-1-57'>Algorithms</a></span>
+<br />   <span class='sectionToc'>3.5 <a href='#procedures-functionsmethods' id='QQ2-1-58'>Procedures (Functions/Methods)</a></span>
+<br />   <span class='sectionToc'>3.6 <a href='#lists-arrays' id='QQ2-1-61'>Lists (Arrays)</a></span>
+<br />   <span class='sectionToc'>3.7 <a href='#algorithm-analysis' id='QQ2-1-73'>Algorithm Analysis</a></span>
+<br />   <span class='sectionToc'>3.8 <a href='#language-comparison-ap-csp-vs-javascript-vs-python' id='QQ2-1-76'>Language Comparison: AP CSP vs JavaScript vs Python</a></span>
+<br />   <span class='sectionToc'>3.9 <a href='#simulations' id='QQ2-1-81'>Simulations</a></span>
+<br />   <span class='chapterToc'>4 <a href='#big-idea-computer-systems-and-networks' id='QQ2-1-82'>Big Idea 4: Computer Systems and Networks</a></span>
+<br />   <span class='sectionToc'>4.1 <a href='#the-internet' id='QQ2-1-83'>The Internet</a></span>
+<br />   <span class='sectionToc'>4.2 <a href='#how-the-internet-works' id='QQ2-1-84'>How the Internet Works</a></span>
+<br />   <span class='sectionToc'>4.3 <a href='#fault-tolerance' id='QQ2-1-85'>Fault Tolerance</a></span>
+<br />   <span class='sectionToc'>4.4 <a href='#parallel-and-distributed-computing' id='QQ2-1-87'>Parallel and Distributed Computing</a></span>
+<br />   <span class='sectionToc'>4.5 <a href='#cybersecurity' id='QQ2-1-88'>Cybersecurity</a></span>
+<br />   <span class='chapterToc'>5 <a href='#big-idea-impact-of-computing' id='QQ2-1-90'>Big Idea 5: Impact of Computing</a></span>
+<br />   <span class='sectionToc'>5.1 <a href='#beneficial-effects' id='QQ2-1-91'>Beneficial Effects</a></span>
+<br />   <span class='sectionToc'>5.2 <a href='#harmful-effects-and-challenges' id='QQ2-1-92'>Harmful Effects and Challenges</a></span>
+<br />   <span class='sectionToc'>5.3 <a href='#bias-in-computing' id='QQ2-1-93'>Bias in Computing</a></span>
+<br />   <span class='sectionToc'>5.4 <a href='#legal-and-ethical-concerns' id='QQ2-1-94'>Legal and Ethical Concerns</a></span>
+   </div>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+   <h2 class='chapterHead' id='big-idea-creative-development'><span class='titlemark'>Chapter 1</span><br /><a id='x1-20001'></a>Big Idea 1: Creative Development</h2>
+<!-- l. 162 --><p class='noindent'>The process of developing computational artifacts (like programs, digital images, audio, video,
+presentations, or web pages) is iterative and often collaborative. This Big Idea explores how computing
+innovations are created and their potential impacts.
+</p>
+   <h3 class='sectionHead' id='collaboration'><span class='titlemark'>1.1   </span> <a id='x1-30001.1'></a>Collaboration</h3>
+<!-- l. 166 --><p class='noindent'>Developing complex computational artifacts often requires collaboration, where individuals bring diverse
+perspectives and skills. Effective collaboration includes: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>Communication: Clearly explaining ideas, progress, and problems.
+     </li>
+     <li class='itemize'>Shared Goals: Working towards a common objective.
+     </li>
+     <li class='itemize'>Contribution: Each member actively participates.
+     </li>
+     <li class='itemize'>Conflict Resolution: Addressing disagreements constructively.
+     </li>
+     <li class='itemize'>Using Tools: Employing version control (like Git) or shared document platforms to manage
+     contributions.</li></ul>
+<!-- l. 175 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='program-function-and-purpose'><span class='titlemark'>1.2   </span> <a id='x1-40001.2'></a>Program Function and Purpose</h3>
+<!-- l. 177 --><p class='noindent'>Every program or computational artifact is designed with a specific purpose and function.
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Purpose</span>: The problem the program aims to solve or the creative expression it intends to
+     convey (e.g., calculating grades, simulating planetary motion, creating interactive art).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Function</span>: What the program actually does; the specific tasks it performs (e.g., takes user
+     input, performs calculations, displays output, responds to events).</li></ul>
+                                                                                         
+                                                                                         
+<!-- l. 182 --><p class='noindent'>Understanding the intended purpose helps guide the development process and evaluate the final
+product.
+</p><!-- l. 184 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='program-design-and-development'><span class='titlemark'>1.3   </span> <a id='x1-50001.3'></a>Program Design and Development</h3>
+<!-- l. 186 --><p class='noindent'>This is an iterative process involving cycles of designing, implementing, testing, and refining. Key phases
+include:
+     </p><dl class='enumerate-enumitem'><dt class='enumerate-enumitem'>
+   1. </dt><dd class='enumerate-enumitem'><span class='cmbx-10x-x-109'>Investigation/Understanding the Problem</span>: Defining the requirements, purpose, and
+     target audience.
+     </dd><dt class='enumerate-enumitem'>
+   2. </dt><dd class='enumerate-enumitem'><span class='cmbx-10x-x-109'>Design</span>:   Planning   the   program’s   structure,   algorithms,   user   interface,   and   data
+     representation. This might involve pseudocode, flowcharts, or diagrams.
+     </dd><dt class='enumerate-enumitem'>
+   3. </dt><dd class='enumerate-enumitem'><span class='cmbx-10x-x-109'>Implementation (Coding)</span>: Writing the program code in a chosen programming language.
+     </dd><dt class='enumerate-enumitem'>
+   4. </dt><dd class='enumerate-enumitem'><span class='cmbx-10x-x-109'>Testing</span>: Identifying and fixing errors (debugging). This involves running the program with
+     various inputs and scenarios.
+     </dd><dt class='enumerate-enumitem'>
+   5. </dt><dd class='enumerate-enumitem'><span class='cmbx-10x-x-109'>Refinement</span>: Improving the program based on testing, feedback, or new requirements. This
+     could involve adding features, optimizing performance, or enhancing usability.
+     </dd><dt class='enumerate-enumitem'>
+   6. </dt><dd class='enumerate-enumitem'><span class='cmbx-10x-x-109'>Documentation</span>: Explaining how the program works, how to use it, and the design choices
+     made. This can include comments in the code and external documents.</dd></dl>
+<!-- l. 195 --><p class='noindent'>This process is rarely linear; developers often loop back to earlier phases.
+</p><!-- l. 197 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='identifying-and-correcting-errors-debugging'><span class='titlemark'>1.4   </span> <a id='x1-60001.4'></a>Identifying and Correcting Errors (Debugging)</h3>
+<!-- l. 199 --><p class='noindent'>Errors (bugs) are inevitable in programming. Debugging strategies include: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Testing</span>: Systematically checking program behavior with different inputs.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Reading Error Messages</span>: Understanding compiler/interpreter messages.
+                                                                                         
+                                                                                         
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Print Statements/Logging</span>: Inserting temporary output commands to track program flow
+     and variable values.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Using a Debugger Tool</span>: Step-by-step execution, inspecting variables, setting breakpoints.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Simplifying the Problem</span>: Isolating the error by commenting out code sections or testing
+     smaller parts.</li></ul>
+<!-- l. 207 --><p class='noindent'>Different types of errors exist: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Syntax Errors</span>: Violations of the programming language’s grammar rules (caught by the
+     compiler/interpreter).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Runtime  Errors</span>:  Errors  occurring  during  program  execution  (e.g.,  division  by  zero,
+     accessing invalid memory).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Logic Errors</span>: The program runs but produces incorrect results because the algorithm or its
+     implementation is flawed. These are often the hardest to find.</li></ul>
+                                                                                         
+                                                                                         
+   <h2 class='chapterHead' id='big-idea-data'><span class='titlemark'>Chapter 2</span><br /><a id='x1-70002'></a>Big Idea 2: Data</h2>
+<!-- l. 219 --><p class='noindent'>Computers store, process, and transmit information digitally using binary data. This Big Idea focuses on
+how data is represented, manipulated, and used.
+</p>
+   <h3 class='sectionHead' id='bits-and-bytes'><span class='titlemark'>2.1   </span> <a id='x1-80002.1'></a>Bits and Bytes</h3>
+<!-- l. 223 --><p class='noindent'>The fundamental unit of digital information is the <span class='cmbx-10x-x-109'>bit </span>(binary digit), which can represent one of two
+states: 0 or 1. Bits are grouped together to represent more complex data. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Byte</span>: A group of 8 bits. A common unit for measuring data size.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Number of States</span>: With <span class='cmmi-10x-x-109'>n </span>bits, you can represent 2<sup><span class='cmmi-8'>n</span></sup> distinct states or values. For example,
+     8 bits (1 byte) can represent 2<sup><span class='cmr-8'>8</span></sup>  = 256 different values (often 0-255). Adding one more bit
+     doubles the number of possible values.</li></ul>
+<!-- l. 229 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='number-systems'><span class='titlemark'>2.2   </span> <a id='x1-90002.2'></a>Number Systems</h3>
+<!-- l. 231 --><p class='noindent'>Computers use binary internally, but humans often use other systems for convenience. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Binary (Base-2)</span>: Uses only digits 0 and 1. Each position represents a power of 2 (e.g.,
+     1101<sub><span class='cmr-8'>2</span></sub> = 1 <span class='cmsy-10x-x-109'>∗ </span>2<sup><span class='cmr-8'>3</span></sup> + 1 <span class='cmsy-10x-x-109'>∗ </span>2<sup><span class='cmr-8'>2</span></sup> + 0 <span class='cmsy-10x-x-109'>∗ </span>2<sup><span class='cmr-8'>1</span></sup> + 1 <span class='cmsy-10x-x-109'>∗ </span>2<sup><span class='cmr-8'>0</span></sup> = 8 + 4 + 0 + 1 = 13<sub><span class='cmr-8'>10</span></sub>).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Decimal (Base-10)</span>: The system we use daily, with digits 0-9. Each position represents a
+     power of 10.</li></ul>
+<!-- l. 237 --><p class='indent'>   <span class='cmbx-10x-x-109'>Overflow Error</span>: Computers use a fixed number of bits (e.g., 8 bits) to represent numbers. This limits
+the largest value they can store (for 8 bits, often 255). An overflow error happens when a
+calculation’s result is too large for the available bits. When this occurs, the result often ”wraps
+around.” For example, adding 1 to the maximum value might result in 0, or even a negative
+number if signed numbers are being used. This unexpected wrap-around leads to incorrect
+results.
+</p><!-- l. 239 --><p class='indent'>   <span class='cmbx-10x-x-109'>Round-off Error</span>: Similarly, computers use a finite number of bits to represent real numbers (like
+decimals or fractions), which can have infinite precision. This means computers often store an
+<span class='cmti-10x-x-109'>approximation </span>rather than the exact value. This small difference is called a round-off error. While often
+tiny, these errors can accumulate during calculations, potentially leading to noticeable inaccuracies in the
+final result (e.g., 0.1 + 0.2 might be stored as something like 0.30000000000000004 instead of exactly
+0.3).
+                                                                                         
+                                                                                         
+</p>
+   <figure class='figure'> 
+
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!-- l. 244 --><p class='noindent'><img alt=' 76543210
+E1202121202020212ach box represents one bit (0 or 1)
+' src='tikz_0.png' style='max-width:100%;height:auto' />
+</p><!-- l. 258 --><p class='noindent' id='converting-binary-to-decimal-each-bits-value-is-multiplied-by-its-position-value-powers-of-'>1 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>7</span></sup> + 0 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>6</span></sup> + 1 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>5</span></sup> + 1 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>4</span></sup> + 0 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>3</span></sup> + 0 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>2</span></sup> + 0 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>1</span></sup> + 1 <span class='cmsy-10x-x-109'>⋅ </span>2<sup><span class='cmr-8'>0</span></sup><br />
+= 128 + 0 + 32 + 16 + 0 + 0 + 0 + 1<br />
+= 177<sub><span class='cmr-8'>10</span></sub>
+<a id='x1-9001r1'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 2.1: </span><span class='content'>Converting binary to decimal: Each bit’s value is multiplied by its position value (powers
+of 2)
+</span></figcaption><!-- tex4ht:label?: x1-9001r1  -->
+                                                                                         
+                                                                                         
+   </figure>
+   <figure class='figure'> 
+
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!-- l. 269 --><p class='noindent' id='binary-addition-example-showing-carry-bits-in-red'><img alt='1011=+1111011+10000=131121041100   ' src='tikz_1.png' style='max-width:100%;height:auto' />
+<a id='x1-9002r2'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 2.2: </span><span class='content'>Binary addition example (1011 + 1101 = 11000) showing carry bits in red
+</span></figcaption><!-- tex4ht:label?: x1-9002r2  -->
+                                                                                         
+                                                                                         
+   </figure>
+   <h3 class='sectionHead' id='sampling-and-representing-analog-data'><span class='titlemark'>2.3   </span> <a id='x1-100002.3'></a>Sampling and Representing Analog Data</h3>
+<!-- l. 305 --><p class='noindent'>To represent continuous, real-world phenomena (like sound waves or visual scenes) digitally, we need to
+convert them into discrete values. This involves: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Sampling</span>: Measuring the phenomenon’s value at regular intervals in either time (for sound)
+     or space (for images). The <span class='cmbx-10x-x-109'>sampling rate </span>(or resolution) determines how frequently these
+     measurements are taken. More samples generally lead to a more accurate representation but
+     require more data.</li></ul>
+<!-- l. 309 --><p class='noindent'>This process inherently involves approximation, as the continuous reality is represented by discrete digital
+data. The number of bits used to store each sample (bit depth) determines the level of detail or number of
+distinct values that can be represented.
+</p><!-- l. 311 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='representing-images'><a id='x1-11000'></a>Representing Images</h4>
+<!-- l. 312 --><p class='noindent'>Images are represented by sampling visual information across a 2D space. The image is divided into a grid
+of <span class='cmbx-10x-x-109'>pixels </span>(picture elements), each representing a sample point. For each pixel, color information is
+captured, often using RGB (Red, Green, Blue) values, each stored with a certain number of bits (bit
+depth) to represent different color intensities. Image file formats (JPEG, PNG, GIF) use different
+encoding and compression techniques.
+</p><!-- l. 314 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='representing-sound'><a id='x1-12000'></a>Representing Sound</h4>
+<!-- l. 315 --><p class='noindent'>Sound is represented by sampling an analog sound wave’s amplitude (height) at regular time intervals (the
+sampling rate). Each sample’s amplitude is then stored using a specific number of bits (bit depth). Higher
+sampling rates and bit depths capture the original sound more accurately, resulting in higher fidelity but
+larger file sizes.
+</p><!-- l. 317 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='data-compression'><span class='titlemark'>2.4   </span> <a id='x1-130002.4'></a>Data Compression</h3>
+<!-- l. 319 --><p class='noindent'>Compression reduces the number of bits needed to store or transmit data. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Lossless Compression</span>: Allows perfect reconstruction of the original data (e.g., ZIP, PNG).
+     Algorithms look for redundancies (like repeated patterns) and encode them more efficiently.
+                                                                                         
+                                                                                         
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Lossy Compression</span>: Discards some information deemed less important to achieve higher
+     compression ratios (e.g., JPEG, MP3). This is acceptable for images and audio where humans
+     may not notice the slight loss of quality. The original data cannot be perfectly recovered.</li></ul>
+<!-- l. 324 --><p class='noindent'>The choice depends on the data type and requirements (e.g., text needs lossless, video often uses
+lossy).
+</p><!-- l. 326 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='extracting-information-from-data'><span class='titlemark'>2.5   </span> <a id='x1-140002.5'></a>Extracting Information from Data</h3>
+<!-- l. 328 --><p class='noindent'>Large datasets can reveal patterns, trends, and insights not obvious from individual data points.
+Techniques include: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Filtering</span>: Selecting a subset of data based on criteria (e.g., show only sales from the last
+     month).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Sorting</span>: Arranging data in a specific order (e.g., alphabetically, numerically).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Aggregation</span>: Summarizing data (e.g., calculating averages, sums, counts).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Visualization</span>: Creating charts and graphs (bar charts, scatter plots, heat maps) to make
+     patterns easier to understand.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Data Mining</span>: Using algorithms to discover complex patterns and relationships in large
+     datasets.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Machine Learning</span>: Using algorithms that can learn from data to make predictions or
+     classify information automatically.</li></ul>
+<!-- l. 337 --><p class='noindent'>Computers are essential for processing large datasets efficiently. These extraction techniques are often
+implemented using programming algorithms that iterate through data structures like lists (see Section <a href='#lists-arrays'>3.6<!-- tex4ht:ref: sec:lists  --></a>)
+to filter, aggregate, or transform information based on specific criteria.
+</p>
+   <!-- l. 339 -->
+                                                                                         
+                                                                                         
+<p id='caption-'><a id='x1-14001r1'></a>
+<a id='x1-14002'></a>
+</p><pre class='lstlisting' id='listing-1'><span class='label'><a id='x1-14003r1'></a><span class='cmr-6'>1</span></span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Example: Find all scores above 90 in a list</span> 
+</span><span class='label'><a id='x1-14004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>highScores</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>[]</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Create an empty list to store results</span> 
+</span><span class='label'><a id='x1-14005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>allScores</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>[75, 92, 88, 95, 60, 100]</span> 
+</span><span class='label'><a id='x1-14006r4'></a><span class='cmr-6'>4</span></span> 
+<span class='label'><a id='x1-14007r5'></a><span class='cmr-6'>5</span></span><span style='color:#FF00FF'><span class='cmtt-9'>FOR</span></span><span style='color:#000000'> </span><span style='color:#FF00FF'><span class='cmtt-9'>EACH</span></span><span style='color:#000000'> <span class='cmtt-9'>score</span> </span><span style='color:#FF00FF'><span class='cmtt-9'>IN</span></span><span style='color:#000000'> <span class='cmtt-9'>allScores</span> 
+</span><span class='label'><a id='x1-14008r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-14009r7'></a><span class='cmr-6'>7</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score &gt; 90)</span> 
+</span><span class='label'><a id='x1-14010r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'>    <span class='cmtt-9'>{</span> 
+</span><span class='label'><a id='x1-14011r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'>        </span><span style='color:#FF00FF'><span class='cmtt-9'>APPEND</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>highScores</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> <span class='cmtt-9'>score)</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Add score to the highScores list</span> 
+</span><span class='label'><a id='x1-14012r10'></a><span class='cmr-6'>10</span></span><span style='color:#000000'>    <span class='cmtt-9'>}</span> 
+</span><span class='label'><a id='x1-14013r11'></a><span class='cmr-6'>11</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-14014r12'></a><span class='cmr-6'>12</span></span> 
+<span class='label'><a id='x1-14015r13'></a><span class='cmr-6'>13</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>High</span></span><span style='color:#9400D1'> <span class='cmtt-9'>scores found:"</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-14016r14'></a><span class='cmr-6'>14</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>highScores</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 2.1:
+    </span><span class='content'>AP
+    Pseudocode:
+    Filtering
+    Data
+    in
+    a
+    List</span></figcaption><!-- tex4ht:label?: x1-14016r2.5  -->
+   <div class='tcolorbox outputbox' id='tcolobox-1'>     
+<div class='tcolorbox-title'>
+<!-- l. 358 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 356 --><p class='noindent'><span class='cmtt-10x-x-109'>High scores found:</span><br class='newline' /><span class='cmtt-10x-x-109'>[92, 95, 100]</span> </p> 
+</div> 
+</div>
+<!-- l. 360 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='digital-data-security-and-privacy'><span class='titlemark'>2.6   </span> <a id='x1-150002.6'></a>Digital Data Security and Privacy</h3>
+<!-- l. 362 --><p class='noindent'>Collecting and storing digital data raises significant concerns: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Security</span>: Protecting data from unauthorized access, modification, or destruction (e.g., using
+     passwords, encryption, firewalls).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Privacy</span>: Controlling how personal information is collected, used, and shared. This includes
+     issues like data breaches, surveillance, and PII (Personally Identifiable Information).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Anonymization</span>:  Removing  PII  (Personal  Identifiable  Information,  i.e.,  name,  address,
+     phone number, etc.) from datasets to protect privacy while still allowing analysis. However,
+     re-identification can sometimes be possible by combining anonymized data with other sources.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Metadata Concerns</span>: Even metadata (e.g., file creation times, locations in photos) can
+     reveal sensitive information.</li></ul>
+                                                                                         
+                                                                                         
+   <h2 class='chapterHead' id='big-idea-algorithms-and-programming'><span class='titlemark'>Chapter 3</span><br /><a id='x1-160003'></a>Big Idea 3: Algorithms and Programming</h2>
+<!-- l. 376 --><p class='noindent'>Programming enables us to implement algorithms that solve problems. This involves using programming
+languages to express instructions a computer can execute.
+</p>
+   <h3 class='sectionHead' id='variables-and-assignments'><span class='titlemark'>3.1   </span> <a id='x1-170003.1'></a>Variables and Assignments</h3>
+<!-- l. 380 --><p class='noindent'>Variables are named storage locations for data values that can change during program execution. You can
+think of a variable as a box with a label on it. We can look at what value is in the box or put a new value
+in the box.
+</p>
+     <ul class='itemize1'>
+     <li class='itemize' id='caption-1'>
+     <!-- l. 383 --><p class='noindent'><span class='cmbx-10x-x-109'>Declaration/Assignment</span>: In AP Pseudocode, variables are often declared implicitly when they
+     are first assigned a value using the assignment operator (<span class='cmsy-10x-x-109'>←</span>). In other languages, you might need to
+     declare the type first. </p><!-- l. 384 -->
+<a id='x1-17001r1'></a>
+<a id='x1-17002'></a>
+     <pre class='lstlisting' id='listing-2'><span class='label'><a id='x1-17003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>x</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>5</span>          </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Assigns the value 5 to variable x</span> 
+</span><span class='label'><a id='x1-17004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>y</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>10</span> 
+</span><span class='label'><a id='x1-17005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>z</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>x + y</span>      </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Assigns the value of x + y (15) to z</span> 
+</span><span class='label'><a id='x1-17006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'><span class='cmtt-9'>message</span></span><span style='color:#000000'> <span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Hello</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Assigns a string value</span> 
+</span><span class='label'><a id='x1-17007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'><span class='cmtt-9'>isValid</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>true</span>   </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Assigns a boolean value</span> 
+</span><span class='label'><a id='x1-17008r6'></a><span class='cmr-6'>6</span></span> 
+<span class='label'><a id='x1-17009r7'></a><span class='cmr-6'>7</span></span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Updating a variable’s value</span> 
+</span><span class='label'><a id='x1-17010r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'><span class='cmtt-9'>x</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>x + 1</span>      </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Reads the current value of x (5), adds 1, assigns the result (6) back to x</span></span></pre>
+     
+     <figcaption class='caption'><span class='id'>Listing 3.1:
+         </span><span class='content'>AP
+         Pseudocode:
+         Assignment
+         Examples</span></figcaption><!-- tex4ht:label?: x1-17010r3.1  -->
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Naming</span>: Meaningful variable names (e.g., <span class='cmtt-10x-x-109'>totalScore </span>instead of just <span class='cmtt-10x-x-109'>s</span>) significantly improve code
+     readability and understanding.</li></ul>
+<!-- l. 397 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='common-data-types-in-programming'><a id='x1-18000'></a>Common Data Types in Programming</h4>
+<!-- l. 398 --><p class='noindent'>Variables hold different kinds of data, known as data types. Common types include: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Numbers</span>: Used for mathematical values. Can be integers (whole numbers, like ‘5‘, ‘-10‘)
+     or real numbers (with decimals, like ‘3.14‘). Internally represented using binary (see Section
+     <a href='#number-systems'>2.2<!-- tex4ht:ref: sec:number_systems  --></a>). Be aware of potential <span class='cmbx-10x-x-109'>overflow </span>and <span class='cmbx-10x-x-109'>round-off errors </span>(Section <a href='#number-systems'>2.2<!-- tex4ht:ref: sec:number_systems  --></a>).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Text (Strings)</span>: Sequences of characters (letters, numbers, symbols) enclosed in quotes, like
+     ‘”Hello”‘ or ‘”CSP2024”‘. Characters are represented internally using standards like ASCII
+     or Unicode.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Booleans</span>: Represent logical values, either ‘true‘ or ‘false‘. Essential for making decisions in
+     programs (see Section <a href='#control-structures'>3.3<!-- tex4ht:ref: sec:control_structures  --></a>).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Lists (Arrays)</span>: Ordered collections of items, which can be of any data type (including other
+     lists). Covered in detail in Section <a href='#lists-arrays'>3.6<!-- tex4ht:ref: sec:lists  --></a>.</li></ul>
+<!-- l. 405 --><p class='noindent'>The type of data determines the operations that can be performed on it (e.g., you can do arithmetic on
+numbers, but not directly on strings).
+</p><!-- l. 407 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='mathematical-and-logical-expressions'><span class='titlemark'>3.2   </span> <a id='x1-190003.2'></a>Mathematical and Logical Expressions</h3>
+<!-- l. 409 --><p class='noindent'>Programs use expressions, combining values, variables, and operators, to compute new values. Categories
+include: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>Numbers, Strings, Variables
+     </li>
+     <li class='itemize'><span class='texthl'><span id='textcolor1'>Logical Operators</span></span>
+     </li>
+     <li class='itemize'><span class='texthl'><span id='textcolor2'>Relational Operators</span></span>
+     </li>
+     <li class='itemize'><span class='texthl'><span id='textcolor3'>Parentheses</span></span></li></ul>
+<!-- l. 417 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='mathematical-expressions'><a id='x1-20000'></a>Mathematical Expressions</h4>
+<!-- l. 418 --><p class='noindent'>Use arithmetic operators to perform calculations. </p>
+                                                                                         
+                                                                                         
+     <ul class='itemize1'>
+     <li class='itemize'>Operators: <span class='cmtt-10x-x-109'>+</span>, <span class='cmtt-10x-x-109'>-</span>, <span class='cmtt-10x-x-109'>*</span>, <span class='cmtt-10x-x-109'>/</span>, <span class='cmtt-10x-x-109'>MOD </span>(modulus/remainder).
+     </li>
+     <li class='itemize'>Order  of  Operations:  Follows  standard  mathematical  precedence  (PEMDAS/BODMAS).
+     Parentheses <span class='texthl'><span id='textcolor4'>( )</span></span> can be used to force a specific evaluation order.</li></ul>
+<!-- l. 423 -->
+<p id='caption-2'><a id='x1-20001r2'></a>
+<a id='x1-20002'></a>
+</p><pre class='lstlisting' id='listing-3'><span class='label'><a id='x1-20003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>totalCost</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>price * quantity</span> 
+</span><span class='label'><a id='x1-20004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>remainder</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>17 MOD 5</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>remainder will be 2</span> 
+</span><span class='label'><a id='x1-20005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>average</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>(a + b + c) / 3</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Parentheses ensure addition happens before division</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.2:
+    </span><span class='content'>AP
+    Pseudocode:
+    Math
+    Expressions</span></figcaption><!-- tex4ht:label?: x1-20005r  -->
+<!-- l. 429 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='relational-operators'><a id='x1-21000'></a>Relational Operators</h4>
+<!-- l. 430 --><p class='noindent'><span class='texthl'><span id='textcolor5'>Relational operators</span></span> compare two values and evaluate to a Boolean result (<span class='cmtt-10x-x-109'>true </span>or <span class='cmtt-10x-x-109'>false</span>).
+</p>   
+    <table class='tabular' id='TBL-3'><colgroup id='TBL-3-1g'><col id='TBL-3-1' /><col id='TBL-3-2' /><col id='TBL-3-3' /></colgroup><tr id='TBL-3-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>Code Symbol </span></td><td class='td11' id='TBL-3-1-2' style='white-space:nowrap; text-align:center;'> <span class='cmtt-10x-x-109'>AP Symbol </span></td><td class='td11' id='TBL-3-1-3' style='white-space:normal; text-align:left;'> <!-- l. 443 --><p class='noindent'><span class='cmbx-10x-x-109'>Meaning</span>                                                         </p></td>
+   
+   </tr><tr id='TBL-3-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-2-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor30'><span class='cmtt-10x-x-109'>==</span></span></span>           </td><td class='td11' id='TBL-3-2-2' style='white-space:nowrap; text-align:center;'>     <span class='texthl'><span id='textcolor31'><span class='cmtt-10x-x-109'>=</span></span></span>     </td><td class='td11' id='TBL-3-2-3' style='white-space:normal; text-align:left;'> <!-- l. 443 --><p class='noindent'>Equal to                                                                   </p></td>
+   </tr><tr id='TBL-3-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-3-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor32'><span class='cmtt-10x-x-109'>!=</span></span></span>           </td><td class='td11' id='TBL-3-3-2' style='white-space:nowrap; text-align:center;'>     <span class='texthl'><span id='textcolor33'><span class='cmmi-10x-x-109'>≠</span></span></span>       </td><td class='td11' id='TBL-3-3-3' style='white-space:normal; text-align:left;'> <!-- l. 443 --><p class='noindent'>Not equal to                                                              </p></td>
+   </tr><tr id='TBL-3-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-4-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor34'><span class='cmtt-10x-x-109'>&gt;</span></span></span>            </td><td class='td11' id='TBL-3-4-2' style='white-space:nowrap; text-align:center;'>     <span class='texthl'><span id='textcolor35'><span class='cmtt-10x-x-109'>&gt;</span></span></span>     </td><td class='td11' id='TBL-3-4-3' style='white-space:normal; text-align:left;'> <!-- l. 443 --><p class='noindent'>Greater than                                                             </p></td>
+   </tr><tr id='TBL-3-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-5-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor36'><span class='cmtt-10x-x-109'>&lt;</span></span></span>            </td><td class='td11' id='TBL-3-5-2' style='white-space:nowrap; text-align:center;'>     <span class='texthl'><span id='textcolor37'><span class='cmtt-10x-x-109'>&lt;</span></span></span>     </td><td class='td11' id='TBL-3-5-3' style='white-space:normal; text-align:left;'> <!-- l. 443 --><p class='noindent'>Less than                                                                  </p></td>
+   </tr><tr id='TBL-3-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-6-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor38'><span class='cmtt-10x-x-109'>&gt;=</span></span></span>           </td><td class='td11' id='TBL-3-6-2' style='white-space:nowrap; text-align:center;'>     <span class='texthl'><span id='textcolor39'><span class='cmsy-10x-x-109'>≥</span></span></span>   </td><td class='td11' id='TBL-3-6-3' style='white-space:normal; text-align:left;'> <!-- l. 443 --><p class='noindent'>Greater than or equal to                                              </p></td>
+   </tr><tr id='TBL-3-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-7-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor40'><span class='cmtt-10x-x-109'>&lt;=</span></span></span>           </td><td class='td11' id='TBL-3-7-2' style='white-space:nowrap; text-align:center;'>     <span class='texthl'><span id='textcolor41'><span class='cmsy-10x-x-109'>≤</span></span></span>   </td><td class='td11' id='TBL-3-7-3' style='white-space:normal; text-align:left;'> <!-- l. 443 --><p class='noindent'>Less than or equal to                                                   </p></td>
+   
+   </tr></table>
+<!-- l. 445 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='logical-operators'><a id='x1-22000'></a>Logical Operators</h4>
+<!-- l. 446 --><p class='noindent'><span class='texthl'><span id='textcolor42'>Logical operators</span></span> combine two or more Boolean expressions.
+</p>   
+    <table class='tabular' id='TBL-6'><colgroup id='TBL-6-1g'><col id='TBL-6-1' /><col id='TBL-6-2' /><col id='TBL-6-3' /></colgroup><tr id='TBL-6-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>Code Symbol </span></td><td class='td11' id='TBL-6-1-2' style='white-space:nowrap; text-align:center;'> <span class='cmtt-10x-x-109'>AP Symbol </span></td><td class='td11' id='TBL-6-1-3' style='white-space:normal; text-align:left;'> <!-- l. 456 --><p class='noindent'><span class='cmbx-10x-x-109'>Meaning</span>                                                         </p></td>
+   
+   </tr><tr id='TBL-6-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-2-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor55'><span class='cmtt-10x-x-109'>&amp;&amp;</span></span></span>           </td><td class='td11' id='TBL-6-2-2' style='white-space:nowrap; text-align:center;'>    <span class='texthl'><span id='textcolor56'><span class='cmtt-10x-x-109'>AND</span></span></span>    </td><td class='td11' id='TBL-6-2-3' style='white-space:normal; text-align:left;'> <!-- l. 456 --><p class='noindent'>Logical AND (true only if <span class='cmti-10x-x-109'>both </span>operands are true)             </p></td>
+   </tr><tr id='TBL-6-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-3-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor57'><span class='cmtt-10x-x-109'>||</span></span></span>           </td><td class='td11' id='TBL-6-3-2' style='white-space:nowrap; text-align:center;'>     <span class='texthl'><span id='textcolor58'><span class='cmtt-10x-x-109'>OR</span></span></span>     </td><td class='td11' id='TBL-6-3-3' style='white-space:normal; text-align:left;'> <!-- l. 456 --><p class='noindent'>Logical OR (true if <span class='cmti-10x-x-109'>at least one </span>operand is true)               </p></td>
+   </tr><tr id='TBL-6-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-4-1' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor59'><span class='cmtt-10x-x-109'>!</span></span></span>            </td><td class='td11' id='TBL-6-4-2' style='white-space:nowrap; text-align:center;'>    <span class='texthl'><span id='textcolor60'><span class='cmtt-10x-x-109'>NOT</span></span></span>    </td><td class='td11' id='TBL-6-4-3' style='white-space:normal; text-align:left;'> <!-- l. 456 --><p class='noindent'>Logical NOT (evaluates to true if the operand is false, and
+  vice versa)                                                                 </p></td>
+   
+   </tr></table>
+                                                                                         
+                                                                                         
+<!-- l. 458 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='boolean-expression-examples'><a id='x1-23000'></a>Boolean Expression Examples</h4>
+     <ul class='itemize1'>
+     <li class='itemize'>
+     <!-- l. 460 --><p class='noindent'><span class='cmti-10x-x-109'>Example 1:</span> </p><!-- l. 461 -->
+
+     <pre class='lstlisting' id='listing-4'><span class='label'><a id='x1-23001r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-10'>(</span></span><span style='color:#000000'><span class='cmtt-10'>x</span></span><span style='color:#000000'> <span class='cmtt-10'>&gt; 10)</span> </span><span style='color:#FF00FF'><span class='cmtt-10'>AND</span></span><span style='color:#000000'> <span class='cmtt-10'>(y &lt; 20)</span></span></pre>
+     
+     <!-- l. 464 --><p class='noindent'>Evaluates to <span class='cmtt-10x-x-109'>true </span>if <span class='cmtt-10x-x-109'>x </span>is greater than 10 <span class='cmti-10x-x-109'>and </span><span class='cmtt-10x-x-109'>y </span>is less than 20. (e.g., true for <span class='cmtt-10x-x-109'>x = 11, y = 19</span>; false
+     for <span class='cmtt-10x-x-109'>x = 11, y = 21</span>)
+     </p></li>
+     <li class='itemize'>
+     <!-- l. 465 --><p class='noindent'><span class='cmti-10x-x-109'>Example 2:</span> </p><!-- l. 466 -->
+
+     <pre class='lstlisting' id='listing-5'><span class='label'><a id='x1-23002r1'></a><span class='cmr-6'>1</span></span><span style='color:#FF00FF'><span class='cmtt-10'>NOT</span></span><span style='color:#000000'> <span class='cmtt-10'>(a = b)</span></span></pre>
+     
+     <!-- l. 469 --><p class='noindent'>Evaluates to <span class='cmtt-10x-x-109'>true </span>if <span class='cmtt-10x-x-109'>a </span>is <span class='cmti-10x-x-109'>not </span>equal to <span class='cmtt-10x-x-109'>b</span>. (e.g., true for <span class='cmtt-10x-x-109'>a = 5, b = 2</span>; false for <span class='cmtt-10x-x-109'>a = 11, b =
+     11</span>)
+     </p></li>
+     <li class='itemize'>
+     <!-- l. 470 --><p class='noindent'><span class='cmti-10x-x-109'>Example 3 (Combined):</span> </p><!-- l. 471 -->
+
+     <pre class='lstlisting' id='listing-6'><span class='label'><a id='x1-23003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-10'>(</span></span><span style='color:#000000'><span class='cmtt-10'>score</span></span><span style='color:#000000'> <span class='cmsy-10'>≥ </span><span class='cmtt-10'>70</span> </span><span style='color:#FF00FF'><span class='cmtt-10'>AND</span></span><span style='color:#000000'> <span class='cmtt-10'>score &lt; 100)</span> </span><span style='color:#FF00FF'><span class='cmtt-10'>OR</span></span><span style='color:#000000'> <span class='cmtt-10'>(isBonusEligible = true)</span></span></pre>
+     
+     <!-- l. 474 --><p class='noindent'>Evaluates to <span class='cmtt-10x-x-109'>true </span>if the score is between 70 (inclusive) and 100 (exclusive), <span class='cmti-10x-x-109'>or </span>if the student is
+     eligible for a bonus.</p></li></ul>
+<!-- l. 477 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='operator-comparison-javascript-vs-ap-pseudocode'><a id='x1-24000'></a>Operator Comparison (JavaScript vs AP Pseudocode)</h4>
+<!-- l. 478 --><p class='noindent'>Different programming languages may use different symbols for the same operation.
+</p>   
+    <table class='tabular' id='TBL-8'><colgroup id='TBL-8-1g'><col id='TBL-8-1' /><col id='TBL-8-2' /><col id='TBL-8-3' /></colgroup><tr id='TBL-8-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-8-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Operation  </span></td><td class='td11' id='TBL-8-1-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>Common Code (e.g., JS) </span></td><td class='td11' id='TBL-8-1-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>AP Pseudocode </span></td>
+   
+   </tr><tr id='TBL-8-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-8-2-1' style='white-space:nowrap; text-align:left;'> Assignment    </td><td class='td11' id='TBL-8-2-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>x = 5                  </span></td><td class='td11' id='TBL-8-2-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>x </span><span class='cmsy-10x-x-109'>← </span><span class='cmtt-10x-x-109'>5        </span></td>
+   </tr><tr id='TBL-8-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-8-3-1' style='white-space:nowrap; text-align:left;'> Equal to        </td><td class='td11' id='TBL-8-3-2' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor71'><span class='cmtt-10x-x-109'>a == b</span></span></span>                 </td><td class='td11' id='TBL-8-3-3' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor72'><span class='cmtt-10x-x-109'>a = b</span></span></span>         </td>
+   </tr><tr id='TBL-8-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-8-4-1' style='white-space:nowrap; text-align:left;'> Not Equal to  </td><td class='td11' id='TBL-8-4-2' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor73'><span class='cmtt-10x-x-109'>a != b</span></span></span>                 </td><td class='td11' id='TBL-8-4-3' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor74'><span class='cmtt-10x-x-109'>a </span><span class='cmmi-10x-x-109'>≠ </span><span class='cmtt-10x-x-109'>b</span></span></span>         </td>
+   </tr><tr id='TBL-8-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-8-5-1' style='white-space:nowrap; text-align:left;'> Logical OR    </td><td class='td11' id='TBL-8-5-2' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor75'><span class='cmtt-10x-x-109'>a || b</span></span></span>                 </td><td class='td11' id='TBL-8-5-3' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor76'><span class='cmtt-10x-x-109'>a OR b</span></span></span>        </td>
+   </tr><tr id='TBL-8-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-8-6-1' style='white-space:nowrap; text-align:left;'> Logical AND  </td><td class='td11' id='TBL-8-6-2' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor77'><span class='cmtt-10x-x-109'>a &amp;&amp; b</span></span></span>                 </td><td class='td11' id='TBL-8-6-3' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor78'><span class='cmtt-10x-x-109'>a AND b</span></span></span>       </td>
+   </tr><tr id='TBL-8-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-8-7-1' style='white-space:nowrap; text-align:left;'> Logical NOT  </td><td class='td11' id='TBL-8-7-2' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor79'><span class='cmtt-10x-x-109'>!a</span></span></span>                     </td><td class='td11' id='TBL-8-7-3' style='white-space:nowrap; text-align:left;'> <span class='texthl'><span id='textcolor80'><span class='cmtt-10x-x-109'>NOT a</span></span></span>         </td>
+   
+   </tr></table>
+                                                                                         
+                                                                                         
+<!-- l. 493 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='control-structures'><span class='titlemark'>3.3   </span> <a id='x1-250003.3'></a>Control Structures</h3>
+<!-- l. 495 --><p class='noindent'>Control structures determine the order in which instructions are executed. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Sequence</span>: Instructions are executed one after another in the order they appear.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Selection (Conditionals)</span>: Executes different blocks of code based on a Boolean condition.
+     Uses <span class='cmtt-10x-x-109'>IF</span>, <span class='cmtt-10x-x-109'>ELSE IF</span>, <span class='cmtt-10x-x-109'>ELSE</span>. (See details below)
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Iteration (Loops)</span>: Repeats a block of code multiple times. (See details below)</li></ul>
+<!-- l. 502 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='selection-conditionals-detailed'><a id='x1-26000'></a>Selection / Conditionals (Detailed)</h4>
+<!-- l. 504 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead' id='basic-if-statement'><a id='x1-27000'></a>Basic IF Statement</h5>
+<!-- l. 505 --><p class='noindent'>Executes a block of code only if a condition is true. </p><!-- l. 506 -->
+<p id='caption-3'><a id='x1-27001r3'></a>
+<a id='x1-27002'></a>
+</p><pre class='lstlisting' id='listing-7'><span class='label'><a id='x1-27003r1'></a><span class='cmr-6'>1</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(condition)</span> 
+</span><span class='label'><a id='x1-27004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-27005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Statements executed if condition is true</span> 
+</span><span class='label'><a id='x1-27006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    <span class='cmtt-9'>statements</span> 
+</span><span class='label'><a id='x1-27007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-27008r6'></a><span class='cmr-6'>6</span></span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Code here executes regardless</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.3:
+    </span><span class='content'>AP
+    Pseudocode:
+    Basic
+    IF</span></figcaption><!-- tex4ht:label?: x1-27008r  -->
+<!-- l. 514 --><p class='indent'>   Example: </p><!-- l. 515 -->
+
+<pre class='lstlisting' id='listing-8'><span class='label'><a id='x1-27009r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>score</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>100</span> 
+</span><span class='label'><a id='x1-27010r2'></a><span class='cmr-6'>2</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score = 100)</span> 
+</span><span class='label'><a id='x1-27011r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-27012r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Perfect</span></span><span style='color:#9400D1'> <span class='cmtt-9'>score!"</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-27013r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span></pre>
+   <div class='tcolorbox outputbox' id='tcolobox-2'>     
+<div class='tcolorbox-title'>
+<!-- l. 524 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 523 --><p class='noindent'><span class='cmtt-10x-x-109'>Perfect score!</span> </p> 
+</div> 
+</div>
+                                                                                         
+                                                                                         
+<!-- l. 526 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead' id='ifelse-statement'><a id='x1-28000'></a>IF-ELSE Statement</h5>
+<!-- l. 527 --><p class='noindent'>Executes one block of code if the condition is true, and a different block if the condition is false.
+</p><!-- l. 528 -->
+<p id='caption-4'><a id='x1-28001r4'></a>
+<a id='x1-28002'></a>
+</p><pre class='lstlisting' id='listing-9'><span class='label'><a id='x1-28003r1'></a><span class='cmr-6'>1</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(condition)</span> 
+</span><span class='label'><a id='x1-28004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-28005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Statements executed if condition is true</span> 
+</span><span class='label'><a id='x1-28006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    <span class='cmtt-9'>statements_if_true</span> 
+</span><span class='label'><a id='x1-28007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-28008r6'></a><span class='cmr-6'>6</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span> 
+<span class='label'><a id='x1-28009r7'></a><span class='cmr-6'>7</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-28010r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Statements executed if condition is false</span> 
+</span><span class='label'><a id='x1-28011r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'>    <span class='cmtt-9'>statements_if_false</span> 
+</span><span class='label'><a id='x1-28012r10'></a><span class='cmr-6'>10</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.4:
+    </span><span class='content'>AP
+    Pseudocode:
+    IF-ELSE</span></figcaption><!-- tex4ht:label?: x1-28012r  -->
+<!-- l. 540 --><p class='indent'>   Example: </p><!-- l. 541 -->
+
+<pre class='lstlisting' id='listing-10'><span class='label'><a id='x1-28013r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>temperature</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>15</span> 
+</span><span class='label'><a id='x1-28014r2'></a><span class='cmr-6'>2</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(temperature &gt; 20)</span> 
+</span><span class='label'><a id='x1-28015r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-28016r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>It</span></span><span style='color:#9400D1'><span class='cmtt-9'>’</span></span><span style='color:#9400D1'><span class='cmtt-9'>s</span></span><span style='color:#9400D1'> <span class='cmtt-9'>warm."</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-28017r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-28018r6'></a><span class='cmr-6'>6</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span> 
+<span class='label'><a id='x1-28019r7'></a><span class='cmr-6'>7</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-28020r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>It</span></span><span style='color:#9400D1'><span class='cmtt-9'>’</span></span><span style='color:#9400D1'><span class='cmtt-9'>s</span></span><span style='color:#9400D1'> <span class='cmtt-9'>cool."</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-28021r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span></pre>
+   <div class='tcolorbox outputbox' id='tcolobox-3'>     
+<div class='tcolorbox-title'>
+<!-- l. 554 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 553 --><p class='noindent'><span class='cmtt-10x-x-109'>It’s cool.</span> </p> 
+</div> 
+</div>
+<!-- l. 556 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead' id='if-else-if-else-statement'><a id='x1-29000'></a>IF - ELSE IF - ELSE Statement</h5>
+<!-- l. 557 --><p class='noindent'>Checks multiple conditions in order. The first condition that evaluates to true has its corresponding block
+executed. If none are true, the optional <span class='cmtt-10x-x-109'>ELSE </span>block is executed. </p><!-- l. 558 -->
+<p id='caption-5'><a id='x1-29001r5'></a>
+<a id='x1-29002'></a>
+</p><pre class='lstlisting' id='listing-11'><span class='label'><a id='x1-29003r1'></a><span class='cmr-6'>1</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(condition1)</span> 
+</span><span class='label'><a id='x1-29004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-29005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Statements executed if condition1 is true</span> 
+</span><span class='label'><a id='x1-29006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    <span class='cmtt-9'>statements1</span> 
+</span><span class='label'><a id='x1-29007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-29008r6'></a><span class='cmr-6'>6</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span><span style='color:#000000'> </span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(condition2)</span> 
+</span><span class='label'><a id='x1-29009r7'></a><span class='cmr-6'>7</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-29010r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Statements executed if condition1 is false AND condition2 is true</span> 
+</span><span class='label'><a id='x1-29011r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'>    <span class='cmtt-9'>statements2</span> 
+</span><span class='label'><a id='x1-29012r10'></a><span class='cmr-6'>10</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-29013r11'></a><span class='cmr-6'>11</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span><span style='color:#000000'> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Optional</span> 
+</span><span class='label'><a id='x1-29014r12'></a><span class='cmr-6'>12</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-29015r13'></a><span class='cmr-6'>13</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Statements executed if all preceding conditions are false</span> 
+</span><span class='label'><a id='x1-29016r14'></a><span class='cmr-6'>14</span></span><span style='color:#000000'>    <span class='cmtt-9'>statements_else</span> 
+</span><span class='label'><a id='x1-29017r15'></a><span class='cmr-6'>15</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.5:
+    </span><span class='content'>AP
+    Pseudocode:
+    IF
+    -
+    ELSE
+    IF
+    -
+    ELSE</span></figcaption><!-- tex4ht:label?: x1-29017r  -->
+<!-- l. 575 --><p class='indent'>   Example (Grading): </p><!-- l. 576 -->
+<p><a id='x1-29017rdoc'></a>
+</p><pre class='lstlisting' id='listing-12'><span class='label'><a id='x1-29018r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>score</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>85</span> 
+</span><span class='label'><a id='x1-29019r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>grade</span></span><span style='color:#000000'> <span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-29020r3'></a><span class='cmr-6'>3</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score </span><span class='cmsy-9'>≥ </span><span class='cmtt-9'>90)</span> 
+</span><span class='label'><a id='x1-29021r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-29022r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'>    <span class='cmtt-9'>grade </span><span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>A</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-29023r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-29024r7'></a><span class='cmr-6'>7</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span><span style='color:#000000'> </span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score </span><span class='cmsy-9'>≥ </span><span class='cmtt-9'>80)</span> 
+</span><span class='label'><a id='x1-29025r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-29026r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'>    <span class='cmtt-9'>grade </span><span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>B</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>This block executes, grade becomes "B"</span> 
+</span><span class='label'><a id='x1-29027r10'></a><span class='cmr-6'>10</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-29028r11'></a><span class='cmr-6'>11</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span><span style='color:#000000'> </span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score </span><span class='cmsy-9'>≥ </span><span class='cmtt-9'>70)</span> 
+</span><span class='label'><a id='x1-29029r12'></a><span class='cmr-6'>12</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-29030r13'></a><span class='cmr-6'>13</span></span><span style='color:#000000'>    <span class='cmtt-9'>grade </span><span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>C</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-29031r14'></a><span class='cmr-6'>14</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-29032r15'></a><span class='cmr-6'>15</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span> 
+<span class='label'><a id='x1-29033r16'></a><span class='cmr-6'>16</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-29034r17'></a><span class='cmr-6'>17</span></span><span style='color:#000000'>    <span class='cmtt-9'>grade </span><span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>D</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-29035r18'></a><span class='cmr-6'>18</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-29036r19'></a><span class='cmr-6'>19</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>grade</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+   <div class='tcolorbox outputbox' id='tcolobox-4'>     
+<div class='tcolorbox-title'>
+<!-- l. 599 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 598 --><p class='noindent'><span class='cmtt-10x-x-109'>B</span> </p> 
+</div> 
+</div>
+<p><span class='cmbx-10x-x-109'>Important: </span>Only one block (the first one whose condition is met) in an IF-ELSE IF-...-ELSE structure
+will execute.
+                                                                                         
+                                                                                         
+</p><!-- l. 602 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead' id='multiple-independent-if-statements'><a id='x1-30000'></a>Multiple Independent IF Statements</h5>
+<!-- l. 603 --><p class='noindent'>Unlike ELSE IF, separate IF statements are evaluated independently. </p><!-- l. 604 -->
+<p id='caption-6'><a id='x1-30001r6'></a>
+<a id='x1-30002'></a>
+</p><pre class='lstlisting' id='listing-13'><span class='label'><a id='x1-30003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>score</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>100</span> 
+</span><span class='label'><a id='x1-30004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>count</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>0</span> 
+</span><span class='label'><a id='x1-30005r3'></a><span class='cmr-6'>3</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score </span><span class='cmsy-9'>≥ </span><span class='cmtt-9'>80)</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Condition is true</span> 
+</span><span class='label'><a id='x1-30006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-30007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'>    <span class='cmtt-9'>count </span><span class='cmsy-9'>← </span><span class='cmtt-9'>count + 1</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>count becomes 1</span> 
+</span><span class='label'><a id='x1-30008r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-30009r7'></a><span class='cmr-6'>7</span></span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>This IF is checked regardless of the previous one</span> 
+</span><span class='label'><a id='x1-30010r8'></a><span class='cmr-6'>8</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score </span><span class='cmsy-9'>≥ </span><span class='cmtt-9'>90)</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Condition is true</span> 
+</span><span class='label'><a id='x1-30011r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-30012r10'></a><span class='cmr-6'>10</span></span><span style='color:#000000'>    <span class='cmtt-9'>count </span><span class='cmsy-9'>← </span><span class='cmtt-9'>count + 1</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>count becomes 2</span> 
+</span><span class='label'><a id='x1-30013r11'></a><span class='cmr-6'>11</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-30014r12'></a><span class='cmr-6'>12</span></span><span style='color:#000000'><span class='cmtt-9'>count</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>count + 1</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>count becomes 3 (unconditional)</span> 
+</span><span class='label'><a id='x1-30015r13'></a><span class='cmr-6'>13</span></span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>This IF is also checked independently</span> 
+</span><span class='label'><a id='x1-30016r14'></a><span class='cmr-6'>14</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score </span><span class='cmsy-9'>≥ </span><span class='cmtt-9'>100)</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Condition is true</span> 
+</span><span class='label'><a id='x1-30017r15'></a><span class='cmr-6'>15</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-30018r16'></a><span class='cmr-6'>16</span></span><span style='color:#000000'>    <span class='cmtt-9'>count </span><span class='cmsy-9'>← </span><span class='cmtt-9'>count + 1</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>count becomes 4</span> 
+</span><span class='label'><a id='x1-30019r17'></a><span class='cmr-6'>17</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-30020r18'></a><span class='cmr-6'>18</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>count</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.6:
+    </span><span class='content'>AP
+    Pseudocode:
+    Multiple
+    Independent
+    IFs</span></figcaption><!-- tex4ht:label?: x1-30020r  -->
+   <div class='tcolorbox outputbox' id='tcolobox-5'>     
+<div class='tcolorbox-title'>
+<!-- l. 626 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 625 --><p class='noindent'><span class='cmtt-10x-x-109'>4</span> </p> 
+</div> 
+</div><p>
+Here, multiple IF blocks can execute if their respective conditions are true.
+</p><!-- l. 629 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead' id='nested-conditionals'><a id='x1-31000'></a>Nested Conditionals</h5>
+<!-- l. 630 --><p class='noindent'>An IF statement can be placed inside another IF or ELSE block. </p><!-- l. 631 -->
+<p id='caption-7'><a id='x1-31001r7'></a>
+<a id='x1-31002'></a>
+</p><pre class='lstlisting' id='listing-14'><span class='label'><a id='x1-31003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>homeworkComplete</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>true</span> 
+</span><span class='label'><a id='x1-31004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>score</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>95</span> 
+</span><span class='label'><a id='x1-31005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>grade</span></span><span style='color:#000000'> <span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-31006r4'></a><span class='cmr-6'>4</span></span> 
+<span class='label'><a id='x1-31007r5'></a><span class='cmr-6'>5</span></span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(homeworkComplete = true)</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Outer condition</span> 
+</span><span class='label'><a id='x1-31008r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-31009r7'></a><span class='cmr-6'>7</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>This block executes only if homeworkComplete is true</span> 
+</span><span class='label'><a id='x1-31010r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Checking</span></span><span style='color:#9400D1'> <span class='cmtt-9'>score because homework is complete..."</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-31011r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>IF</span></span><span style='color:#000000'> <span class='cmtt-9'>(score </span><span class='cmsy-9'>≥ </span><span class='cmtt-9'>90)</span> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Inner condition</span> 
+</span><span class='label'><a id='x1-31012r10'></a><span class='cmr-6'>10</span></span><span style='color:#000000'>    <span class='cmtt-9'>{</span> 
+</span><span class='label'><a id='x1-31013r11'></a><span class='cmr-6'>11</span></span><span style='color:#000000'>        <span class='cmtt-9'>grade </span><span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>A</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'> </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>This executes</span> 
+</span><span class='label'><a id='x1-31014r12'></a><span class='cmr-6'>12</span></span><span style='color:#000000'>    <span class='cmtt-9'>}</span> 
+</span><span class='label'><a id='x1-31015r13'></a><span class='cmr-6'>13</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span> 
+<span class='label'><a id='x1-31016r14'></a><span class='cmr-6'>14</span></span><span style='color:#000000'>    <span class='cmtt-9'>{</span> 
+</span><span class='label'><a id='x1-31017r15'></a><span class='cmr-6'>15</span></span><span style='color:#000000'>        <span class='cmtt-9'>grade </span><span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>B</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-31018r16'></a><span class='cmr-6'>16</span></span><span style='color:#000000'>    <span class='cmtt-9'>}</span> 
+</span><span class='label'><a id='x1-31019r17'></a><span class='cmr-6'>17</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-31020r18'></a><span class='cmr-6'>18</span></span><span style='color:#FF00FF'><span class='cmtt-9'>ELSE</span></span> 
+<span class='label'><a id='x1-31021r19'></a><span class='cmr-6'>19</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-31022r20'></a><span class='cmr-6'>20</span></span><span style='color:#000000'>    <span class='cmtt-9'>grade </span><span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Incomplete</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-31023r21'></a><span class='cmr-6'>21</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-31024r22'></a><span class='cmr-6'>22</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>grade</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.7:
+    </span><span class='content'>AP
+    Pseudocode:
+    Nested
+    IFs</span></figcaption><!-- tex4ht:label?: x1-31024r  -->
+   <div class='tcolorbox outputbox' id='tcolobox-6'>     
+<div class='tcolorbox-title'>
+<!-- l. 658 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 656 --><p class='noindent'><span class='cmtt-10x-x-109'>Checking score because homework is complete...</span><br class='newline' /><span class='cmtt-10x-x-109'>A</span> </p> 
+</div> 
+</div><p>
+Indentation helps visualize the structure of nested blocks.
+</p><!-- l. 661 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='iteration-loops-detailed'><a id='x1-32000'></a>Iteration / Loops (Detailed)</h4>
+<!-- l. 662 --><p class='noindent'>Loops repeat blocks of code. </p>
+     <ul class='itemize1'>
+     <li class='itemize' id='caption-8'>
+     <!-- l. 664 --><p class='noindent'><span class='cmtt-10x-x-109'>REPEAT n TIMES</span>: Executes the block a fixed number of times.<br class='newline' /> </p><!-- l. 665 -->
+                                                                                         
+                                                                                         
+<a id='x1-32001r8'></a>
+<a id='x1-32002'></a>
+     <pre class='lstlisting' id='listing-15'><span class='label'><a id='x1-32003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>count</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>0</span> 
+</span><span class='label'><a id='x1-32004r2'></a><span class='cmr-6'>2</span></span><span style='color:#FF00FF'><span class='cmtt-9'>REPEAT</span></span><span style='color:#000000'> <span class='cmtt-9'>5 TIMES</span> 
+</span><span class='label'><a id='x1-32005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-32006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    <span class='cmtt-9'>count </span><span class='cmsy-9'>← </span><span class='cmtt-9'>count + 1</span> 
+</span><span class='label'><a id='x1-32007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>count</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-32008r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span></pre>
+     
+     <figcaption class='caption'><span class='id'>Listing 3.8:
+         </span><span class='content'>AP
+         Pseudocode:
+         REPEAT
+         n
+         TIMES</span></figcaption><!-- tex4ht:label?: x1-32008r  -->
+     <div class='tcolorbox outputbox' id='tcolobox-7'>     
+<div class='tcolorbox-title'>
+     <!-- l. 679 --><p class='noindent'>Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 674 --><p class='noindent'><span class='cmtt-10x-x-109'>1</span><br class='newline' /><span class='cmtt-10x-x-109'>2</span><br class='newline' /><span class='cmtt-10x-x-109'>3</span><br class='newline' /><span class='cmtt-10x-x-109'>4</span><br class='newline' /><span class='cmtt-10x-x-109'>5</span> </p> 
+</div> 
+</div>
+     </li>
+     <li class='itemize' id='caption-9'>
+     <!-- l. 680 --><p class='noindent'><span class='cmtt-10x-x-109'>REPEAT UNTIL (condition)</span>: Executes the block <span class='cmti-10x-x-109'>first</span>, then checks the condition. Repeats as long as
+     the condition is <span class='cmtt-10x-x-109'>false</span>. The block always executes at least once.<br class='newline' /> </p><!-- l. 681 -->
+<a id='x1-32009r9'></a>
+<a id='x1-32010'></a>
+     <pre class='lstlisting' id='listing-16'><span class='label'><a id='x1-32011r1'></a><span class='cmr-6'>1</span></span><span style='color:#FF00FF'><span class='cmtt-9'>input</span></span><span style='color:#000000'> <span class='cmsy-9'>←</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span> 
+<span class='label'><a id='x1-32012r2'></a><span class='cmr-6'>2</span></span><span style='color:#FF00FF'><span class='cmtt-9'>REPEAT</span></span><span style='color:#000000'> </span><span style='color:#FF00FF'><span class='cmtt-9'>UNTIL</span></span><span style='color:#000000'> <span class='cmtt-9'>(</span></span><span style='color:#FF00FF'><span class='cmtt-9'>input</span></span><span style='color:#000000'> <span class='cmtt-9'>=</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>quit</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-32013r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-32014r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Enter</span></span><span style='color:#9400D1'> <span class='cmtt-9'>command (or ’quit’):"</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-32015r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>input</span></span><span style='color:#000000'> <span class='cmsy-9'>←</span> </span><span style='color:#FF00FF'><span class='cmtt-9'>INPUT</span></span><span style='color:#000000'><span class='cmtt-9'>()</span></span> 
+<span class='label'><a id='x1-32016r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'>    </span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Process input...</span> 
+</span><span class='label'><a id='x1-32017r7'></a><span class='cmr-6'>7</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>You</span></span><span style='color:#9400D1'> <span class='cmtt-9'>entered: "</span></span><span style='color:#000000'> <span class='cmtt-9'>+</span> </span><span style='color:#FF00FF'><span class='cmtt-9'>input</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-32018r8'></a><span class='cmr-6'>8</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-32019r9'></a><span class='cmr-6'>9</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Exiting</span></span><span style='color:#9400D1'> <span class='cmtt-9'>loop."</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+     
+     <figcaption class='caption'><span class='id'>Listing 3.9:
+         </span><span class='content'>AP
+         Pseudocode:
+         REPEAT
+         UNTIL</span></figcaption><!-- tex4ht:label?: x1-32019r  -->
+     </li>
+     <li class='itemize' id='caption-10'>
+     <!-- l. 692 --><p class='noindent'><span class='cmtt-10x-x-109'>FOR EACH item IN list </span>(Covered more in Lists): Iterates through each element in a list
+     sequentially.<br class='newline' /> </p><!-- l. 693 -->
+<a id='x1-32020r10'></a>
+<a id='x1-32021'></a>
+     <pre class='lstlisting' id='listing-17'><span class='label'><a id='x1-32022r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>names</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>[</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Alice</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Bob</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Charlie</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>]</span></span> 
+<span class='label'><a id='x1-32023r2'></a><span class='cmr-6'>2</span></span><span style='color:#FF00FF'><span class='cmtt-9'>FOR</span></span><span style='color:#000000'> </span><span style='color:#FF00FF'><span class='cmtt-9'>EACH</span></span><span style='color:#000000'> <span class='cmtt-9'>name</span> </span><span style='color:#FF00FF'><span class='cmtt-9'>IN</span></span><span style='color:#000000'> <span class='cmtt-9'>names</span> 
+</span><span class='label'><a id='x1-32024r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-32025r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Hello</span></span><span style='color:#9400D1'><span class='cmtt-9'>,</span></span><span style='color:#9400D1'> <span class='cmtt-9'>"</span></span><span style='color:#000000'> <span class='cmtt-9'>+ name)</span> 
+</span><span class='label'><a id='x1-32026r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span></pre>
+     
+     <figcaption class='caption'><span class='id'>Listing 3.10:
+         </span><span class='content'>AP
+         Pseudocode:
+         FOR
+         EACH</span></figcaption><!-- tex4ht:label?: x1-32026r  -->
+                                                                                         
+                                                                                         
+     <div class='tcolorbox outputbox' id='tcolobox-8'>     
+<div class='tcolorbox-title'>
+     <!-- l. 704 --><p class='noindent'>Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 701 --><p class='noindent'><span class='cmtt-10x-x-109'>Hello, Alice</span><br class='newline' /><span class='cmtt-10x-x-109'>Hello, Bob</span><br class='newline' /><span class='cmtt-10x-x-109'>Hello, Charlie</span> </p> 
+</div> 
+</div>                                                           </li></ul>
+<!-- l. 706 --><p class='noindent'>These three structures (Sequence, Selection, Iteration) are the fundamental building blocks for constructing
+any algorithm.
+</p><!-- l. 708 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='algorithms'><span class='titlemark'>3.4   </span> <a id='x1-330003.4'></a>Algorithms</h3>
+<!-- l. 710 --><p class='noindent'>An algorithm is a finite sequence of well-defined, computer-implementable instructions to solve a class of
+problems or perform a computation. Algorithms can be expressed in natural language, flowcharts, or
+pseudocode before being implemented in a programming language.
+</p><!-- l. 719 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='procedures-functionsmethods'><span class='titlemark'>3.5   </span> <a id='x1-340003.5'></a>Procedures (Functions/Methods)</h3>
+<!-- l. 721 --><p class='noindent'>Procedures (often called functions or methods) are named blocks of code that perform a specific task.
+They help organize code, reduce redundancy, and improve reusability. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Definition</span>: Specifies the procedure name, parameters (inputs), and the code it executes.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Parameters</span>: Variables listed in the definition that receive values when the procedure is
+     called.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Arguments</span>: The actual values passed to the parameters when the procedure is called.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Return Values</span>: Procedures can optionally return a value back to the calling code using the
+     <span class='cmtt-10x-x-109'>RETURN </span>statement.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Modularity</span>: Breaking down a complex problem into smaller, manageable procedures.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Abstraction</span>: Hiding the complex details of implementation behind a simple interface (the
+     procedure call).</li></ul>
+                                                                                         
+                                                                                         
+<!-- l. 730 -->
+<p id='caption-11'><a id='x1-34001r11'></a>
+<a id='x1-34002'></a>
+</p><pre class='lstlisting' id='listing-18'><span class='label'><a id='x1-34003r1'></a><span class='cmr-6'>1</span></span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Procedure Definition</span> 
+</span><span class='label'><a id='x1-34004r2'></a><span class='cmr-6'>2</span></span><span style='color:#FF00FF'><span class='cmtt-9'>PROCEDURE</span></span><span style='color:#000000'> <span class='cmtt-9'>calculateArea(length, width)</span> 
+</span><span class='label'><a id='x1-34005r3'></a><span class='cmr-6'>3</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-34006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'>    <span class='cmtt-9'>area </span><span class='cmsy-9'>← </span><span class='cmtt-9'>length * width</span> 
+</span><span class='label'><a id='x1-34007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'>    </span><span style='color:#FF00FF'><span class='cmtt-9'>RETURN</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>area</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-34008r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-34009r7'></a><span class='cmr-6'>7</span></span> 
+<span class='label'><a id='x1-34010r8'></a><span class='cmr-6'>8</span></span><span style='color:#808080'><span class='cmtt-9'>//</span></span><span style='color:#808080'> <span class='cmtt-9'>Procedure Call</span> 
+</span><span class='label'><a id='x1-34011r9'></a><span class='cmr-6'>9</span></span><span style='color:#000000'><span class='cmtt-9'>roomLength</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>10</span> 
+</span><span class='label'><a id='x1-34012r10'></a><span class='cmr-6'>10</span></span><span style='color:#000000'><span class='cmtt-9'>roomWidth</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>8</span> 
+</span><span class='label'><a id='x1-34013r11'></a><span class='cmr-6'>11</span></span><span style='color:#000000'><span class='cmtt-9'>roomArea</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>calculateArea(roomLength, roomWidth)</span> 
+</span><span class='label'><a id='x1-34014r12'></a><span class='cmr-6'>12</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>The</span></span><span style='color:#9400D1'> <span class='cmtt-9'>area is: "</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-34015r13'></a><span class='cmr-6'>13</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>roomArea</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.11:
+    </span><span class='content'>AP
+    Pseudocode:
+    Procedure
+    Definition
+    and
+    Call</span></figcaption><!-- tex4ht:label?: x1-34015r3.5  -->
+   <div class='tcolorbox outputbox' id='tcolobox-9'>     
+<div class='tcolorbox-title'>
+<!-- l. 748 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 746 --><p class='noindent'><span class='cmtt-10x-x-109'>The area is: </span><br class='newline' /><span class='cmtt-10x-x-109'>80</span> </p> 
+</div> 
+</div><p>
+When ‘calculateArea‘ is called, the value of ‘roomLength‘ (10) is passed as the argument for the ‘length‘
+parameter, and ‘roomWidth‘ (8) is passed as the argument for the ‘width‘ parameter. Inside the
+procedure, these values are used to calculate ‘area‘. The ‘RETURN(area)‘ statement sends the calculated
+value (80) back to where the procedure was called. This returned value is then assigned to the ‘roomArea‘
+variable.
+</p><!-- l. 751 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='lists-arrays'><span class='titlemark'>3.6   </span> <a id='x1-350003.6'></a>Lists (Arrays)</h3>
+<!-- l. 753 --><p class='noindent'>Lists (or arrays in some languages) are ordered collections of items (elements). They allow you to store
+multiple values under a single variable name.
+</p><!-- l. 755 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='list-indexing-ap-csp-uses-based-indexing'><a id='x1-36000'></a>List Indexing: AP CSP Uses 1-Based Indexing</h4>
+<!-- l. 756 --><p class='noindent'><span class='cmbx-10x-x-109'>Important: </span>AP Pseudocode uses <span class='cmbx-10x-x-109'>1-based indexing</span>, meaning the first element is at index 1. This differs
+from most programming languages (like JavaScript and Python) which use 0-based indexing where the
+first element is at index 0.
+</p>
+   <figure class='figure'> 
+
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!-- l. 761 --><p class='noindent' id='list-indexing-comparison-ap-csp-starts-at-while-javascript-and-python-start-at-'><img alt='””””A[[[[J[[[[ABCDP1234S0123paha]]]]/]]]]pnetPlareCyenr”St”ayPh”:o”n: ' src='tikz_2.png' style='max-width:100%;height:auto' />
+<a id='x1-36001r1'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 3.1: </span><span class='content'>List indexing comparison: AP CSP starts at 1, while JavaScript and Python start at 0
+</span></figcaption><!-- tex4ht:label?: x1-36001r1  -->
+                                                                                         
+                                                                                         
+   </figure>
+   <h4 class='likesubsectionHead' id='creating-and-accessing-lists'><a id='x1-37000'></a>Creating and Accessing Lists</h4>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Creating Lists</span>: <span class='cmtt-10x-x-109'>myList &lt;- [item1, item2, item3]</span>
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Accessing Elements</span>: By index. <span class='cmtt-10x-x-109'>firstItem &lt;- myList[1]</span>, <span class='cmtt-10x-x-109'>thirdItem &lt;- myList[3]</span>
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Modifying Elements</span>: <span class='cmtt-10x-x-109'>myList[2] &lt;- newItem</span>
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Length</span>: Finding the number of elements. <span class='cmtt-10x-x-109'>len &lt;- LENGTH(myList)</span></li></ul>
+   <!-- l. 790 -->
+<p id='caption-12'><a id='x1-37001r12'></a>
+<a id='x1-37002'></a>
+</p><pre class='lstlisting' id='listing-19'><span class='label'><a id='x1-37003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>fruits</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>[</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Apple</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Banana</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Cherry</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Date</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>]</span></span> 
+<span class='label'><a id='x1-37004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>first</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>fruits[1]</span> 
+</span><span class='label'><a id='x1-37005r3'></a><span class='cmr-6'>3</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>first</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.12:
+    </span><span class='content'>AP
+    Pseudocode:
+    Creating
+    and
+    Accessing
+    Lists</span></figcaption><!-- tex4ht:label?: x1-37005r  -->
+   <div class='tcolorbox outputbox' id='tcolobox-10'>     
+<div class='tcolorbox-title'>
+<!-- l. 797 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 796 --><p class='noindent'><span class='cmtt-10x-x-109'>Apple</span> </p> 
+</div> 
+</div>
+<!-- l. 799 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='list-operations'><a id='x1-38000'></a>List Operations</h4>
+<!-- l. 800 --><p class='noindent'>AP Pseudocode provides several built-in operations for manipulating lists:
+</p>   
+    <table class='tabular' id='TBL-11'><colgroup id='TBL-11-1g'><col id='TBL-11-1' /><col id='TBL-11-2' /></colgroup><tr id='TBL-11-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-11-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>Operation             </span></td><td class='td11' id='TBL-11-1-2' style='white-space:normal; text-align:left;'> <!-- l. 811 --><p class='noindent'><span class='cmbx-10x-x-109'>Description</span>                                                         </p></td>
+   
+   </tr><tr id='TBL-11-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-11-2-1' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>APPEND(list, value)    </span></td><td class='td11' id='TBL-11-2-2' style='white-space:normal; text-align:left;'> <!-- l. 811 --><p class='noindent'>Adds <span class='cmtt-10x-x-109'>value </span>to the end of <span class='cmtt-10x-x-109'>list</span>                          </p></td>
+   </tr><tr id='TBL-11-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-11-3-1' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>INSERT(list, i, value) </span></td><td class='td11' id='TBL-11-3-2' style='white-space:normal; text-align:left;'> <!-- l. 811 --><p class='noindent'>Inserts <span class='cmtt-10x-x-109'>value </span>at index <span class='cmtt-10x-x-109'>i</span>, shifting elements to the right           </p></td>
+   </tr><tr id='TBL-11-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-11-4-1' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>REMOVE(list, i)        </span></td><td class='td11' id='TBL-11-4-2' style='white-space:normal; text-align:left;'> <!-- l. 811 --><p class='noindent'>Removes the element at index <span class='cmtt-10x-x-109'>i</span>, shifting elements to the left   </p></td>
+   </tr><tr id='TBL-11-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-11-5-1' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10x-x-109'>LENGTH(list)           </span></td><td class='td11' id='TBL-11-5-2' style='white-space:normal; text-align:left;'> <!-- l. 811 --><p class='noindent'>Returns the number of elements in <span class='cmtt-10x-x-109'>list</span>                   </p></td>
+   </tr></table><!-- l. 813 -->
+                                                                                         
+                                                                                         
+<p id='caption-13'><a id='x1-38001r13'></a>
+<a id='x1-38002'></a>
+</p><pre class='lstlisting' id='listing-20'><span class='label'><a id='x1-38003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>[</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Red</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Blue</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>]</span></span> 
+<span class='label'><a id='x1-38004r2'></a><span class='cmr-6'>2</span></span> 
+<span class='label'><a id='x1-38005r3'></a><span class='cmr-6'>3</span></span><span style='color:#FF00FF'><span class='cmtt-9'>APPEND</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Green</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-38006r4'></a><span class='cmr-6'>4</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-38007r5'></a><span class='cmr-6'>5</span></span> 
+<span class='label'><a id='x1-38008r6'></a><span class='cmr-6'>6</span></span><span style='color:#FF00FF'><span class='cmtt-9'>INSERT</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> <span class='cmtt-9'>2,</span> </span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Yellow</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-38009r7'></a><span class='cmr-6'>7</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-38010r8'></a><span class='cmr-6'>8</span></span> 
+<span class='label'><a id='x1-38011r9'></a><span class='cmr-6'>9</span></span><span style='color:#FF00FF'><span class='cmtt-9'>REMOVE</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'><span class='cmtt-9'>,</span></span><span style='color:#000000'> <span class='cmtt-9'>1)</span> 
+</span><span class='label'><a id='x1-38012r10'></a><span class='cmr-6'>10</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span> 
+<span class='label'><a id='x1-38013r11'></a><span class='cmr-6'>11</span></span> 
+<span class='label'><a id='x1-38014r12'></a><span class='cmr-6'>12</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>LENGTH</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#000000'><span class='cmtt-9'>colors</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span><span style='color:#000000'><span class='cmtt-9'>)</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.13:
+    </span><span class='content'>AP
+    Pseudocode:
+    List
+    Operations</span></figcaption><!-- tex4ht:label?: x1-38014r  -->
+   <div class='tcolorbox outputbox' id='tcolobox-11'>     
+<div class='tcolorbox-title'>
+<!-- l. 832 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 828 --><p class='noindent'><span class='cmtt-10x-x-109'>["Red", "Blue", "Green"]</span><br class='newline' /><span class='cmtt-10x-x-109'>["Red", "Yellow", "Blue", "Green"]</span><br class='newline' /><span class='cmtt-10x-x-109'>["Yellow", "Blue", "Green"]</span><br class='newline' /><span class='cmtt-10x-x-109'>3</span> </p> 
+</div> 
+</div>
+<!-- l. 834 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='iteration-with-for-each'><a id='x1-39000'></a>Iteration with FOR EACH</h4>
+<!-- l. 835 --><p class='noindent'>The <span class='cmtt-10x-x-109'>FOR EACH </span>loop iterates through each element in a list sequentially. The loop variable takes on the
+value of each element (not the index).
+</p>
+   <!-- l. 837 -->
+<p id='caption-14'><a id='x1-39001r14'></a>
+<a id='x1-39002'></a>
+</p><pre class='lstlisting' id='listing-21'><span class='label'><a id='x1-39003r1'></a><span class='cmr-6'>1</span></span><span style='color:#000000'><span class='cmtt-9'>scores</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>[85, 92, 78, 95]</span> 
+</span><span class='label'><a id='x1-39004r2'></a><span class='cmr-6'>2</span></span><span style='color:#000000'><span class='cmtt-9'>sum</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>0</span> 
+</span><span class='label'><a id='x1-39005r3'></a><span class='cmr-6'>3</span></span><span style='color:#FF00FF'><span class='cmtt-9'>FOR</span></span><span style='color:#000000'> </span><span style='color:#FF00FF'><span class='cmtt-9'>EACH</span></span><span style='color:#000000'> <span class='cmtt-9'>score</span> </span><span style='color:#FF00FF'><span class='cmtt-9'>IN</span></span><span style='color:#000000'> <span class='cmtt-9'>scores</span> 
+</span><span class='label'><a id='x1-39006r4'></a><span class='cmr-6'>4</span></span><span style='color:#000000'><span class='cmtt-9'>{</span></span> 
+<span class='label'><a id='x1-39007r5'></a><span class='cmr-6'>5</span></span><span style='color:#000000'>    <span class='cmtt-9'>sum </span><span class='cmsy-9'>← </span><span class='cmtt-9'>sum + score</span> 
+</span><span class='label'><a id='x1-39008r6'></a><span class='cmr-6'>6</span></span><span style='color:#000000'><span class='cmtt-9'>}</span></span> 
+<span class='label'><a id='x1-39009r7'></a><span class='cmr-6'>7</span></span><span style='color:#000000'><span class='cmtt-9'>average</span></span><span style='color:#000000'> <span class='cmsy-9'>← </span><span class='cmtt-9'>sum / LENGTH(scores)</span> 
+</span><span class='label'><a id='x1-39010r8'></a><span class='cmr-6'>8</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Sum</span></span><span style='color:#9400D1'><span class='cmtt-9'>:</span></span><span style='color:#9400D1'> <span class='cmtt-9'>"</span></span><span style='color:#000000'> <span class='cmtt-9'>+ sum)</span> 
+</span><span class='label'><a id='x1-39011r9'></a><span class='cmr-6'>9</span></span><span style='color:#FF00FF'><span class='cmtt-9'>DISPLAY</span></span><span style='color:#000000'><span class='cmtt-9'>(</span></span><span style='color:#9400D1'><span class='cmtt-9'>"</span></span><span style='color:#9400D1'><span class='cmtt-9'>Average</span></span><span style='color:#9400D1'><span class='cmtt-9'>:</span></span><span style='color:#9400D1'> <span class='cmtt-9'>"</span></span><span style='color:#000000'> <span class='cmtt-9'>+ average)</span></span></pre>
+<figcaption class='caption'><span class='id'>Listing 3.14:
+    </span><span class='content'>AP
+    Pseudocode:
+    FOR
+    EACH
+    Loop</span></figcaption><!-- tex4ht:label?: x1-39011r  -->
+   <div class='tcolorbox outputbox' id='tcolobox-12'>     
+<div class='tcolorbox-title'>
+<!-- l. 851 --><p class='indent'>   Output</p></div> 
+<div class='tcolorbox-content'><!-- l. 849 --><p class='noindent'><span class='cmtt-10x-x-109'>Sum: 350</span><br class='newline' /><span class='cmtt-10x-x-109'>Average: 87.5</span> </p> 
+</div> 
+</div>
+<!-- l. 853 --><p class='indent'>   <span class='cmbx-10x-x-109'>Note: </span>In a <span class='cmtt-10x-x-109'>FOR EACH </span>loop, the loop variable (<span class='cmtt-10x-x-109'>score </span>in the example above) holds the <span class='cmti-10x-x-109'>value </span>of the
+current element, not its index. If you need the index, you would use a counter variable with a <span class='cmtt-10x-x-109'>REPEAT </span>loop
+instead.
+</p><!-- l. 855 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='algorithm-analysis'><span class='titlemark'>3.7   </span> <a id='x1-400003.7'></a>Algorithm Analysis</h3>
+<!-- l. 857 --><p class='noindent'>Comparing algorithms that solve the same problem. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Correctness</span>: Does the algorithm always produce the correct result?
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Efficiency</span>: How many resources (primarily time, measured often by the number of steps
+     relative to the input size) does the algorithm use, especially as the input size grows?
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Readability/Simplicity</span>: Is the algorithm easy to understand and implement?</li></ul>
+<!-- l. 864 --><p class='indent'>   Efficiency is crucial when dealing with large inputs. We categorize algorithms based on how their
+runtime grows with the input size:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Reasonable Time</span>: Algorithms whose runtime grows polynomially (or slower) with the input
+     size. These algorithms remain practical even for relatively large inputs. Examples include
+     logarithmic, linear, and polynomial growth rates.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Unreasonable Time</span>: Algorithms whose runtime grows extremely fast (e.g., exponentially
+     or factorially) with the input size. While correct, these algorithms quickly become impractical
+     for all but the smallest inputs.</li></ul>
+<!-- l. 871 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead' id='common-algorithm-examples-and-efficiency'><a id='x1-41000'></a>Common Algorithm Examples and Efficiency</h5>
+<!-- l. 872 --><p class='noindent'>Different algorithms solving the same problem can have vastly different efficiencies.
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>
+     <!-- l. 875 --><p class='noindent'><span class='cmbx-10x-x-109'>Linear Search</span>: Checks each element in a list sequentially until the target is found or the list ends.
+     </p>
+          <ul class='itemize2'>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Efficiency</span>:  Reasonable.  In  the  worst  case,  it  takes  a  number  of  steps  roughly
+          proportional to the size of the list (approximately <span class='cmmi-10x-x-109'>n </span>steps if the list has <span class='cmmi-10x-x-109'>n </span>items). Suitable
+          for small or unsorted lists.</li></ul>
+                                                                                         
+                                                                                         
+     </li>
+     <li class='itemize'>
+     <!-- l. 879 --><p class='noindent'><span class='cmbx-10x-x-109'>Binary Search</span>: Efficiently finds items in a <span class='cmti-10x-x-109'>sorted </span>list by repeatedly dividing the search interval in
+     half. It compares the target value to the middle element; if they don’t match, it eliminates
+     half the list where the item cannot be and repeats the process on the remaining half.
+     </p>
+          <ul class='itemize2'>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Efficiency</span>: Reasonable. Much faster than linear search for large lists. The number of
+          steps grows very slowly compared to the list size (proportional to log <span class='cmmi-10x-x-109'>n </span>steps for a list of
+          size <span class='cmmi-10x-x-109'>n</span>). Requires the list to be sorted first.</li></ul>
+     </li>
+     <li class='itemize'>
+     <!-- l. 883 --><p class='noindent'><span class='cmbx-10x-x-109'>Traveling Salesman Problem (TSP) - Brute Force</span>: The problem is to find the shortest
+     possible route that visits each city in a given list exactly once and returns to the starting city. A
+     brute-force algorithm checks every possible route. </p>
+          <ul class='itemize2'>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Efficiency</span>: Unreasonable. The number of possible routes grows factorially (<span class='cmmi-10x-x-109'>n</span>!) with the
+          number of cities (<span class='cmmi-10x-x-109'>n</span>). This becomes computationally infeasible extremely quickly, even
+          for a moderate number of cities (e.g., 20 cities have 20! <span class='cmsy-10x-x-109'>≈ </span>2<span class='cmmi-10x-x-109'>.</span>4 <span class='cmsy-10x-x-109'>× </span>10<sup><span class='cmr-8'>18</span></sup> possible routes).</li></ul>
+     </li></ul>
+<!-- l. 889 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead' id='runtime-classification-table'><a id='x1-42000'></a>Runtime Classification Table</h5>
+    <table class='tabular' id='TBL-14'><colgroup id='TBL-14-1g'><col id='TBL-14-1' /><col id='TBL-14-2' /><col id='TBL-14-3' /></colgroup><tr id='TBL-14-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Classification  </span></td><td class='td11' id='TBL-14-1-2' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Example Growth Rate </span></td><td class='td11' id='TBL-14-1-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'><span class='cmbx-10x-x-109'>Description</span>                                 </p></td>
+   
+   </tr><tr id='TBL-14-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-2-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Reasonable     </span></td><td class='td11' id='TBL-14-2-2' style='white-space:nowrap; text-align:left;'>                        </td><td class='td11' id='TBL-14-2-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'>                                   </p></td>
+   </tr><tr id='TBL-14-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-3-1' style='white-space:nowrap; text-align:left;'>      Logarithmic  </td><td class='td11' id='TBL-14-3-2' style='white-space:nowrap; text-align:left;'> log <span class='cmmi-10x-x-109'>n</span>, 5 <span class='cmsy-10x-x-109'>×</span> log <span class='cmmi-10x-x-109'>n              </span></td><td class='td11' id='TBL-14-3-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'>Very  efficient;  runtime  increases  very
+  slowly as input size grows (e.g., Binary
+  Search).                                             </p></td>
+   </tr><tr id='TBL-14-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-4-1' style='white-space:nowrap; text-align:left;'>      Linear         </td><td class='td11' id='TBL-14-4-2' style='white-space:nowrap; text-align:left;'> <span class='cmmi-10x-x-109'>n</span>, 2<span class='cmmi-10x-x-109'>n </span>+ 5                        </td><td class='td11' id='TBL-14-4-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'>Runtime  grows  directly  proportional  to
+  input size (e.g., Linear Search).              </p></td>
+   </tr><tr id='TBL-14-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-5-1' style='white-space:nowrap; text-align:left;'>      Polynomial   </td><td class='td11' id='TBL-14-5-2' style='white-space:nowrap; text-align:left;'> <span class='cmmi-10x-x-109'>n</span><sup><span class='cmr-8'>2</span></sup>, <span class='cmmi-10x-x-109'>n</span><sup><span class='cmr-8'>3</span></sup> + <span class='cmmi-10x-x-109'>n</span>, 10<span class='cmmi-10x-x-109'>n</span><sup><span class='cmr-8'>2</span></sup>                  </td><td class='td11' id='TBL-14-5-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'>Runtime     grows     faster     but     still
+  manageable for moderately large inputs
+  (e.g., many basic sorting algorithms).      </p></td>
+   
+   </tr><tr id='TBL-14-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-6-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Unreasonable  </span></td><td class='td11' id='TBL-14-6-2' style='white-space:nowrap; text-align:left;'>                        </td><td class='td11' id='TBL-14-6-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'>                                   </p></td>
+   </tr><tr id='TBL-14-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-7-1' style='white-space:nowrap; text-align:left;'>      Exponential  </td><td class='td11' id='TBL-14-7-2' style='white-space:nowrap; text-align:left;'> 2<sup><span class='cmmi-8'>n</span></sup>, 1<span class='cmmi-10x-x-109'>.</span>5<sup><span class='cmmi-8'>n</span></sup> + <span class='cmmi-10x-x-109'>n</span><sup><span class='cmr-8'>2</span></sup>                        </td><td class='td11' id='TBL-14-7-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'>Runtime    grows    extremely    rapidly;
+  impractical for large inputs.                   </p></td>
+   </tr><tr id='TBL-14-8-' style='vertical-align:baseline;'><td class='td11' id='TBL-14-8-1' style='white-space:nowrap; text-align:left;'>      Factorial      </td><td class='td11' id='TBL-14-8-2' style='white-space:nowrap; text-align:left;'> <span class='cmmi-10x-x-109'>n</span>!                                 </td><td class='td11' id='TBL-14-8-3' style='white-space:normal; text-align:left;'> <!-- l. 904 --><p class='noindent'>Runtime               grows               even
+  faster than exponential; only feasible for
+  very small inputs (e.g., Brute-force TSP).  </p></td>
+   
+   </tr></table>
+<!-- l. 906 --><p class='noindent'><span class='cmbx-10x-x-109'>Heuristics</span>: Sometimes, finding an exact, optimal solution using a reasonable time algorithm is not known
+or practical (especially for problems where the best known exact solutions run in unreasonable time, like
+                                                                                         
+                                                                                         
+TSP). A <span class='cmbx-10x-x-109'>heuristic </span>is an approach that finds an <span class='cmti-10x-x-109'>approximate </span>solution that is ”good enough” for practical
+purposes, often much faster than finding the perfect solution. It’s a shortcut or rule of thumb used when
+an exact solution is too hard or slow to find.
+</p><!-- l. 908 --><p class='indent'>   <span class='cmbx-10x-x-109'>Undecidable Problem</span>: A problem for which no algorithm can ever be constructed that always leads
+to a correct yes-or-no answer for every possible input (e.g., the Halting Problem - determining whether an
+arbitrary program will eventually stop running or continue forever).
+</p><!-- l. 910 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='language-comparison-ap-csp-vs-javascript-vs-python'><span class='titlemark'>3.8   </span> <a id='x1-430003.8'></a>Language Comparison: AP CSP vs JavaScript vs Python</h3>
+<!-- l. 912 --><p class='noindent'>Different programming languages use different syntax for the same concepts. Here is a comparison of
+common operations:
+</p><!-- l. 914 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='assignment-and-basic-operations'><a id='x1-44000'></a>Assignment and Basic Operations</h4>
+    <table class='tabular' id='TBL-16'><colgroup id='TBL-16-1g'><col id='TBL-16-1' /><col id='TBL-16-2' /><col id='TBL-16-3' /><col id='TBL-16-4' /></colgroup><tr id='TBL-16-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Operation  </span></td><td class='td11' id='TBL-16-1-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>AP CSP      </span></td><td class='td11' id='TBL-16-1-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>JavaScript   </span></td><td class='td11' id='TBL-16-1-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>Python       </span></td>
+   
+   </tr><tr id='TBL-16-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-2-1' style='white-space:nowrap; text-align:left;'> Assignment    </td><td class='td11' id='TBL-16-2-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>x </span><span class='cmsy-10'>← </span><span class='cmtt-10'>5      </span></td><td class='td11' id='TBL-16-2-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>x = 5        </span></td><td class='td11' id='TBL-16-2-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>x = 5        </span></td>
+   </tr><tr id='TBL-16-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-3-1' style='white-space:nowrap; text-align:left;'> Equality        </td><td class='td11' id='TBL-16-3-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a = b       </span></td><td class='td11' id='TBL-16-3-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a === b      </span></td><td class='td11' id='TBL-16-3-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a == b       </span></td>
+   </tr><tr id='TBL-16-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-4-1' style='white-space:nowrap; text-align:left;'> Not equal      </td><td class='td11' id='TBL-16-4-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a </span><span class='cmmi-10'>≠ </span><span class='cmtt-10'>b       </span></td><td class='td11' id='TBL-16-4-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a !== b      </span></td><td class='td11' id='TBL-16-4-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a != b       </span></td>
+   </tr><tr id='TBL-16-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-5-1' style='white-space:nowrap; text-align:left;'> Greater/Less  </td><td class='td11' id='TBL-16-5-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>&gt;, &lt;, </span><span class='cmsy-10'>≥</span><span class='cmtt-10'>, </span><span class='cmsy-10'>≤ </span></td><td class='td11' id='TBL-16-5-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>&gt;, &lt;, &gt;=, &lt;= </span></td><td class='td11' id='TBL-16-5-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>&gt;, &lt;, &gt;=, &lt;= </span></td>
+   </tr><tr id='TBL-16-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-6-1' style='white-space:nowrap; text-align:left;'> Logical AND  </td><td class='td11' id='TBL-16-6-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a AND b     </span></td><td class='td11' id='TBL-16-6-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a &amp;&amp; b       </span></td><td class='td11' id='TBL-16-6-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a and b      </span></td>
+   </tr><tr id='TBL-16-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-7-1' style='white-space:nowrap; text-align:left;'> Logical OR    </td><td class='td11' id='TBL-16-7-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a OR b      </span></td><td class='td11' id='TBL-16-7-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a || b       </span></td><td class='td11' id='TBL-16-7-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a or b       </span></td>
+   </tr><tr id='TBL-16-8-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-8-1' style='white-space:nowrap; text-align:left;'> Logical NOT  </td><td class='td11' id='TBL-16-8-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>NOT a       </span></td><td class='td11' id='TBL-16-8-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>!a           </span></td><td class='td11' id='TBL-16-8-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>not a        </span></td>
+   </tr><tr id='TBL-16-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-9-1' style='white-space:nowrap; text-align:left;'> Modulus       </td><td class='td11' id='TBL-16-9-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a MOD b     </span></td><td class='td11' id='TBL-16-9-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a % b        </span></td><td class='td11' id='TBL-16-9-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>a % b        </span></td>
+   </tr></table>
+<!-- l. 930 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='procedures-and-functions'><a id='x1-45000'></a>Procedures and Functions</h4>
+    <table class='tabular' id='TBL-18'><colgroup id='TBL-18-1g'><col id='TBL-18-1' /><col id='TBL-18-2' /><col id='TBL-18-3' /><col id='TBL-18-4' /></colgroup><tr id='TBL-18-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Concept     </span></td><td class='td11' id='TBL-18-1-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>AP CSP            </span></td><td class='td11' id='TBL-18-1-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>JavaScript          </span></td><td class='td11' id='TBL-18-1-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>Python       </span></td>
+   
+   </tr><tr id='TBL-18-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-2-1' style='white-space:nowrap; text-align:left;'> Define           </td><td class='td11' id='TBL-18-2-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>PROCEDURE name()  </span></td><td class='td11' id='TBL-18-2-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>function name() </span><span class='cmsy-10'>{} </span></td><td class='td11' id='TBL-18-2-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>def name():  </span></td>
+   </tr><tr id='TBL-18-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-3-1' style='white-space:nowrap; text-align:left;'> With params  </td><td class='td11' id='TBL-18-3-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>PROCEDURE f(a, b) </span></td><td class='td11' id='TBL-18-3-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>function f(a, b) </span><span class='cmsy-10'>{} </span></td><td class='td11' id='TBL-18-3-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>def f(a, b): </span></td>
+   </tr><tr id='TBL-18-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-4-1' style='white-space:nowrap; text-align:left;'> Return value  </td><td class='td11' id='TBL-18-4-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>RETURN(value)     </span></td><td class='td11' id='TBL-18-4-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>return value        </span></td><td class='td11' id='TBL-18-4-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>return value </span></td>
+   </tr><tr id='TBL-18-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-5-1' style='white-space:nowrap; text-align:left;'> Call              </td><td class='td11' id='TBL-18-5-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>name()            </span></td><td class='td11' id='TBL-18-5-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>name()              </span></td><td class='td11' id='TBL-18-5-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>name()       </span></td>
+   </tr></table>
+<!-- l. 942 --><p class='noindent'><span class='cmbx-10x-x-109'>Note: </span>AP CSP uses the term “procedure” for all callable blocks of code. JavaScript and Python
+distinguish between functions (which return values) and procedures/methods (which may not), but in
+practice both terms are often used interchangeably.
+</p><!-- l. 944 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='lists-and-indexing'><a id='x1-46000'></a>Lists and Indexing</h4>
+                                                                                         
+                                                                                         
+   
+    <table class='tabular' id='TBL-21'><colgroup id='TBL-21-1g'><col id='TBL-21-1' /><col id='TBL-21-2' /><col id='TBL-21-3' /><col id='TBL-21-4' /></colgroup><tr id='TBL-21-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Operation </span></td><td class='td11' id='TBL-21-1-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>AP CSP               </span></td><td class='td11' id='TBL-21-1-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>JavaScript               </span></td><td class='td11' id='TBL-21-1-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>Python              </span></td>
+   
+   </tr><tr id='TBL-21-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-2-1' style='white-space:nowrap; text-align:left;'> Create list    </td><td class='td11' id='TBL-21-2-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>[1, 2, 3]            </span></td><td class='td11' id='TBL-21-2-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>[1, 2, 3]                </span></td><td class='td11' id='TBL-21-2-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>[1, 2, 3]           </span></td>
+   </tr><tr id='TBL-21-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-3-1' style='white-space:nowrap; text-align:left;'> First index   </td><td class='td11' id='TBL-21-3-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>1                    </span></td><td class='td11' id='TBL-21-3-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>0                        </span></td><td class='td11' id='TBL-21-3-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>0                   </span></td>
+   </tr><tr id='TBL-21-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-4-1' style='white-space:nowrap; text-align:left;'> Access first   </td><td class='td11' id='TBL-21-4-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list[1]              </span></td><td class='td11' id='TBL-21-4-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list[0]                  </span></td><td class='td11' id='TBL-21-4-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list[0]             </span></td>
+   </tr><tr id='TBL-21-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-5-1' style='white-space:nowrap; text-align:left;'> Access last    </td><td class='td11' id='TBL-21-5-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list[LENGTH(list)]   </span></td><td class='td11' id='TBL-21-5-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list[list.length-1]      </span></td><td class='td11' id='TBL-21-5-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list[-1]            </span></td>
+   </tr><tr id='TBL-21-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-6-1' style='white-space:nowrap; text-align:left;'> Length         </td><td class='td11' id='TBL-21-6-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>LENGTH(list)         </span></td><td class='td11' id='TBL-21-6-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list.length              </span></td><td class='td11' id='TBL-21-6-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>len(list)           </span></td>
+   </tr><tr id='TBL-21-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-7-1' style='white-space:nowrap; text-align:left;'> Append        </td><td class='td11' id='TBL-21-7-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>APPEND(list, val)    </span></td><td class='td11' id='TBL-21-7-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list.push(val)           </span></td><td class='td11' id='TBL-21-7-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list.append(val)    </span></td>
+   </tr><tr id='TBL-21-8-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-8-1' style='white-space:nowrap; text-align:left;'> Remove at i  </td><td class='td11' id='TBL-21-8-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>REMOVE(list, i)      </span></td><td class='td11' id='TBL-21-8-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list.splice(i-1, 1)      </span></td><td class='td11' id='TBL-21-8-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list.pop(i)         </span></td>
+   </tr><tr id='TBL-21-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-9-1' style='white-space:nowrap; text-align:left;'> Insert at i     </td><td class='td11' id='TBL-21-9-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>INSERT(list, i, val) </span></td><td class='td11' id='TBL-21-9-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list.splice(i-1, 0, val) </span></td><td class='td11' id='TBL-21-9-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>list.insert(i, val) </span></td>
+   
+   </tr></table>
+<!-- l. 960 --><p class='noindent'><span class='cmbx-10x-x-109'>Important: </span>Remember that AP CSP uses <span class='cmbx-10x-x-109'>1-based indexing </span>while JavaScript and Python use <span class='cmbx-10x-x-109'>0-based
+indexing</span>. This is a common source of errors when translating between them.
+</p><!-- l. 962 --><p class='noindent'>
+</p>
+   <h4 class='likesubsectionHead' id='loops'><a id='x1-47000'></a>Loops</h4>
+    <table class='tabular' id='TBL-24'><colgroup id='TBL-24-1g'><col id='TBL-24-1' /><col id='TBL-24-2' /><col id='TBL-24-3' /><col id='TBL-24-4' /></colgroup><tr id='TBL-24-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-24-1-1' style='white-space:nowrap; text-align:left;'> <span class='cmbx-10x-x-109'>Loop Type    </span></td><td class='td11' id='TBL-24-1-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>AP CSP             </span></td><td class='td11' id='TBL-24-1-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>JavaScript             </span></td><td class='td11' id='TBL-24-1-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>Python             </span></td>
+   
+   </tr><tr id='TBL-24-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-24-2-1' style='white-space:nowrap; text-align:left;'> Repeat n times  </td><td class='td11' id='TBL-24-2-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>REPEAT n TIMES     </span></td><td class='td11' id='TBL-24-2-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>for(let i=0; i&lt;n; i++) </span></td><td class='td11' id='TBL-24-2-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>for i in range(n): </span></td>
+   </tr><tr id='TBL-24-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-24-3-1' style='white-space:nowrap; text-align:left;'> For each          </td><td class='td11' id='TBL-24-3-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>FOR EACH x IN list </span></td><td class='td11' id='TBL-24-3-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>for(let x of list)     </span></td><td class='td11' id='TBL-24-3-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>for x in list:     </span></td>
+   </tr><tr id='TBL-24-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-24-4-1' style='white-space:nowrap; text-align:left;'> Repeat until     </td><td class='td11' id='TBL-24-4-2' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>REPEAT UNTIL(cond) </span></td><td class='td11' id='TBL-24-4-3' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>while(!cond) </span><span class='cmsy-10'>{}      </span></td><td class='td11' id='TBL-24-4-4' style='white-space:nowrap; text-align:left;'> <span class='cmtt-10'>while not cond:    </span></td>
+   
+   </tr></table>
+<!-- l. 973 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='simulations'><span class='titlemark'>3.9   </span> <a id='x1-480003.9'></a>Simulations</h3>
+<!-- l. 975 --><p class='noindent'>Simulations use computer models to mimic real-world phenomena or systems. They allow us to:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>Test hypotheses
+     </li>
+     <li class='itemize'>Explore  complex  systems  where  real-world  experiments  are  impossible,  dangerous,  or
+     expensive
+     </li>
+     <li class='itemize'>Make predictions</li></ul>
+<!-- l. 981 --><p class='noindent'>Simulations involve designing models with specific rules, variables, and interactions, often incorporating
+randomness (using random number generators) to reflect real-world variability.
+                                                                                         
+                                                                                         
+</p>
+   <h2 class='chapterHead' id='big-idea-computer-systems-and-networks'><span class='titlemark'>Chapter 4</span><br /><a id='x1-490004'></a>Big Idea 4: Computer Systems and Networks</h2>
+<!-- l. 989 --><p class='noindent'>Computing requires hardware and software working together. Networks, especially the Internet, connect
+computers globally, enabling communication and information sharing.
+</p>
+   <h3 class='sectionHead' id='the-internet'><span class='titlemark'>4.1   </span> <a id='x1-500004.1'></a>The Internet</h3>
+<!-- l. 1005 --><p class='noindent'>The Internet is a global network of interconnected computer networks. It’s a system for communication
+and information exchange. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Decentralized</span>: No single point of control or failure.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Interoperability</span>:  Uses  standardized,  open  protocols  (rules  for  communication)  allowing
+     different types of devices and networks to connect.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>World Wide Web (WWW)</span>: A system of linked hypertext documents accessed via the
+     Internet (using protocols like HTTP/HTTPS). The Web is *part* of the Internet, not the same
+     thing. <span class='cmbx-10x-x-109'>Crucially, the Internet is the underlying network infrastructure (hardware
+     and protocols), while the WWW is an information system built on top of the
+     Internet.</span></li></ul>
+<!-- l. 1012 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='how-the-internet-works'><span class='titlemark'>4.2   </span> <a id='x1-510004.2'></a>How the Internet Works</h3>
+<!-- l. 1014 --><p class='noindent'>Data travels across the Internet using standardized procedures (protocols). Key concepts:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Protocols</span>: Standardized sets of rules governing communication. Open protocols (like those
+     used on the Internet) allow different types of devices and networks to connect and interoperate
+     smoothly.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>IP Addresses</span>: Every device connected to the Internet needs a unique numerical label, its
+     IP address (Internet Protocol address), to be identified and receive data.
+                                                                                         
+                                                                                         
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Domain Name System (DNS)</span>: Since remembering numerical IP addresses is difficult, the
+     DNS acts like the Internet’s phonebook. It translates human-readable domain names (e.g.,
+     <span class='cmtt-10x-x-109'>www.google.com</span>) into the corresponding IP addresses needed for routing.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Packets</span>: Data sent over the Internet is broken down into small units called packets. Each
+     packet contains a portion of the data plus metadata (like source/destination IP addresses)
+     needed for routing and reassembly.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Routing</span>: Devices called routers examine packet destination addresses and forward them
+     across networks towards their destination. The Internet is designed to be dynamic; packets
+     from the same message might take different routes depending on network conditions and
+     efficiency.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Packet Reliability</span>: Protocols like TCP (Transmission Control Protocol) ensure reliable data
+     transfer by managing packet sequencing, checking for errors, and requesting retransmission
+     of  lost  packets.  Other  protocols  like  UDP  prioritize  speed  over  guaranteed  delivery  for
+     applications like streaming. (You don’t need to know the deep specifics of TCP/UDP, just
+     that mechanisms exist for reliability vs. speed trade-offs).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>World Wide Web (WWW) and HTTP/HTTPS</span>: The WWW is a system of linked
+     information (web pages, files, etc.) accessed <span class='cmti-10x-x-109'>via </span>the Internet. It uses the HTTP (Hypertext
+     Transfer Protocol) or HTTPS (secure version) to request and display web content. The WWW
+     is one of many services that run on the Internet, but it is not the Internet itself.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Scalability</span>: The Internet’s design using open protocols, packet switching, and decentralized
+     routing allows it to expand to handle ever-increasing numbers of users and devices effectively.</li></ul>
+<!-- l. 1026 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='fault-tolerance'><span class='titlemark'>4.3   </span> <a id='x1-520004.3'></a>Fault Tolerance</h3>
+<!-- l. 1028 --><p class='noindent'>Systems that can continue operating even if some components fail are fault-tolerant. The Internet achieves
+fault tolerance through: </p>
+                                                                                         
+                                                                                         
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Redundancy</span>: Multiple paths exist between networks. If one path or router fails, traffic can
+     often be automatically redirected through alternative routes.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Packet Switching</span>: Because data is broken into independent packets, if some packets are
+     lost or take a faulty route, they can often be re-sent or rerouted without losing the entire
+     message (especially when using reliable protocols like TCP).</li></ul>
+<!-- l. 1033 --><p class='noindent'>This design makes the Internet robust against many common failures, ensuring communication can
+continue.
+</p>
+   <figure class='figure'> 
+
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!-- l. 1038 --><p class='noindent' id='network-diagram-illustrating-redundancy-and-fault-tolerance-multiple-paths-exist-between-nodes-eg-a-to-d-directly-via-b-or-via-c-if-one-path-eg-abd-fails-data-can-be-rerouted-through-another-eg-acd-or-the-direct-ad-path-allowing-the-network-to-continue-functioning-'><img alt='ABCDEF  ' src='tikz_3.png' style='max-width:100%;height:auto' />
+<a id='x1-52001r1'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'>Network diagram illustrating redundancy and fault tolerance. Multiple paths exist
+between nodes (e.g., A to D directly, via B, or via C). If one path (e.g., A-B-D) fails, data can be
+rerouted through another (e.g., A-C-D or the direct A-D path), allowing the network to continue
+functioning.
+</span></figcaption><!-- tex4ht:label?: x1-52001r1  -->
+                                                                                         
+                                                                                         
+   </figure>
+   <h3 class='sectionHead' id='parallel-and-distributed-computing'><span class='titlemark'>4.4   </span> <a id='x1-530004.4'></a>Parallel and Distributed Computing</h3>
+<!-- l. 1071 --><p class='noindent'>These approaches use multiple computers or processors to solve large problems faster. </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Parallel Computing</span>: Uses multiple processors working simultaneously on parts of the same
+     task, often within a single computer system.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Distributed Computing</span>: Spreads tasks across multiple, independent computers connected
+     by a network (like the Internet). Examples include large-scale scientific simulations (e.g.,
+     protein folding) or big data processing.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Speedup</span>: The performance gain achieved by using parallel/distributed systems compared to
+     a single processor. Ideally, <span class='cmmi-10x-x-109'>N </span>processors could provide <span class='cmmi-10x-x-109'>N </span>times speedup, but communication
+     overhead and task dependencies often limit this.</li></ul>
+<!-- l. 1078 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='cybersecurity'><span class='titlemark'>4.5   </span> <a id='x1-540004.5'></a>Cybersecurity</h3>
+<!-- l. 1080 --><p class='noindent'>Protecting computer systems, networks, and data from unauthorized access, attacks, damage, or theft.
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>
+     <!-- l. 1088 --><p class='noindent'><span class='cmbx-10x-x-109'>Common Threats</span>: </p>
+          <ul class='itemize2'>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Malware</span>: Malicious software (viruses, worms, ransomware, spyware).
+          </li>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Phishing</span>: Tricking users into revealing sensitive information (passwords, credit card
+          numbers) often via deceptive emails, messages, or websites designed to look legitimate.
+          </li>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Rogue Access Point</span>: An unauthorized wireless access point installed on a network,
+          potentially allowing attackers to intercept traffic or gain unauthorized access.
+                                                                                         
+                                                                                         
+          </li>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Keylogger</span>: Malware or hardware that records keystrokes entered on a keyboard, often
+          used to steal passwords or other sensitive information.</li></ul>
+     </li>
+     <li class='itemize'>
+     <!-- l. 1097 --><p class='noindent'><span class='cmbx-10x-x-109'>Countermeasures</span>: </p>
+          <ul class='itemize2'>
+          <li class='itemize'>
+          <!-- l. 1099 --><p class='noindent'><span class='cmbx-10x-x-109'>Authentication</span>: Verifying identity (passwords, biometrics). </p>
+              <ul class='itemize3'>
+              <li class='itemize'><span class='cmbx-10x-x-109'>Multifactor Authentication (MFA)</span>: Enhances security by requiring two or more
+              distinct pieces of evidence (factors) to verify identity (e.g., something you know like
+              a password + something you have like a code from your phone).</li></ul>
+          </li>
+          <li class='itemize'>
+          <!-- l. 1103 --><p class='noindent'><span class='cmbx-10x-x-109'>Encryption</span>: Scrambling data (plaintext) into an unreadable format (ciphertext) using an
+          algorithm and a key, so it’s unintelligible without the key. Used for secure communication
+          (HTTPS) and data storage. </p>
+              <ul class='itemize3'>
+              <li class='itemize'><span class='cmbx-10x-x-109'>Symmetric Key Encryption</span>: Uses the <span class='cmbx-10x-x-109'>same secret key </span>for both encryption
+              and decryption. Faster, but requires a secure way to share the secret key beforehand
+              between the sender and receiver.
+              </li>
+              <li class='itemize'>
+              <!-- l. 1106 --><p class='noindent'><span class='cmbx-10x-x-109'>Public Key (Asymmetric) Encryption</span>: Uses <span class='cmbx-10x-x-109'>two keys</span>: a <span class='cmti-10x-x-109'>public key </span>(shared freely)
+              for encryption and a corresponding <span class='cmti-10x-x-109'>private key </span>(kept secret by the owner) for
+              decryption. Anyone can encrypt a message using the recipient’s public key, but only
+              the recipient with the matching private key can decrypt it. This solves the
+              key sharing problem of symmetric encryption but is computationally slower.
+              </p>
+                 <ul class='itemize4'>
+                 <li class='itemize'><span class='cmbx-10x-x-109'>Public Key</span>: Can be shared with anyone without compromising security. Used
+                 to encrypt messages intended for the owner of the corresponding private key.
+                 </li>
+                 <li class='itemize'><span class='cmbx-10x-x-109'>Private Key</span>: Must be kept secret by the owner. Used to decrypt messages
+                 encrypted with the corresponding public key.</li></ul>
+              </li></ul>
+          <figure class='figure' id='x1-54001r2'><span id='public-key-encryption-example-alice-encrypts-a-message-using-bobs-public-key-only-bob-with-his-corresponding-private-key-can-decrypt-it'></span> 
+ <img alt='PPllaECDainieincpcntrhrteyeyexprpxtttttexutussiinngg
+B(BABBBMoUoMloooebnbeibbbsrscs’e’se’’asasarssg Pd Pgse P Peuareenceurbbidibillvsvlvieaeiactsct)eeK KK Keeeeyyyy ↑↑
+          ' src='tikz_4.png' style='max-width:100%;height:auto' />
+<figcaption class='caption'><span class='id'>Figure 4.2: </span><span class='content'>Public Key Encryption Example: Alice encrypts a message using Bob’s public key. Only
+Bob, with his corresponding private key, can decrypt it.
+</span></figcaption><!-- tex4ht:label?: x1-54001r2  -->
+          </figure>
+          </li></ul>
+     </li></ul>
+<!-- l. 1144 --><p class='noindent'>Cybersecurity is an ongoing challenge due to evolving threats and system complexity.
+                                                                                         
+                                                                                         
+</p>
+   <h2 class='chapterHead' id='big-idea-impact-of-computing'><span class='titlemark'>Chapter 5</span><br /><a id='x1-550005'></a>Big Idea 5: Impact of Computing</h2>
+<!-- l. 1152 --><p class='noindent'>Computing technologies have profoundly changed society, bringing numerous benefits but also raising
+significant ethical and societal challenges.
+</p>
+   <h3 class='sectionHead' id='beneficial-effects'><span class='titlemark'>5.1   </span> <a id='x1-560005.1'></a>Beneficial Effects</h3>
+<!-- l. 1156 --><p class='noindent'>Computing innovations have driven progress in many areas: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Communication</span>:  Facilitating  instant  global  communication  (email,  social  media,  video
+     conferencing).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Access to Information</span>: Providing vast resources for learning and research (World Wide
+     Web, online libraries, search engines).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Collaboration</span>: Enabling collaboration on projects regardless of geographic location.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Creativity and Expression</span>: Offering new tools for art, music, writing, and design.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Automation</span>:  Performing  repetitive  or  dangerous  tasks,  increasing  efficiency  in  various
+     industries.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Economic Growth</span>: Creating new industries, jobs, and markets.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Scientific Advancement</span>: Enabling complex simulations, data analysis, and discovery in
+     fields like medicine, climate science, and physics.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Crowdsourcing / Citizen Science</span>: Leveraging the skills, knowledge, or computing power
+     of large numbers of people, often via the internet, to solve complex problems, gather data,
+     or  contribute  to  research  (e.g.,  protein  folding  projects,  identifying  galaxies,  transcribing
+     historical documents).
+                                                                                         
+                                                                                         
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Accessibility</span>: Providing assistive technologies for people with disabilities.</li></ul>
+<!-- l. 1169 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='harmful-effects-and-challenges'><span class='titlemark'>5.2   </span> <a id='x1-570005.2'></a>Harmful Effects and Challenges</h3>
+<!-- l. 1171 --><p class='noindent'>Alongside benefits, computing raises concerns: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Bias in Algorithms</span>: Algorithms, often trained on historical data, can reflect and amplify
+     existing societal biases (e.g., in facial recognition, loan applications, hiring tools).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Privacy  Concerns</span>:  Widespread  collection  and  analysis  of  personal  data  raise  issues  of
+     surveillance, data breaches, and misuse of information.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Security Risks</span>: Increased reliance on digital systems makes individuals and infrastructure
+     vulnerable to cyberattacks (as discussed in Big Idea 4).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Digital Divide</span>: Unequal access to computing devices, the internet, and digital literacy skills
+     creates disparities in opportunities (economic, educational, social).
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Workforce Impact</span>: Automation can displace workers in certain sectors, requiring workforce
+     adaptation and retraining.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Information Reliability</span>: The ease of spreading information online makes it challenging to
+     distinguish credible sources from misinformation and disinformation.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Intellectual Property</span>: Digital content (music, movies, software) is easily copied, leading to
+     challenges in protecting copyright and preventing piracy.
+                                                                                         
+                                                                                         
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Social Impacts</span>: Effects on social interaction, mental health (e.g., social media addiction),
+     and the nature of community.</li></ul>
+<!-- l. 1183 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='bias-in-computing'><span class='titlemark'>5.3   </span> <a id='x1-580005.3'></a>Bias in Computing</h3>
+<!-- l. 1185 --><p class='noindent'>Bias can be introduced into computing systems at various stages: </p>
+     <ul class='itemize1'>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Data Bias</span>: If the data used to train an algorithm is not representative of the population it
+     will be used on, the algorithm may perform poorly or unfairly for certain groups.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Algorithm Bias</span>: The design choices made by programmers can inadvertently introduce bias.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Human Bias</span>: The people designing, implementing, and using technology can bring their
+     own conscious or unconscious biases.</li></ul>
+<!-- l. 1191 --><p class='noindent'>It’s crucial to be aware of potential biases and strive to create and use technology equitably.
+</p><!-- l. 1193 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='legal-and-ethical-concerns'><span class='titlemark'>5.4   </span> <a id='x1-590005.4'></a>Legal and Ethical Concerns</h3>
+<!-- l. 1195 --><p class='noindent'>Computing raises complex legal and ethical questions: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>
+     <!-- l. 1197 --><p class='noindent'><span class='cmbx-10x-x-109'>Copyright and Intellectual Property</span>: How to balance creators’ rights with public access to
+     information and innovation. </p>
+          <ul class='itemize2'>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Copyright</span>: The legal right granted to the creator of original works (literature, music,
+          software, etc.), usually for a limited time. It gives the creator exclusive rights to copy,
+          distribute, and adapt the work.
+          </li>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Open  Source  Software  (OSS)</span>:  Software  for  which  the  original  source  code  (the
+          human-readable instructions written by programmers) is made freely available and may
+          be redistributed and modified. Users can see how the software works, fix bugs, or adapt it.
+          This contrasts with proprietary software, where the source code is kept secret. Examples
+          include the Linux operating system and the Firefox web browser. OSS licenses still have
+          rules, but they prioritize sharing and modification.
+          </li>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Creative Commons (CC)</span>: A set of public copyright licenses that enable the free
+          distribution of an otherwise copyrighted work. A creator uses a CC license to give others
+          permission to share, use, and build upon their work, under certain conditions specified
+          by the license (e.g., requiring attribution, prohibiting commercial use). This provides a
+          more flexible alternative to the traditional ”all rights reserved” copyright, facilitating
+          sharing and collaboration, especially for digital content like images, music, and text.
+          </li>
+          <li class='itemize'><span class='cmbx-10x-x-109'>Fair Use</span>: A legal doctrine that permits limited use of copyrighted material without
+          permission  from  the  rights  holders  for  purposes  such  as  criticism,  comment,  news
+          reporting, teaching, scholarship, or research.</li></ul>
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Data Privacy Laws</span>: Regulations like GDPR (Europe) or CCPA (California) attempt to give
+     individuals more control over their personal data.
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Responsibility</span>: Who is responsible when an autonomous system (like a self-driving car) causes
+     harm?
+     </li>
+     <li class='itemize'><span class='cmbx-10x-x-109'>Ethical Use</span>: Considering the potential consequences of technology and using it responsibly.</li></ul>
+    
+</body> 
+</html>
